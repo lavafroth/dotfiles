@@ -118,6 +118,7 @@
       aircrack-ng
       bettercap
       blackbox-terminal
+      cargo
       dxvk
       feroxbuster
       fragments
@@ -130,22 +131,24 @@
       hashcat
       hcxtools
       hugo
+      i2p
       jq  
       krita
       librewolf
       lutris
       neofetch
       nmap
+      onionshare
       patchelf
+      picotool
       pkg-config
       pwntools
       python312
-      rustscan
-      picotool
-      rustc
-      cargo
       rust-analyzer
+      rustc
+      rustscan
       signal-desktop
+      tor-browser-bundle-bin
       wifite2
       wine
       yt-dlp
