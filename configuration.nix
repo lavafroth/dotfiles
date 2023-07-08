@@ -145,6 +145,7 @@
       signal-desktop
       wifite2
       wine
+      yt-dlp
     ];
     shell = pkgs.fish;
   };
