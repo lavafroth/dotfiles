@@ -141,7 +141,9 @@
       pwntools
       python312
       rustscan
-      rustup
+      rustc
+      cargo
+      rust-analyzer
       signal-desktop
       wifite2
       wine
