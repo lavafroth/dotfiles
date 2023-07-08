@@ -141,6 +141,7 @@
       pwntools
       python312
       rustscan
+      picotool
       rustc
       cargo
       rust-analyzer
