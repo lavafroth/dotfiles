@@ -145,6 +145,7 @@
       pwntools
       python312
       rust-analyzer
+      rustfmt
       rustc
       rustscan
       signal-desktop
