@@ -128,6 +128,8 @@
       gnome.gnome-boxes
       gnome-secrets
       hashcat
+      hcxtools
+      hugo
       jq  
       krita
       librewolf
