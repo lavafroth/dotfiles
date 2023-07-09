@@ -16,6 +16,10 @@
         source = ./sources/fish;
         recursive = true;
       };
+    ".config/mpv" = {
+        source = ./sources/mpv;
+        recursive = true;
+      };
     };
   };
 }

@@ -1,0 +1,3 @@
+[submodule "sources/mpv-sponsorblock"]
+	path = sources/mpv-sponsorblock
+	url = https://github.com/TheCactusVert/mpv-sponsorblock

@@ -115,7 +115,6 @@
     description = "Himadri Bhattacharjee";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      aircrack-ng
       bettercap
       blackbox-terminal
       cargo
@@ -145,12 +144,11 @@
       pwntools
       python312
       rust-analyzer
-      rustfmt
       rustc
+      rustfmt
       rustscan
       signal-desktop
       tor-browser-bundle-bin
-      wifite2
       wine
       yt-dlp
     ];
@@ -211,24 +209,28 @@
   # $ nix search wget
 
   environment.systemPackages = with pkgs; [
-    # Need virtualenv for waydroid-scripts
-    # this helps us enable libhoudini
     adw-gtk3
+    aircrack-ng
     bat
     exa
     gnomeExtensions.blur-my-shell
     gnomeExtensions.caffeine
     gnomeExtensions.rounded-window-corners
     helix
+    iw
+    macchanger
     mpv
+    # Need virtualenv for waydroid-scripts
     ntfs3g
     openssl
     openssl.dev
-    ripgrep
-    virtualenv
-    wget
     p7zip
     pciutils
+    ripgrep
+    # this helps us enable libhoudini
+    virtualenv
+    wget
+    wifite2
     wl-clipboard
     (writeScriptBin "sudo" ''exec doas "$@"'')
   ];
