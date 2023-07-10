@@ -10,20 +10,20 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-    enable = true;
-    device = "nodev";
-    efiSupport = true;
+  boot = {
+    loader = {
+      systemd-boot.enable = false;
+      efi.canTouchEfiVariables = true;
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+      };
+    };
+    # no keyfile
+    initrd.secrets."/crypto_keyfile.bin" = null;
   };
 
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
-
-  networking.hostName = "cafe"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -31,11 +31,14 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
-  networking.nameservers = [
-    "1.1.1.1"
-    "9.9.9.9"
-  ];
+  networking = {
+    hostName = "cafe";
+    networkmanager.enable = true;
+    nameservers = [
+        "1.1.1.1"
+        "9.9.9.9"
+      ];
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -56,46 +59,48 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.xserver = {
-    # Enable the X11 windowing system.
-    enable = true;
-
-    # Enable the GNOME Desktop Environment.
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-
-    # Configure keymap in X11
-    layout = "us";
-    xkbVariant = "";
-
-    # Enable automatic login for the user.
-    displayManager.autoLogin.enable = true;
-    displayManager.autoLogin.user = "h";
-    excludePackages = [ pkgs.xterm ];
-    desktopManager.xterm.enable = false;
-  };
-
-  services.flatpak.enable = true;
   xdg.portal.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+  services = {
+    flatpak.enable = true;
+    # Enable CUPS to print documents.
+    printing.enable = true;
+    # Enable sound with pipewire.
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+      # use the example session manager (no others are packaged yet so this is enabled by default,
+      # no need to redefine it in your config for now)
+      #media-session.enable = true;
+    };
+
+    xserver = {
+      # Enable the X11 windowing system.
+      enable = true;
+
+      # Enable the GNOME Desktop Environment.
+      desktopManager.gnome.enable = true;
+
+      # Configure keymap in X11
+      layout = "us";
+      xkbVariant = "";
+
+      displayManager = {
+        gdm.enable = true;
+        autoLogin.enable = true;
+        autoLogin.user = "h";
+      };
+      excludePackages = [ pkgs.xterm ];
+      desktopManager.xterm.enable = false;
+      # Tell Xorg to use the nvidia driver
+      videoDrivers = ["nvidia"];
+    };
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -118,14 +123,17 @@
       bettercap
       blackbox-terminal
       cargo
+      clippy
       dxvk
       feroxbuster
       fragments
+      gau
       gcc
       gh
       gimp
       git
       gnome.gnome-boxes
+      gnome.gnome-tweaks
       gnome-secrets
       hashcat
       hcxtools
@@ -133,9 +141,13 @@
       i2p
       jq  
       krita
+      libreoffice-fresh
       librewolf
+      libvirt
       lutris
+      mari0
       neofetch
+      nikto
       nmap
       onionshare
       patchelf
@@ -143,11 +155,13 @@
       pkg-config
       pwntools
       python312
+      qemu
       rust-analyzer
       rustc
       rustfmt
       rustscan
       signal-desktop
+      sqlmap
       tor-browser-bundle-bin
       wine
       yt-dlp
@@ -155,33 +169,29 @@
     shell = pkgs.fish;
   };
 
-  # documentation.nixos.enable = false;
-
   # Enable experimental features for searching
   nix = {
    package = pkgs.nixFlakes;
    extraOptions = pkgs.lib.optionalString (config.nix.package == pkgs.nixFlakes)
      "experimental-features = nix-command flakes";
-
-    # Enable weekly garbage collection
-    # gc = {
-    #   automatic = true;
-    #   dates = "weekly";
-    #   options = "--delete-older-than 7d";
-    # };
   };
 
-  system.autoUpgrade.enable = true;
+  # I tried autoupgrade, didn't like it.
+  # system.autoUpgrade.enable = true;
 
   # Replace sudo with doas
-  security.sudo.enable = false;
-  security.doas.enable = true;
-  security.doas.extraRules = [{
-    groups = [ "wheel" ];
-    persist = false;
-    keepEnv = true;
-  }];
-
+  security = {
+    rtkit.enable = true;
+    sudo.enable = false;
+    doas = {
+      enable = true;
+      extraRules = [{
+        groups = [ "wheel" ];
+        persist = false;
+        keepEnv = true;
+      }];
+    };
+  };
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
@@ -220,15 +230,13 @@
     iw
     macchanger
     mpv
-    # Need virtualenv for waydroid-scripts
     ntfs3g
     openssl
     openssl.dev
     p7zip
     pciutils
     ripgrep
-    # this helps us enable libhoudini
-    virtualenv
+    virtualenv # Needed for waydroid-scripts to enable libhoudini
     wget
     wifite2
     wl-clipboard
@@ -248,8 +256,6 @@
       "nvidia-x11"
     ];
 
-  # Tell Xorg to use the nvidia driver
-  services.xserver.videoDrivers = ["nvidia"];
 
   # Enable syncthing to sync books,
   # captured photos and videos with my phone.
@@ -307,6 +313,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Change this to upgrade to a later stateVersion.
 
 }
