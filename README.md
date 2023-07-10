@@ -10,10 +10,11 @@ sudo nixos-rebuild switch -I nixos-config=configuration.nix
 
 # Compiling the Sponsorblock library for mpv
 
-For the first install, you won't get the sponsorblock library installed
-since a bare install probably won't have Rust to compile it and I'm not
-going to upload a compiled shared library to this repository. After the
-first install, run:
+> Note: This is optional
+
+A fresh install will be unlikely to have Rust and thus, the sponsorblock
+library won't be installed. Also, I won't be uploading the compiled shared
+object. After the first `nixos-rebuild`, run:
 
 ```sh
 git submodule update --init --recursive
