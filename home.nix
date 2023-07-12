@@ -20,6 +20,8 @@
         source = ./sources/mpv;
         recursive = true;
       };
+      # Do not display fish in the menu
+      ".local/share/applications/fish.desktop".source = ./sources/fish.desktop;
     };
   };
 }
