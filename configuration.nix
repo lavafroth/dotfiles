@@ -146,6 +146,7 @@
       libvirt
       lutris
       mari0
+      mariadb
       neofetch
       nikto
       nmap
@@ -163,6 +164,7 @@
       signal-desktop
       sqlmap
       tor-browser-bundle-bin
+      vala-language-server
       wine
       yt-dlp
     ];
