@@ -147,6 +147,7 @@
       lutris
       mari0
       mariadb
+      marksman
       neofetch
       nikto
       nmap
@@ -162,6 +163,7 @@
       rustfmt
       rustscan
       signal-desktop
+      slides
       sqlmap
       tor-browser-bundle-bin
       vala-language-server
