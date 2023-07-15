@@ -126,6 +126,7 @@
       clippy
       dxvk
       feroxbuster
+      ffuf
       fragments
       gau
       gcc
@@ -135,6 +136,8 @@
       gnome.gnome-boxes
       gnome.gnome-tweaks
       gnome-secrets
+      go
+      gopls
       hashcat
       hcxtools
       hugo
@@ -228,6 +231,7 @@
     bat
     exa
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.quick-settings-tweaker
     gnomeExtensions.caffeine
     gnomeExtensions.rounded-window-corners
     helix
