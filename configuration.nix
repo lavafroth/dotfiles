@@ -127,10 +127,13 @@
       dxvk
       feroxbuster
       ffuf
+      file
       fragments
       gau
       gcc
       gh
+      ghidra
+      radare2
       gimp
       git
       gnome.gnome-boxes
