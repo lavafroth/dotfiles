@@ -152,6 +152,7 @@
       dxvk
       fd
       feroxbuster
+      ffmpeg
       ffuf
       file
       fragments
@@ -176,7 +177,6 @@
       librewolf
       libvirt
       lutris
-      mari0
       mariadb
       marksman
       neofetch
