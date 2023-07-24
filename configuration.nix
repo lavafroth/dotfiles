@@ -249,6 +249,7 @@
   # For example, a Rust project depending upon the openssl-sys crate.
   environment.variables = rec {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+    EDITOR = "${pkgs.helix}/bin/hx";
   };
 
   # List packages installed in system profile. To search, run:
