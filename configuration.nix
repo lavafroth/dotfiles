@@ -152,7 +152,9 @@
       bettercap
       blackbox-terminal
       cargo
+      cargo-deny
       clippy
+      du-dust
       dxvk
       fd
       feroxbuster
