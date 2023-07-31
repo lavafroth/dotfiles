@@ -271,6 +271,7 @@
     gnomeExtensions.caffeine
     gnomeExtensions.rounded-window-corners
     helix
+    hyperfine
     iw
     macchanger
     mpv
