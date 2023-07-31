@@ -280,6 +280,7 @@
     p7zip
     pciutils
     ripgrep
+    tealdeer
     virtualenv # Needed for waydroid-scripts to enable libhoudini
     wget
     wifite2
