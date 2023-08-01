@@ -177,7 +177,7 @@
       hcxtools
       hugo
       i2p
-      jq  
+      jq
       krita
       libreoffice-fresh
       librewolf
@@ -282,7 +282,6 @@
     pciutils
     ripgrep
     tealdeer
-    virtualenv # Needed for waydroid-scripts to enable libhoudini
     wget
     wifite2
     wl-clipboard
