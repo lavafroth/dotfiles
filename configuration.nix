@@ -58,7 +58,6 @@
 
       # You can choose a specific set of servers from https://github.com/DNSCrypt/dnscrypt-resolvers/blob/master/v3/public-resolvers.md
       server_names = [
-        "cloudflare"
         "dnsforge.de"
         "nextdns"
       ];
@@ -193,7 +192,13 @@
       picotool
       pkg-config
       pwntools
-      python312
+      (python311.withPackages(ps: with ps; [
+        pandas
+        requests
+        xlrd
+        xlwt
+        jupyter
+      ]))
       qemu
       radare2
       rust-analyzer
