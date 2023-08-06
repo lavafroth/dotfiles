@@ -174,6 +174,7 @@
       gopls
       hashcat
       hcxtools
+      hyperfine
       hugo
       i2p
       jq
@@ -276,7 +277,6 @@
     gnomeExtensions.caffeine
     gnomeExtensions.rounded-window-corners
     helix
-    hyperfine
     iw
     macchanger
     mpv
