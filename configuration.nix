@@ -202,6 +202,7 @@
         jupyter
       ]))
       qemu
+      qrencode
       radare2
       rust-analyzer
       rustc
