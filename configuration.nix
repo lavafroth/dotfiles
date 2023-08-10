@@ -269,15 +269,18 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; pkgs.lib.lists.flatten [
     adw-gtk3
     aircrack-ng
     bat
     exa
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.quick-settings-tweaker
-    gnomeExtensions.caffeine
-    gnomeExtensions.rounded-window-corners
+    (with gnomeExtensions; [
+      blur-my-shell
+      quick-settings-tweaker
+      user-themes
+      caffeine
+      rounded-window-corners
+    ])
     helix
     iw
     macchanger
