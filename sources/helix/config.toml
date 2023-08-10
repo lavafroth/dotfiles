@@ -1,4 +1,4 @@
-theme = "adwaita-dark"
+theme = "tokyonight"
 
 [editor.lsp]
 display-inlay-hints = true

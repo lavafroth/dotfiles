@@ -22,6 +22,7 @@
       };
       # Do not display fish in the menu
       ".local/share/applications/fish.desktop".source = ./sources/fish.desktop;
+      ".local/share/blackbox/schemes/tokyonight.json".source = ./sources/blackbox/tokyonight.json;
     };
   };
 }
