@@ -205,6 +205,7 @@
       qrencode
       radare2
       rust-analyzer
+      linuxPackages_latest.perf
       rustc
       rustfmt
       rustscan
