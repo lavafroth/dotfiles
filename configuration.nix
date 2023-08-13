@@ -290,6 +290,7 @@
     openssl
     openssl.dev
     p7zip
+    picocom
     pciutils
     ripgrep
     tealdeer
@@ -331,8 +332,8 @@
     # Only available on driver 515.43.04+
     open = true;
 
-    # Enable the nvidia settings menu
-    # nvidiaSettings = true;
+    # Disable the nvidia settings menu
+    nvidiaSettings = false;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
