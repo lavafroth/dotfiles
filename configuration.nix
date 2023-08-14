@@ -227,8 +227,7 @@
      "experimental-features = nix-command flakes";
   };
 
-  # I tried autoupgrade, didn't like it.
-  # system.autoUpgrade.enable = true;
+  system.autoUpgrade.enable = true;
 
   # Replace sudo with doas
   security = {
