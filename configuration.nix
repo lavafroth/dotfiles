@@ -227,7 +227,7 @@
      "experimental-features = nix-command flakes";
   };
 
-  system.autoUpgrade.enable = true;
+  system.autoUpgrade.enable = false;
 
   # Replace sudo with doas
   security = {
@@ -280,6 +280,8 @@
       user-themes
       caffeine
       rounded-window-corners
+      custom-hot-corners-extended
+      looking-glass-button
     ])
     helix
     iw
