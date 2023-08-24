@@ -202,6 +202,7 @@
         jupyter
       ]))
       qemu
+      unrar
       qrencode
       radare2
       rust-analyzer
