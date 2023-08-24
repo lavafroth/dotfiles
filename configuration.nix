@@ -7,6 +7,7 @@
     [ # Include the results of the hardware scan.
       ./home.nix
       ./hardware-configuration.nix
+      ./gnome-extensions.nix
     ];
 
   # Bootloader.
@@ -143,16 +144,26 @@
     };
   };
 
+
   users.users.h = {
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
+    packages = with pkgs;
+      let pythonPackages = python311.withPackages(ps: with ps; [
+        jupyter
+        pandas
+        requests
+        xlrd
+        xlwt
+      ]);
+      in [
       bettercap
       blackbox-terminal
       cargo
       cargo-deny
       clippy
+      delta
       du-dust
       dxvk
       fd
@@ -174,8 +185,8 @@
       gopls
       hashcat
       hcxtools
-      hyperfine
       hugo
+      hyperfine
       i2p
       jq
       krita
@@ -183,6 +194,7 @@
       libreoffice-fresh
       librewolf
       libvirt
+      linuxPackages_latest.perf
       lutris
       mariadb
       marksman
@@ -194,19 +206,11 @@
       picotool
       pkg-config
       pwntools
-      (python311.withPackages(ps: with ps; [
-        pandas
-        requests
-        xlrd
-        xlwt
-        jupyter
-      ]))
+      pythonPackages
       qemu
-      unrar
       qrencode
       radare2
       rust-analyzer
-      linuxPackages_latest.perf
       rustc
       rustfmt
       rustscan
@@ -214,6 +218,7 @@
       slides
       sqlmap
       tor-browser-bundle-bin
+      unrar
       vala-language-server
       wine
       yt-dlp
@@ -259,10 +264,10 @@
     epiphany
   ];
 
-  # Set the path for pkg-config to the openssl library
-  # so that we may compile projects that link to openssl.
-  # For example, a Rust project depending upon the openssl-sys crate.
   environment.variables = rec {
+    # Set the path for pkg-config to the openssl library
+    # so that we may compile projects that link to openssl.
+    # For example, a Rust project depending upon the openssl-sys crate.
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     EDITOR = "${pkgs.helix}/bin/hx";
   };
@@ -270,20 +275,11 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-  environment.systemPackages = with pkgs; pkgs.lib.lists.flatten [
+  environment.systemPackages = with pkgs; [
     adw-gtk3
     aircrack-ng
     bat
     exa
-    (with gnomeExtensions; [
-      blur-my-shell
-      quick-settings-tweaker
-      user-themes
-      caffeine
-      rounded-window-corners
-      custom-hot-corners-extended
-      looking-glass-button
-    ])
     helix
     iw
     macchanger
