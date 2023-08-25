@@ -13,7 +13,7 @@ Now run the following rebuild command:
 
 ```sh
 nix develop
-cafe-rebuild switch
+sudo cafe-rebuild switch
 ```
 
 #### Optional: Installing Sponsorblock for mpv
