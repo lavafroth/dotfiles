@@ -226,11 +226,7 @@
   };
 
   # Enable nix-command for search and flakes
-  nix = {
-   package = pkgs.nixFlakes;
-   extraOptions = pkgs.lib.optionalString (config.nix.package == pkgs.nixFlakes)
-     "experimental-features = nix-command flakes";
-  };
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.autoUpgrade.enable = false;
 
