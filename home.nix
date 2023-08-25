@@ -1,11 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports  = [
-    # nix-channel --add https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz home-manager
-    # nix-channel --update
-    <home-manager/nixos>
-  ];
 
   home-manager.users.h = {
     home.stateVersion = "23.05";

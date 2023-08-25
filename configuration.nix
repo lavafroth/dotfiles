@@ -5,7 +5,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./home.nix
+      # ./home.nix
       ./hardware-configuration.nix
       ./gnome-extensions.nix
     ];
@@ -177,7 +177,6 @@
       gh
       ghidra
       gimp
-      git
       gnome.gnome-boxes
       gnome.gnome-tweaks
       gnome-secrets
@@ -280,6 +279,7 @@
     aircrack-ng
     bat
     exa
+    git
     helix
     iw
     macchanger
