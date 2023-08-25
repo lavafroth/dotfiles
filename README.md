@@ -2,7 +2,7 @@
 
 NixOS configuration files personalized for my workflow.
 
-To get started, install NixOS, enable flakes, clone this repository.
+To get started, install NixOS, [enable flakes](https://nixos.wiki/wiki/Flakes#NixOS), clone this repository.
 
 ```sh
 git clone --recursive https://github.com/lavafroth/dotfiles
