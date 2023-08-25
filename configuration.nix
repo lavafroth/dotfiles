@@ -5,7 +5,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./home.nix
+      # ./home.nix
       ./hardware-configuration.nix
       ./gnome-extensions.nix
     ];
@@ -177,7 +177,6 @@
       gh
       ghidra
       gimp
-      git
       gnome.gnome-boxes
       gnome.gnome-tweaks
       gnome-secrets
@@ -226,12 +225,8 @@
     shell = pkgs.fish;
   };
 
-  # Enable experimental features for searching
-  nix = {
-   package = pkgs.nixFlakes;
-   extraOptions = pkgs.lib.optionalString (config.nix.package == pkgs.nixFlakes)
-     "experimental-features = nix-command flakes";
-  };
+  # Enable nix-command for search and flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.autoUpgrade.enable = false;
 
@@ -280,6 +275,7 @@
     aircrack-ng
     bat
     exa
+    git
     helix
     iw
     macchanger
