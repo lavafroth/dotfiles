@@ -225,7 +225,7 @@
     shell = pkgs.fish;
   };
 
-  # Enable experimental features for searching
+  # Enable nix-command for search and flakes
   nix = {
    package = pkgs.nixFlakes;
    extraOptions = pkgs.lib.optionalString (config.nix.package == pkgs.nixFlakes)

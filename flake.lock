@@ -7,30 +7,26 @@
         ]
       },
       "locked": {
-        "lastModified": 1692763155,
-        "narHash": "sha256-qMrGKZ8c/q/mHO3ZdrcBPwiVVXPLLgXjY98Ejqb5kAA=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "6a20e40acaebf067da682661aa67da8b36812606",
-        "type": "github"
+        "narHash": "sha256-/pSusGhmIdSdAaywQRFA5dVbfdIzlWQTecM+E46+cJ0=",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz"
       },
       "original": {
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz"
       }
     },
     "nixpkgs": {
       "locked": {
         "lastModified": 1692794066,
         "narHash": "sha256-H0aG8r16dj0x/Wz6wQhQxc9V7AsObOiHPaKxQgH6Y08=",
-        "owner": "NixOS",
+        "owner": "nixos",
         "repo": "nixpkgs",
         "rev": "fc944919f743bb22379dddf18dcb72db6cff84aa",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
+        "owner": "nixos",
         "ref": "nixos-23.05",
         "repo": "nixpkgs",
         "type": "github"

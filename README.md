@@ -2,14 +2,14 @@
 
 NixOS configuration files personalized for my workflow.
 
-To get started, install NixOS, clone this repository and run the rebuild command.
+To get started, install NixOS, enable flakes, clone this repository and run the rebuild command.
 
 ```sh
 git clone --recursive https://github.com/lavafroth/dotfiles
 ```
 
 ```sh
-sudo nixos-rebuild switch -I nixos-config=configuration.nix
+sudo nixos-rebuild switch --flake .#cafe
 ```
 
 #### Optional: Installing Sponsorblock for mpv
