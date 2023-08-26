@@ -189,7 +189,8 @@
       i2p
       jq
       krita
-      lazygit
+      qbittorrent
+      jackett
       libreoffice-fresh
       librewolf
       libvirt
