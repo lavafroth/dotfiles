@@ -42,6 +42,11 @@
     networkmanager.dns = "none";
   };
 
+  services.jackett = {
+    enable = true;
+    user = "h";
+  };
+
   services.dnscrypt-proxy2 = {
     enable = true;
     settings = {
@@ -171,7 +176,6 @@
       ffmpeg
       ffuf
       file
-      fragments
       gau
       gcc
       gh
@@ -190,7 +194,6 @@
       jq
       krita
       qbittorrent
-      jackett
       libreoffice-fresh
       librewolf
       libvirt
