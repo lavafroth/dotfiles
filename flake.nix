@@ -25,23 +25,5 @@
         ];
       };
     };
-
-    devShells = builtins.mapAttrs (system: pkgs:
-    let
-      rebuild = pkgs.writeShellApplication {
-        name = "cafe-rebuild";
-        runtimeInputs = [ pkgs.nixos-rebuild ];
-        text = ''
-          exec nixos-rebuild \
-            --flake '.#cafe' \
-            "$@"
-        '';
-      };
-      in {
-        default = pkgs.mkShell {
-          nativeBuildInputs = [ rebuild ];
-      };
-    }) nixpkgs.legacyPackages;
   };
-  
 }
