@@ -193,7 +193,6 @@
       i2p
       jq
       krita
-      qbittorrent
       libreoffice-fresh
       librewolf
       libvirt
@@ -210,6 +209,7 @@
       pkg-config
       pwntools
       pythonPackages
+      qbittorrent
       qemu
       qrencode
       radare2
@@ -256,11 +256,11 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.gnome.excludePackages = with pkgs; [
-    gnome-tour
-    gnome-text-editor
-    gnome.geary
-    gnome.yelp
     epiphany
+    gnome.geary
+    gnome-text-editor
+    gnome-tour
+    gnome.yelp
   ];
 
   environment.variables = rec {
@@ -288,8 +288,8 @@
     openssl
     openssl.dev
     p7zip
-    picocom
     pciutils
+    picocom
     ripgrep
     tealdeer
     wget
@@ -368,6 +368,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Change this to upgrade to a later stateVersion.
+  system.stateVersion = "23.11"; # Change this to upgrade to a later stateVersion.
 
 }

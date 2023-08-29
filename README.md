@@ -6,7 +6,8 @@ To get started, install NixOS, [enable flakes](https://nixos.wiki/wiki/Flakes#Ni
 
 ```sh
 git clone --recursive https://github.com/lavafroth/dotfiles
-sudo nixos-rebuild switch --flake dotfiles#cafe
+cd dotfiles
+sudo nixos-rebuild switch --flake .#cafe
 ```
 
 #### Optional: Installing Sponsorblock for mpv

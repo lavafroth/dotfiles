@@ -16,6 +16,6 @@
       ".local/share/applications/fish.desktop".source = ./sources/fish.desktop;
       ".local/share/blackbox/schemes/lain.json".source = ./sources/blackbox/lain.json;
     };
-    stateVersion = "23.05";
+    stateVersion = "23.11";
   };
 }
