@@ -19,19 +19,11 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
-          ({ lib, ... }: {
+          {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.h = import ./home.nix;
-
-            boot.loader.systemd-boot = lib.mkForce false;
-
-            boot.lanzaboote = {
-              enable = true;
-              pkiBundle = "/etc/secureboot";
-            };
-
-          })
+          }
         ];
       };
     };
