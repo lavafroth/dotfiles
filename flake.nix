@@ -11,7 +11,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, lanzaboote ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, ... }: {
     nixosConfigurations = {
       cafe = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
