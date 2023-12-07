@@ -140,7 +140,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.fish = {
     enable = true;
     shellAliases = {
@@ -150,6 +149,7 @@
   };
 
 
+  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.h = {
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
@@ -209,7 +209,6 @@
       pkg-config
       pwntools
       pythonPackages
-      qbittorrent
       qemu
       qrencode
       radare2
@@ -217,13 +216,12 @@
       rustc
       rustfmt
       rustscan
-      signal-desktop
+      # signal-desktop
       slides
       sbctl
       sqlmap
       tor-browser-bundle-bin
       unrar
-      vala-language-server
       wine
       yt-dlp
     ];
@@ -262,6 +260,7 @@
     gnome-text-editor
     gnome-tour
     gnome.yelp
+    gnome-photos
   ];
 
   environment.variables = rec {
