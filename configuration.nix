@@ -217,7 +217,7 @@
       rustc
       rustfmt
       rustscan
-      signal-desktop
+      # signal-desktop
       slides
       sbctl
       sqlmap
@@ -262,6 +262,7 @@
     gnome-text-editor
     gnome-tour
     gnome.yelp
+    gnome-photos
   ];
 
   environment.variables = rec {
