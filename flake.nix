@@ -31,6 +31,7 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          ./secureboot.nix
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
           {
