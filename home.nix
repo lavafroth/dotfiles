@@ -18,4 +18,11 @@
     };
     stateVersion = "23.11";
   };
+  dconf.settings = {
+    # Enable dark theme using adw-gtk3 to make GTK3 apps look coherent
+    "org/gnome/desktop/interface" = {
+      gtk-theme = "adw-gtk3-dark";
+      color-scheme = "prefer-dark";
+    };
+  };
 }
