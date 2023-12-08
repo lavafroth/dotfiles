@@ -26,6 +26,20 @@
           }
         ];
       };
+
+      cafe-secureboot = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          home-manager.nixosModules.home-manager
+          lanzaboote.nixosModules.lanzaboote
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.h = import ./home.nix;
+          }
+        ];
+      };
     };
   };
 }

@@ -4,8 +4,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      # ./home.nix
+    [
       ./hardware-configuration.nix
       ./gnome-extensions.nix
     ];
@@ -13,13 +12,8 @@
   # Bootloader.
   boot = {
     loader = {
-      systemd-boot.enable = lib.mkForce false;
-      # efi.canTouchEfiVariables = true;
-    };
-
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/etc/secureboot";
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
     };
     # no keyfile
     initrd.secrets."/crypto_keyfile.bin" = null;
