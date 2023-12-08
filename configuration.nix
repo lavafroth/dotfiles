@@ -259,7 +259,7 @@
     gnome-photos
   ];
 
-  environment.variables = rec {
+  environment.variables = {
     # Set the path for pkg-config to the openssl library
     # so that we may compile projects that link to openssl.
     # For example, a Rust project depending upon the openssl-sys crate.
