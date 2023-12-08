@@ -137,7 +137,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "exa -la";
+      ls = "eza -la";
       cat = "bat -p";
     };
   };
@@ -272,7 +272,7 @@
     adw-gtk3
     aircrack-ng
     bat
-    exa
+    eza
     git
     helix
     iw
