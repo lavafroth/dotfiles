@@ -256,7 +256,6 @@
     gnome-text-editor
     gnome-tour
     gnome.yelp
-    gnome-photos
   ];
 
   environment.variables = {
