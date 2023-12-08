@@ -196,6 +196,7 @@
       mariadb
       marksman
       neofetch
+      nil
       nikto
       nmap
       onionshare
