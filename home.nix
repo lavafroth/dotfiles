@@ -32,5 +32,9 @@
       gtk-theme = "adw-gtk3-dark";
       color-scheme = "prefer-dark";
     };
+
+    "org/gnome/desktop/wm/keybindings" = {
+      close = [ "<Super>q" ];
+    };
   };
 }
