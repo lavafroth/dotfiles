@@ -256,6 +256,7 @@
     gnome-text-editor
     gnome-tour
     gnome.yelp
+    gnome.totem
   ];
 
   environment.variables = {
