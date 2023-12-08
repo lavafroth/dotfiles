@@ -1,11 +1,10 @@
 # Read the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      # ./home.nix
+    [
       ./hardware-configuration.nix
       ./gnome-extensions.nix
     ];
@@ -135,16 +134,16 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "exa -la";
+      ls = "eza -la";
       cat = "bat -p";
     };
   };
 
 
+  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.h = {
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
@@ -188,6 +187,7 @@
       i2p
       jq
       krita
+      lazygit
       libreoffice-fresh
       librewolf
       libvirt
@@ -196,6 +196,7 @@
       mariadb
       marksman
       neofetch
+      nil
       nikto
       nmap
       onionshare
@@ -204,7 +205,6 @@
       pkg-config
       pwntools
       pythonPackages
-      qbittorrent
       qemu
       qrencode
       radare2
@@ -212,13 +212,12 @@
       rustc
       rustfmt
       rustscan
-      signal-desktop
+      # signal-desktop
       slides
       sbctl
       sqlmap
       tor-browser-bundle-bin
       unrar
-      vala-language-server
       wine
       yt-dlp
     ];
@@ -257,6 +256,7 @@
     gnome-text-editor
     gnome-tour
     gnome.yelp
+    gnome-photos
   ];
 
   environment.variables = rec {
@@ -274,7 +274,7 @@
     adw-gtk3
     aircrack-ng
     bat
-    exa
+    eza
     git
     helix
     iw
