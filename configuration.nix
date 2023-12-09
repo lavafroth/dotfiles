@@ -311,6 +311,10 @@
     configDir = "/home/h/.config/syncthing";
   };
 
+  # Syncthing ports for TCP/UDP sync traffic
+  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
+
   hardware.nvidia = {
 
     # Modesetting is needed for most wayland compositors
