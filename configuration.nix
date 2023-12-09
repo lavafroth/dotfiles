@@ -1,6 +1,6 @@
 # Read the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -34,11 +34,6 @@
     # dhcpcd.extraConfig = "nohook resolv.conf";
     # If using NetworkManager:
     networkmanager.dns = "none";
-  };
-
-  services.jackett = {
-    enable = true;
-    user = "h";
   };
 
   services.dnscrypt-proxy2 = {
