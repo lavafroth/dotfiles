@@ -36,11 +36,6 @@
     networkmanager.dns = "none";
   };
 
-  services.jackett = {
-    enable = true;
-    user = "h";
-  };
-
   services.dnscrypt-proxy2 = {
     enable = true;
     settings = {
