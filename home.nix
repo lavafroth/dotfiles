@@ -18,4 +18,23 @@
     };
     stateVersion = "23.11";
   };
+  dconf.settings = {
+
+    # Did you know I'm a programmer?
+    "org/gnome/calculator" = {
+      button-mode = "programming";
+      show-thousands = true;
+      base = 10;
+    };
+
+    # Enable dark theme using adw-gtk3 to make GTK3 apps look coherent
+    "org/gnome/desktop/interface" = {
+      gtk-theme = "adw-gtk3-dark";
+      color-scheme = "prefer-dark";
+    };
+
+    "org/gnome/desktop/wm/keybindings" = {
+      close = [ "<Super>q" ];
+    };
+  };
 }
