@@ -303,14 +303,17 @@
     ];
 
 
-  # Enable syncthing to sync books,
-  # captured photos and videos with my phone.
+  # Enable syncthing to sync media.
   services.syncthing = {
     enable = true;
     user = "h";
-    dataDir = "/home/h/Sync";
+    dataDir = "/home/h/.config/syncthing/db";
     configDir = "/home/h/.config/syncthing";
   };
+
+  # Syncthing ports for TCP/UDP sync traffic
+  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
   hardware.nvidia = {
 
