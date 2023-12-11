@@ -5,7 +5,7 @@ NixOS configuration files personalized for my workflow.
 To get started, install NixOS, [enable flakes](https://nixos.wiki/wiki/Flakes#NixOS), clone this repository.
 
 ```sh
-git clone --recursive https://github.com/lavafroth/dotfiles
+git clone https://github.com/lavafroth/dotfiles
 cd dotfiles
 sudo nixos-rebuild switch --flake .#cafe
 ```
