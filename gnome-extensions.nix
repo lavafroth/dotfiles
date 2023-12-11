@@ -7,5 +7,6 @@
     user-themes
     caffeine
     rounded-window-corners
+    paperwm
   ];
 }
