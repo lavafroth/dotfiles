@@ -14,6 +14,7 @@
       };
       # Do not display fish in the menu
       ".local/share/applications/fish.desktop".source = ./sources/fish.desktop;
+      ".config/paperwm/user.css".source = ./sources/paperwm/user.css;
     };
 
     sessionVariables = {
