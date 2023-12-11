@@ -320,15 +320,10 @@
 
     # Modesetting is needed for most wayland compositors
     modesetting.enable = true;
-
-    # Use the open source version of the kernel module
-    # Only available on driver 515.43.04+
     open = true;
 
     # Disable the nvidia settings menu
     nvidiaSettings = false;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
@@ -356,5 +351,8 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = true;
-  system.stateVersion = "23.11"; # Change this to upgrade to a later stateVersion.
+  system.stateVersion = "24.05";
+  # Keeping this the same will be fine in most
+  # cases unless you want a future service or respective option unavailable with
+  # stateVersion.
 }

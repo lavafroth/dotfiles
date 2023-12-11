@@ -16,7 +16,8 @@
       ".local/share/applications/fish.desktop".source = ./sources/fish.desktop;
       ".local/share/blackbox/schemes/lain.json".source = ./sources/blackbox/lain.json;
     };
-    stateVersion = "23.11";
+
+    stateVersion = "24.05";
   };
   dconf.settings = {
 
