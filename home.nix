@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   home = {
@@ -17,8 +17,14 @@
       ".local/share/blackbox/schemes/lain.json".source = ./sources/blackbox/lain.json;
     };
 
+    sessionVariables = {
+      GOPATH = "${config.home.homeDirectory}/Public/go";
+      GOBIN = "${config.home.sessionVariables.GOPATH}/bin";
+    };
+
     stateVersion = "24.05";
   };
+
   dconf.settings = {
 
     # Did you know I'm a programmer?
