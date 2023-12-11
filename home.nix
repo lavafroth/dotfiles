@@ -14,7 +14,6 @@
       };
       # Do not display fish in the menu
       ".local/share/applications/fish.desktop".source = ./sources/fish.desktop;
-      ".local/share/blackbox/schemes/lain.json".source = ./sources/blackbox/lain.json;
     };
 
     sessionVariables = {
