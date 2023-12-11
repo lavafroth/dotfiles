@@ -21,16 +21,15 @@ Once the keys are enrolled, we must run the following to rebuild our system from
 sudo nixos-rebuild switch --flake .#cafe-secureboot
 ```
 
-#### Optional: Installing Sponsorblock for mpv
+### Sponsorblock for mpv
 
-A fresh install is unlikely to have Rust and thus, the sponsorblock
-library won't be installed. Since I won't be uploading the compiled shared
-object, you have to compile it yourself. After the first rebuild, run:
+Optionally, if you want to block sponsors in mpv, run
 
 ```sh
 pushd sources/mpv-sponsorblock
-cargo build --release --locked
-cp ./target/release/libmpv_sponsorblock.so ../mpv/scripts/sponsorblock.so
+mkdir sources/mpv/scripts
+nix build
+cp result/lib/libmpv_sponsorblock.so ../mpv/scripts/sponsorblock.so
 popd
 ```
 
