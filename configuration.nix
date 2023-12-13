@@ -30,9 +30,6 @@
     hostName = "cafe";
     networkmanager.enable = true;
     nameservers = [ "127.0.0.1" "::1" ];
-    # If using dhcpcd:
-    # dhcpcd.extraConfig = "nohook resolv.conf";
-    # If using NetworkManager:
     networkmanager.dns = "none";
   };
 
@@ -157,6 +154,7 @@
       broot
       cargo
       cargo-deny
+      celluloid
       clippy
       delta
       dxvk
@@ -275,7 +273,6 @@
     helix
     iw
     macchanger
-    mpv
     ntfs3g
     openssl
     openssl.dev
