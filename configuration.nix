@@ -206,7 +206,7 @@
       rustc
       rustfmt
       rustscan
-      # signal-desktop
+      signal-desktop
       slides
       sbctl
       sqlmap
