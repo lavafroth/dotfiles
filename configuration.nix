@@ -212,6 +212,7 @@
       sqlmap
       tor-browser-bundle-bin
       unrar
+      ungoogled-chromium
       wine
       yt-dlp
     ];
