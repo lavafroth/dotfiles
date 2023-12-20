@@ -195,6 +195,7 @@
       nmap
       onionshare
       patchelf
+      conda
       picotool
       pkg-config
       pwntools
