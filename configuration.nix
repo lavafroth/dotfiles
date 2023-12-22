@@ -180,6 +180,7 @@
       hyperfine
       i2p
       jq
+      just
       krita
       lazygit
       libreoffice-fresh
@@ -207,6 +208,7 @@
       rustc
       rustfmt
       rustscan
+      rnote
       signal-desktop
       slides
       sbctl
