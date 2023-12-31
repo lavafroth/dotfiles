@@ -331,10 +331,10 @@
   };
 
   # Enable waydroid to run android applications in a sandbox
-  virtualisation = {
-    waydroid.enable = true;
-    lxd.enable = true;
-  };
+  # virtualisation = {
+  #   waydroid.enable = true;
+  #   lxd.enable = true;
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
