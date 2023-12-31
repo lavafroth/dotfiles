@@ -205,6 +205,8 @@
       qrencode
       radare2
       rust-analyzer
+      openvpn
+      kdenlive
       rustc
       rustfmt
       rustscan
