@@ -194,7 +194,7 @@
       nil
       nikto
       nmap
-      onionshare
+      # onionshare
       patchelf
       conda
       picotool
