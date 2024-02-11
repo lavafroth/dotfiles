@@ -6,7 +6,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./gnome-extensions.nix
     ];
 
   # Bootloader.
@@ -106,8 +105,8 @@
       desktopManager.gnome.enable = true;
 
       # Configure keymap in X11
-      layout = "us";
-      xkbVariant = "";
+      xkb.layout = "us";
+      xkb.variant = "";
 
       displayManager = {
         gdm.enable = true;
