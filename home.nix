@@ -14,13 +14,20 @@
       };
       # Do not display fish in the menu
       ".local/share/applications/fish.desktop".source = ./sources/fish.desktop;
-      ".config/paperwm/user.css".source = ./sources/paperwm/user.css;
     };
 
     sessionVariables = {
       GOPATH = "${config.home.homeDirectory}/Public/go";
       GOBIN = "${config.home.sessionVariables.GOPATH}/bin";
     };
+
+    packages = with pkgs.gnomeExtensions; [
+      blur-my-shell
+      quick-settings-tweaker
+      user-themes
+      caffeine
+      rounded-window-corners
+    ];
 
     stateVersion = "24.05";
   };
@@ -43,6 +50,23 @@
     "org/gnome/desktop/wm/keybindings" = {
       close = [ "<Super>q" ];
     };
+
+    "org/gnome/shell".enabled-extensions = [
+      "quick-settings-tweaks@qwreey"
+      "caffeine@patapon.info"
+      "blur-my-shell@aunetx"
+    ];
+
+    "org/gnome/mutter".dynamic-workspaces = true;
+
+    "org/gnome/shell".favorite-apps = [
+      "org.gnome.Console.desktop"
+      "librewolf.desktop"
+      "org.gnome.Nautilus.desktop"
+      "org.gnome.World.Secrets.desktop"
+      "signal-desktop.desktop"
+    ];
+
   };
 
   xdg.desktopEntries.ocr = {
