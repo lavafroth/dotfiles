@@ -15,8 +15,6 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    # no keyfile
-    initrd.secrets."/crypto_keyfile.bin" = null;
   };
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
