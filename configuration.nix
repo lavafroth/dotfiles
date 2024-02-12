@@ -147,7 +147,6 @@
       ]);
       in [
       bettercap
-      blackbox-terminal
       broot
       cargo
       cargo-deny
@@ -171,6 +170,7 @@
       gnome-secrets
       go
       gopls
+      glow
       hashcat
       hcxtools
       hugo
@@ -191,7 +191,6 @@
       nil
       nikto
       nmap
-      # onionshare
       patchelf
       conda
       picotool
@@ -209,8 +208,6 @@
       rustscan
       rnote
       signal-desktop
-      slides
-      sbctl
       sqlmap
       tor-browser-bundle-bin
       unrar
@@ -283,6 +280,7 @@
     pciutils
     picocom
     ripgrep
+    sbctl
     tealdeer
     wget
     wifite2
