@@ -67,6 +67,59 @@
       "signal-desktop.desktop"
     ];
 
+    "org/gnome/desktop/app-folders/folders/Office" = {
+      name = "Office";
+      apps = [
+        "startcenter.desktop"
+        "base.desktop"
+        "writer.desktop"
+        "calc.desktop"
+        "impress.desktop"
+        "draw.desktop"
+        "math.desktop"
+      ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/Programming" = {
+      name = "Programming";
+      apps = [
+        "jupyterlab.desktop"
+        "jupyter-notebook.desktop"
+        "Helix.desktop"
+        "ghidra.desktop"
+      ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/Graphics" = {
+      name = "Graphics";
+      apps = [
+        "org.kde.krita.desktop"
+        "gimp.desktop"
+        "com.github.flxzt.rnote.desktop"
+      ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/AltBrowsers" = {
+      name = "Alt Browsers";
+      apps = [
+        "torbrowser.desktop"
+        "chromium-browser.desktop"
+      ];
+    };
+
+    "org/gnome/desktop/app-folders".folder-children = [
+      "Utilities"
+      "Office"
+      "Programming"
+      "Graphics"
+      "AltBrowsers"
+    ];
+
+    # notebooks with touchpads
+    "org/gnome/desktop/peripherals/touchpad".tap-to-click = true;
+
+    # disable hot corners
+    "org/gnome/desktop/interface".enable-hot-corners = false;
   };
 
   xdg.desktopEntries.ocr = {
