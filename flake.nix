@@ -11,9 +11,9 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, lanzaboote, ... }: {
+  outputs = { nixpkgs, home-manager, lanzaboote, ... }: {
     nixosConfigurations = {
-      cafe = nixpkgs.lib.nixosSystem {
+      cafe-nosecureboot = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
@@ -27,7 +27,7 @@
         ];
       };
 
-      cafe-secureboot = nixpkgs.lib.nixosSystem {
+      cafe = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
