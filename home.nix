@@ -32,9 +32,9 @@
     stateVersion = "24.05";
   };
 
+  # Refer to https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/
   dconf.settings = {
 
-    # Did you know I'm a programmer?
     "org/gnome/calculator" = {
       button-mode = "programming";
       show-thousands = true;
