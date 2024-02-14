@@ -44,6 +44,7 @@
       "org.gnome.Nautilus.desktop"
       "org.gnome.World.Secrets.desktop"
       "signal-desktop.desktop"
+      "net.lutris.Lutris.desktop"
     ];
 
     "org/gnome/desktop/app-folders/folders/Office" = {
