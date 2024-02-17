@@ -177,6 +177,7 @@
       nil
       nikto
       nmap
+      ollama
       patchelf
       conda
       picotool
