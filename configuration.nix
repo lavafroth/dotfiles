@@ -71,6 +71,7 @@
   xdg.portal.enable = true;
   sound.enable = true;
   hardware.pulseaudio.enable = false;
+  hardware.uinput.enable = true;
   services = {
     flatpak.enable = true;
     # Enable CUPS to print documents.
@@ -96,8 +97,6 @@
 
       displayManager = {
         gdm.enable = true;
-        autoLogin.enable = true;
-        autoLogin.user = "h";
       };
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
@@ -120,7 +119,7 @@
   users.users.h = {
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "uinput" ];
     packages = with pkgs;
       let pythonPackages = python311.withPackages(ps: with ps; [
         jupyter
@@ -145,6 +144,7 @@
       ffmpeg
       ffuf
       file
+      fractal
       gau
       gcc
       gh
@@ -180,15 +180,14 @@
       ollama
       patchelf
       conda
-      picotool
       pkg-config
       pwntools
       pythonPackages
       qemu
       qrencode
-      radare2
       rust-analyzer
       openvpn
+      openai-whisper-cpp
       kdenlive
       rustc
       rustfmt
@@ -201,6 +200,7 @@
       ungoogled-chromium
       wine
       yt-dlp
+      ydotool
     ];
     shell = pkgs.fish;
   };
@@ -272,6 +272,7 @@
     wget
     wifite2
     wl-clipboard
+    # cosmic-workspaces-epoch
     (writeScriptBin "sudo" ''exec doas "$@"'')
   ];
 
