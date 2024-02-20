@@ -187,7 +187,6 @@
       qrencode
       rust-analyzer
       openvpn
-      openai-whisper-cpp
       kdenlive
       rustc
       rustfmt
@@ -200,7 +199,6 @@
       ungoogled-chromium
       wine
       yt-dlp
-      ydotool
     ];
     shell = pkgs.fish;
   };
