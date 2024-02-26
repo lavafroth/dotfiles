@@ -97,6 +97,8 @@
 
       displayManager = {
         gdm.enable = true;
+        autoLogin.enable = true;
+        autoLogin.user = "h";
       };
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
@@ -173,7 +175,7 @@
       lutris
       mariadb
       marksman
-      neofetch
+      nitch
       nil
       nikto
       nmap
@@ -186,12 +188,14 @@
       qemu
       qrencode
       rust-analyzer
+      blackbox-terminal
       openvpn
       kdenlive
       rustc
       rustfmt
       rustscan
       rnote
+      terminus-nerdfont
       signal-desktop
       sqlmap
       tor-browser-bundle-bin

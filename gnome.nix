@@ -39,7 +39,7 @@
     "org/gnome/mutter".dynamic-workspaces = true;
 
     "org/gnome/shell".favorite-apps = [
-      "org.gnome.Console.desktop"
+      "com.raggesilver.BlackBox.desktop"
       "librewolf.desktop"
       "org.gnome.Nautilus.desktop"
       "org.gnome.World.Secrets.desktop"
