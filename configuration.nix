@@ -139,7 +139,6 @@
       cargo-deny
       celluloid
       clippy
-      delta
       dxvk
       fd
       feroxbuster
