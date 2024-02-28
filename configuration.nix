@@ -153,7 +153,6 @@
       gimp
       gitleaks
       gnome.gnome-boxes
-      gnome.gnome-tweaks
       gnome-secrets
       go
       gopls
