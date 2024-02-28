@@ -35,5 +35,18 @@
       rm /tmp/ocr-tmp.png
     ''}";
   };
+
+  programs.git = {
+    enable = true;
+    userName = "Himadri Bhattacharjee";
+    userEmail = "107522312+lavafroth@users.noreply.github.com";
+    extraConfig = {
+      credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
+      gpg.format = "ssh";
+    };
+    delta.enable = true;
+    signing.signByDefault = true;
+    signing.key = "${config.home.homeDirectory}/.ssh/id_ed25519";
+  };
  
 }
