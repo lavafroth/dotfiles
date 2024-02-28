@@ -259,7 +259,6 @@
     bat
     eza
     git
-    gnupg
     helix
     iw
     macchanger
