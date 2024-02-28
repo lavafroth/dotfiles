@@ -193,7 +193,6 @@
       rustfmt
       rustscan
       rnote
-      terminus-nerdfont
       signal-desktop
       sqlmap
       tor-browser-bundle-bin
@@ -298,6 +297,13 @@
     dataDir = "/home/h/.config/syncthing/db";
     configDir = "/home/h/.config/syncthing";
   };
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    terminus-nerdfont
+  ];
 
   # Syncthing ports for TCP/UDP sync traffic
   networking.firewall.allowedTCPPorts = [ 8384 22000 ];
