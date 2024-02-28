@@ -43,7 +43,8 @@
     delta.enable = true;
 
     extraConfig = {
-      credential.helper = "${pkgs.gh}/bin/gh auth git-credential";
+      credential."https://github.com".helper = "${pkgs.gh}/bin/gh auth git-credential";
+      credential."https://gist.github.com".helper = "${pkgs.gh}/bin/gh auth git-credential";
       gpg.format = "ssh";
     };
     signing.signByDefault = true;
