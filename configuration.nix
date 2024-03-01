@@ -194,6 +194,7 @@
       rustscan
       rnote
       signal-desktop
+      jellyfin-media-player
       sqlmap
       tor-browser-bundle-bin
       unrar
