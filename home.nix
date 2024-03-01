@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+let githubHelper = "${pkgs.gh}/bin/gh auth git-credential"; in
 {
 
   imports = [ ./gnome.nix ];
@@ -42,8 +43,8 @@
     delta.enable = true;
 
     extraConfig = {
-      credential."https://github.com".helper = "${pkgs.gh}/bin/gh auth git-credential";
-      credential."https://gist.github.com".helper = "${pkgs.gh}/bin/gh auth git-credential";
+      credential."https://github.com".helper = githubHelper;
+      credential."https://gist.github.com".helper = githubHelper;
       gpg.format = "ssh";
     };
     signing.signByDefault = true;
