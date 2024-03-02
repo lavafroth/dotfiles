@@ -20,10 +20,6 @@
         modules = [
           ./hosts/default/configuration.nix
           home-manager.nixosModules.home-manager
-          lanzaboote.nixosModules.lanzaboote
-          {
-            home-manager.users.h = import ./hosts/default/home.nix;
-          }
         ];
       };
 
@@ -34,9 +30,6 @@
           ./hosts/default/secureboot.nix
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
-          {
-            home-manager.users.h = import ./hosts/default/home.nix;
-          }
         ];
       };
 
