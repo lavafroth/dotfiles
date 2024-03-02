@@ -1,6 +1,8 @@
 # Dotfiles
 
-NixOS configuration files personalized for my workflow.
+NixOS configuration files personalized for my daily driver and home server.
+
+### Work Computer
 
 To get started, install NixOS, [enable flakes](https://nixos.wiki/wiki/Flakes#NixOS)
 and clone this repository.
@@ -11,7 +13,7 @@ cd dotfiles
 sudo nixos-rebuild switch --flake .#cafe-nosecureboot
 ```
 
-### Secureboot
+#### Secureboot
 
 To enable secureboot, use the preinstalled `sbctl` command to generate your keys,
 clear the manufacturer keys and enroll yours as described [here](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md).
@@ -24,7 +26,7 @@ Once the keys are enrolled, run the following to rebuild the system from now on
 sudo nixos-rebuild switch --flake .
 ```
 
-### Sponsorblock for mpv
+#### Sponsorblock for mpv
 
 Optionally, if you want to block sponsors in mpv, run
 
@@ -38,11 +40,23 @@ popd
 
 followed by another rebuild.
 
+### Home Server
+
+Install NixOS with the headless (no GUI) settings. Enable flakes.
+Clone this repo, enter the directory and run a rebuild for the host `rahu`.
+
+```sh
+git clone https://github.com/lavafroth/dotfiles
+cd dotfiles
+sudo nixos-rebuild switch --flake .#rahu
+```
+
 ## Troubleshooting
 
 ### command-not-found unable to connect to database
 
-The programs.sqlite is only generated for the nixos- prefixed channels.
+The `programs.sqlite` is only generated for the `nixos-` prefixed channels.
+The Nix flake in this repo uses the unstable channel. Thus, you must add them.
 
 Run the following as root:
 
