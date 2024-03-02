@@ -77,7 +77,7 @@ let githubHelper = "${pkgs.gh}/bin/gh auth git-credential"; in
           if test -n "$VIRTUAL_ENV"
               printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
           end
-          printf '↪ '
+          printf '\uf313  \u0000'
           set_color normal
           '';
         };

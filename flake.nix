@@ -3,8 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+        url = "github:nix-community/home-manager";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,13 +18,11 @@
       cafe-nosecureboot = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
+          ./hosts/default/configuration.nix
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.h = import ./home.nix;
+            home-manager.users.h = import ./hosts/default/home.nix;
           }
         ];
       };
@@ -30,15 +30,20 @@
       cafe = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./configuration.nix
-          ./secureboot.nix
+          ./hosts/default/configuration.nix
+          ./hosts/default/secureboot.nix
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.h = import ./home.nix;
+            home-manager.users.h = import ./hosts/default/home.nix;
           }
+        ];
+      };
+
+      rahu = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/rahu/configuration.nix
         ];
       };
     };
