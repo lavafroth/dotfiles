@@ -208,7 +208,7 @@
   # Enable nix-command for search and flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  system.autoUpgrade.enable = true;
+  system.autoUpgrade.enable = false;
 
   # Replace sudo with doas
   security = {
