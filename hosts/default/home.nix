@@ -1,9 +1,13 @@
 { config, pkgs, ... }:
 
-let githubHelper = "${pkgs.gh}/bin/gh auth git-credential"; in
 {
 
-  imports = [ ./gnome.nix ];
+  imports = [
+    ./gnome.nix
+    ./aws.nix
+    ./git.nix
+    ./shell.nix
+  ];
 
   home = {
     file = {
@@ -16,6 +20,7 @@ let githubHelper = "${pkgs.gh}/bin/gh auth git-credential"; in
     sessionVariables = {
       GOPATH = "${config.home.homeDirectory}/Public/go";
       GOBIN = "${config.home.sessionVariables.GOPATH}/bin";
+      CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
     };
 
     sessionPath = [ config.home.sessionVariables.GOBIN "${config.home.homeDirectory}/.cargo/bin" ];
@@ -33,57 +38,6 @@ let githubHelper = "${pkgs.gh}/bin/gh auth git-credential"; in
   };
 
   programs = {
-
-    git = {
-      enable = true;
-      userName = "Himadri Bhattacharjee";
-      userEmail = "107522312+lavafroth@users.noreply.github.com";
-      delta.enable = true;
-
-      extraConfig = {
-        credential."https://github.com".helper = githubHelper;
-        credential."https://gist.github.com".helper = githubHelper;
-        gpg.format = "ssh";
-      };
-      signing.signByDefault = true;
-      signing.key = "${config.home.homeDirectory}/.ssh/id_ed25519";
-
-    };
-
-    fish = {
-      enable = true;
-      functions = {
-        fish_prompt = {
-          body = ''
-            if not set -q VIRTUAL_ENV_DISABLE_PROMPT
-                set -g VIRTUAL_ENV_DISABLE_PROMPT true
-            end
-            set_color yellow
-            printf '%s' $USER
-            set_color normal
-            printf ' at '
-
-            set_color magenta
-            echo -n (prompt_hostname)
-            set_color normal
-            printf ' in '
-
-            set_color $fish_color_cwd
-            printf '%s' (prompt_pwd)
-            set_color normal
-
-            # Line 2
-            echo
-            if test -n "$VIRTUAL_ENV"
-                printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
-            end
-            printf '\uf313  \u0000'
-            set_color normal
-          '';
-        };
-        fish_greeting.body = "";
-      };
-    };
 
     helix = {
       enable = true;
