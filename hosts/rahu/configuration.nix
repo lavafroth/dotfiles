@@ -82,13 +82,17 @@
     description = "user";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs;
-    let transmission-compose = (pkgs.callPackage (fetchFromGitHub {
-        owner = "lavafroth";
-        repo = "transmission-compose";
-        rev = "983355f668a0b230af17ff4dba4311f4b58c21d6";
-        sha256 = "sha256-mJcFA5Q+6ZuFgKSG78aCpoHtMRBqid03Qr7guGw7ui8=";
-      }) {}); in
-     [ transmission-compose ];
+      let
+        transmission-compose = (pkgs.callPackage
+          (fetchFromGitHub {
+            owner = "lavafroth";
+            repo = "transmission-compose";
+            rev = "983355f668a0b230af17ff4dba4311f4b58c21d6";
+            sha256 = "sha256-mJcFA5Q+6ZuFgKSG78aCpoHtMRBqid03Qr7guGw7ui8=";
+          })
+          { });
+      in
+      [ transmission-compose ];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -106,8 +110,8 @@
     syncthing = {
       enable = true;
       user = "user";
-      dataDir = "/home/user/Documents";    # Default folder for new synced folders
-      configDir = "/home/user/Documents/.config/syncthing";   # Folder for Syncthing's settings and ke
+      dataDir = "/home/user/Documents"; # Default folder for new synced folders
+      configDir = "/home/user/Documents/.config/syncthing"; # Folder for Syncthing's settings and ke
       guiAddress = "0.0.0.0:8384";
     };
     jellyfin = {

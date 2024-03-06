@@ -106,7 +106,7 @@
       };
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
-      videoDrivers = ["nvidia"];
+      videoDrivers = [ "nvidia" ];
     };
   };
 
@@ -116,7 +116,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "eza -la --icons=always";
+      ls = "${pkgs.eza}/bin/eza -la --icons=always";
       cat = "bat -p";
     };
   };
@@ -127,85 +127,87 @@
     description = "Himadri Bhattacharjee";
     extraGroups = [ "networkmanager" "wheel" "uinput" ];
     packages = with pkgs;
-      let pythonPackages = python311.withPackages(ps: with ps; [
-        jupyter
-        python-lsp-server
-        python-lsp-ruff
-        pandas
-        requests
-        xlrd
-        xlwt
-      ]);
-      in [
-      bettercap
-      broot
-      cargo
-      cargo-deny
-      celluloid
-      clippy
-      dxvk
-      fd
-      feroxbuster
-      ffmpeg-full
-      ffuf
-      file
-      fractal
-      gau
-      gcc
-      gh
-      ghidra
-      gimp
-      gitleaks
-      gnome.gnome-boxes
-      gnome-secrets
-      go
-      gopls
-      glow
-      hashcat
-      hcxtools
-      hugo
-      hyperfine
-      i2p
-      jq
-      just
-      krita
-      lazygit
-      libreoffice-fresh
-      librewolf
-      libvirt
-      linuxPackages_latest.perf
-      lutris
-      mariadb
-      marksman
-      nitch
-      nil
-      nikto
-      nmap
-      ollama
-      patchelf
-      conda
-      pkg-config
-      pwntools
-      pythonPackages
-      qemu
-      qrencode
-      rust-analyzer
-      blackbox-terminal
-      openvpn
-      kdenlive
-      rustc
-      rustfmt
-      rustscan
-      rnote
-      signal-desktop
-      jellyfin-media-player
-      sqlmap
-      tor-browser-bundle-bin
-      unrar
-      ungoogled-chromium
-      wine
-      yt-dlp
-    ];
+      let
+        pythonPackages = python311.withPackages (ps: with ps; [
+          jupyter
+          python-lsp-server
+          python-lsp-ruff
+          pandas
+          requests
+          xlrd
+          xlwt
+        ]);
+      in
+      [
+        bettercap
+        broot
+        cargo
+        cargo-deny
+        celluloid
+        clippy
+        dxvk
+        fd
+        feroxbuster
+        ffmpeg-full
+        ffuf
+        file
+        fractal
+        gau
+        gcc
+        gh
+        ghidra
+        gimp
+        gitleaks
+        gnome.gnome-boxes
+        gnome-secrets
+        go
+        gopls
+        glow
+        hashcat
+        hcxtools
+        hugo
+        hyperfine
+        i2p
+        jq
+        just
+        krita
+        lazygit
+        libreoffice-fresh
+        librewolf
+        libvirt
+        linuxPackages_latest.perf
+        lutris
+        mariadb
+        marksman
+        nitch
+        nil
+        nikto
+        nmap
+        ollama
+        patchelf
+        conda
+        pkg-config
+        pwntools
+        pythonPackages
+        qemu
+        qrencode
+        rust-analyzer
+        blackbox-terminal
+        openvpn
+        kdenlive
+        rustc
+        rustfmt
+        rustscan
+        rnote
+        signal-desktop
+        jellyfin-media-player
+        sqlmap
+        tor-browser-bundle-bin
+        unrar
+        ungoogled-chromium
+        wine
+        yt-dlp
+      ];
     shell = pkgs.fish;
   };
 

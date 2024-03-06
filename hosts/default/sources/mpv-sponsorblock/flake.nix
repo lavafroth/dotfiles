@@ -4,8 +4,8 @@
     naersk.url = "github:nix-community/naersk";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     mpv-sponsorblock = {
-        url = "github:TheCactusVert/mpv-sponsorblock";
-        flake = false;
+      url = "github:TheCactusVert/mpv-sponsorblock";
+      flake = false;
     };
   };
 
@@ -16,9 +16,10 @@
           inherit system;
         };
 
-        naersk' = pkgs.callPackage naersk {};
+        naersk' = pkgs.callPackage naersk { };
 
-      in {
+      in
+      {
         # For `nix build` & `nix run`:
         defaultPackage = naersk'.buildPackage {
           src = mpv-sponsorblock;
