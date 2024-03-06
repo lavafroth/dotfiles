@@ -1,13 +1,13 @@
 { config, pkgs, ... }: {
 
   home.packages = with pkgs.gnomeExtensions; [
-      blur-my-shell
-      quick-settings-tweaker
-      user-themes
-      caffeine
-      rounded-window-corners
-      paperwm
-    ];
+    blur-my-shell
+    quick-settings-tweaker
+    user-themes
+    caffeine
+    rounded-window-corners
+    paperwm
+  ];
 
   home.file.".config/paperwm/user.css".source = ./sources/paperwm/user.css;
 
