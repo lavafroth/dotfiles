@@ -116,7 +116,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ls = "eza -la";
+      ls = "eza -la --icons=always";
       cat = "bat -p";
     };
   };
@@ -146,7 +146,7 @@
       dxvk
       fd
       feroxbuster
-      ffmpeg
+      ffmpeg-full
       ffuf
       file
       fractal
