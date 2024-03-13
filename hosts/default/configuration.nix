@@ -133,44 +133,29 @@
     extraGroups = [ "networkmanager" "wheel" "uinput" ];
     packages = with pkgs;
       let
-        pythonPackages = python311.withPackages (ps: with ps; [
-          jupyter
-          python-lsp-server
-          python-lsp-ruff
-          pandas
-          requests
-          xlrd
-          xlwt
-        ]);
+        pythonWithPackages = import ./python.nix pkgs;
+        rustPackages = import ./rust.nix pkgs;
+        ctfPackages = import ./ctf.nix pkgs;
       in
+      rustPackages ++ ctfPackages ++
       [
-        bettercap
         blackbox-terminal
         broot
-        cargo
-        cargo-deny
         celluloid
-        clippy
         dxvk
         evcxr
         fd
         feroxbuster
         ffmpeg-full
-        ffuf
         file
         fractal
-        gau
         gh
-        ghidra
         gimp
-        gitleaks
         glow
         gnome.gnome-boxes
         gnome-secrets
         go
         gopls
-        hashcat
-        hcxtools
         hyperfine
         i2p
         jellyfin-media-player
@@ -186,25 +171,16 @@
         lutris
         mariadb
         marksman
-        nikto
         nil
         nitch
-        nmap
         ollama
         openvpn
-        patchelf
         pkg-config
-        pwntools
-        pythonPackages
+        pythonWithPackages
         qemu
         qrencode
         rnote
-        rust-analyzer
-        rustc
-        rustfmt
-        rustscan
         signal-desktop
-        sqlmap
         tor-browser-bundle-bin
         ungoogled-chromium
         unrar
@@ -264,7 +240,6 @@
     adw-gtk3
     aircrack-ng
     bat
-    eza
     git
     gnupg
     helix
