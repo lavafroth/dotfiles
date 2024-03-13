@@ -34,7 +34,14 @@
       ${pkgs.tesseract}/bin/tesseract /tmp/ocr-tmp.png - | ${pkgs.wl-clipboard}/bin/wl-copy
       rm /tmp/ocr-tmp.png
     ''}";
+  };
 
+  xdg.desktopEntries.andcam = {
+    name = "Android Virtual Camera";
+    exec = "${pkgs.writeScript "andcam" ''
+      ${pkgs.android-tools}/bin/adb start-server
+      ${pkgs.scrcpy}/bin/scrcpy --video-source=camera --no-audio --camera-facing=back --v4l2-sink=/dev/video0 -m1024
+    ''}";
   };
 
   programs = {
