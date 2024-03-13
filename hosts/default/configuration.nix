@@ -145,12 +145,14 @@
       in
       [
         bettercap
+        blackbox-terminal
         broot
         cargo
         cargo-deny
         celluloid
         clippy
         dxvk
+        evcxr
         fd
         feroxbuster
         ffmpeg-full
@@ -158,23 +160,23 @@
         file
         fractal
         gau
-        gcc
         gh
         ghidra
         gimp
         gitleaks
+        glow
         gnome.gnome-boxes
         gnome-secrets
         go
         gopls
-        glow
         hashcat
         hcxtools
-        hugo
         hyperfine
         i2p
+        jellyfin-media-player
         jq
         just
+        kdenlive
         krita
         lazygit
         libreoffice-fresh
@@ -184,32 +186,28 @@
         lutris
         mariadb
         marksman
-        nitch
-        nil
         nikto
+        nil
+        nitch
         nmap
         ollama
+        openvpn
         patchelf
-        conda
         pkg-config
         pwntools
         pythonPackages
         qemu
         qrencode
+        rnote
         rust-analyzer
-        blackbox-terminal
-        openvpn
-        kdenlive
         rustc
         rustfmt
         rustscan
-        rnote
         signal-desktop
-        jellyfin-media-player
         sqlmap
         tor-browser-bundle-bin
-        unrar
         ungoogled-chromium
+        unrar
         wine
         yt-dlp
       ];
