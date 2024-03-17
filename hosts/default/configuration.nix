@@ -247,7 +247,6 @@
     macchanger
     ntfs3g
     openssl
-    openssl.dev
     p7zip
     pciutils
     picocom
