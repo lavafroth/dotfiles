@@ -186,6 +186,7 @@
         unrar
         wine
         yt-dlp
+        zellij
       ];
     shell = pkgs.fish;
   };
