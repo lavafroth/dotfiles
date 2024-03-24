@@ -5,7 +5,6 @@
     quick-settings-tweaker
     user-themes
     caffeine
-    rounded-window-corners
     paperwm
   ];
 
@@ -60,6 +59,15 @@
       ];
     };
 
+    "org/gnome/desktop/app-folders/folders/SoundAndVideo" = {
+      name = "Sound & Video";
+      apps = [
+        "com.github.iwalton3.jellyfin-media-player.desktop"
+        "io.github.celluloid_player.Celluloid.desktop"
+        "org.kde.kdenlive.desktop"
+      ];
+    };
+
     "org/gnome/desktop/app-folders/folders/Programming" = {
       name = "Programming";
       apps = [
@@ -76,6 +84,7 @@
         "org.kde.krita.desktop"
         "gimp.desktop"
         "com.github.flxzt.rnote.desktop"
+        "io.gitlab.theevilskeleton.Upscaler.desktop"
       ];
     };
 
@@ -93,6 +102,7 @@
       "Programming"
       "Graphics"
       "AltBrowsers"
+      "SoundAndVideo"
     ];
 
     # notebooks with touchpads
