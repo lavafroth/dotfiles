@@ -310,6 +310,7 @@
   #   waydroid.enable = true;
   #   lxd.enable = true;
   # };
+  virtualisation.podman.enable = true;
 
   networking.firewall.enable = true;
   system.stateVersion = "24.05";
