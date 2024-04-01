@@ -10,7 +10,7 @@
   nikto
   nmap
   patchelf
-  pwntools
+  # pwntools
   rustscan
   sqlmap
   s3scanner
