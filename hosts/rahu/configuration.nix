@@ -112,6 +112,7 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    git
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
