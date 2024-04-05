@@ -63,6 +63,8 @@
     };
   };
 
+  programs.fish.enable = true;
+
   systemd.tmpfiles.rules = [
     "d /media 1777 root root"
     "d /media/seed 1777 transmission transmission"
@@ -104,6 +106,8 @@
           { });
       in
       [ transmission-compose ];
+
+    shell = pkgs.fish;
   };
 
   nixpkgs.config.allowUnfree = true;
