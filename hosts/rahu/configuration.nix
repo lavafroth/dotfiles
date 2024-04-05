@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
@@ -68,13 +68,24 @@
     "d /media/seed 1777 transmission transmission"
   ];
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 14d";
   };
 
-  system.autoUpgrade.enable = true;
+  # system.autoUpgrade.enable = true;
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "--no-write-lock-file"
+      "-L"
+    ];
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.user = {

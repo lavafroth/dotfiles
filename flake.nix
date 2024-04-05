@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, lanzaboote, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, lanzaboote, ... }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     nixosConfigurations = {
       cafe-nosecureboot = nixpkgs.lib.nixosSystem {
@@ -36,6 +36,7 @@
 
       rahu = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules = [
           ./hosts/rahu/configuration.nix
         ];
