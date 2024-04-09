@@ -141,7 +141,6 @@
       [
         blackbox-terminal
         broot
-        celluloid
         dxvk
         evcxr
         fd
@@ -171,6 +170,7 @@
         lutris
         mariadb
         marksman
+        mpv
         nil
         nitch
         ollama
