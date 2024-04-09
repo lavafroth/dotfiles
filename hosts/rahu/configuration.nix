@@ -10,7 +10,7 @@
   sops.defaultSopsFormat = "yaml";
 
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
-  spos.secrets.photoprism_password = { };
+  sops.secrets.photoprism_password = { };
 
   services.photoprism = {
     enable = true;
