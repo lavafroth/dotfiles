@@ -149,7 +149,7 @@
       openFirewall = true;
     };
   };
-  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+  networking.firewall.allowedTCPPorts = [ 8384 22000 2342 ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 ];
   system.stateVersion = "23.11";
 }
