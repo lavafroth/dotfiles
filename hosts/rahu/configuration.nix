@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ inputs, config, pkgs, sops, ... }:
 
 {
   imports =
@@ -6,14 +6,28 @@
       ./hardware-configuration.nix
     ];
 
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+
+  sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
+  spos.secrets.photoprism_password = { };
+
+  services.photoprism = {
+    enable = true;
+    originalsPath = "/media/Himadri/Stasis/Camera";
+    address = "0.0.0.0";
+    passwordFile = "/run/secrets/photoprism_password";
+    settings = {
+      PHOTOPRISM_ADMIN_USER = "user";
+    };
+  };
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.timeout = 1;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "rahu"; # Define your hostname.
-
-  # Enable networking
+  networking.hostName = "rahu";
   networking.networkmanager.enable = true;
 
   # Time zone and locale.

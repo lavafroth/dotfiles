@@ -11,9 +11,13 @@
       url = "github:nix-community/lanzaboote/v0.3.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sops-nix = {
+        url = "github:Mic92/sops-nix";
+        inputs.nixpkgs.follows= "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, lanzaboote, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, sops-nix, ... }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     nixosConfigurations = {
       cafe-nosecureboot = nixpkgs.lib.nixosSystem {
@@ -39,6 +43,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/rahu/configuration.nix
+          sops-nix.nixosModules.sops
         ];
       };
     };
