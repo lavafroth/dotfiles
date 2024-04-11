@@ -6,7 +6,11 @@
     user-themes
     caffeine
     paperwm
+  ] ++ [
+    pkgs.blackbox-terminal
   ];
+
+  # the above two get merged
 
   home.file.".config/paperwm/user.css".source = ./sources/paperwm/user.css;
 

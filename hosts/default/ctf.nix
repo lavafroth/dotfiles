@@ -1,5 +1,5 @@
 # Tools for pentesting and playing CTFs
-{ pkgs, ... }: with pkgs; [
+{ config, pkgs, ... }: {home.packages = with pkgs; [
   bettercap
   ffuf
   gau
@@ -11,7 +11,8 @@
   nmap
   patchelf
   # pwntools
+  feroxbuster
   rustscan
   sqlmap
   s3scanner
-]
+];}

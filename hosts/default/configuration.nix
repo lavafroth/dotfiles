@@ -131,31 +131,18 @@
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
     extraGroups = [ "networkmanager" "wheel" "uinput" ];
-    packages = with pkgs;
-      let
-        pythonWithPackages = import ./python.nix pkgs;
-        rustPackages = import ./rust.nix pkgs;
-        ctfPackages = import ./ctf.nix pkgs;
-      in
-      rustPackages ++ ctfPackages ++
-      [
-        blackbox-terminal
+    packages = with pkgs; [
         broot
-        dxvk
-        evcxr
         fd
-        feroxbuster
         ffmpeg-full
         file
         fractal
         gh
         gimp
-        glow
         gnome.gnome-boxes
         gnome-secrets
         go
         gopls
-        hyperfine
         i2p
         jellyfin-media-player
         jq
@@ -166,28 +153,23 @@
         libreoffice-fresh
         librewolf
         libvirt
-        linuxPackages_latest.perf
-        lutris
         mariadb
-        marksman
         mpv
         nil
         nitch
         ollama
         openvpn
         pkg-config
-        pythonWithPackages
         qemu
         qrencode
-        rnote
+        realesrgan-ncnn-vulkan
         signal-desktop
         tor-browser-bundle-bin
         ungoogled-chromium
         unrar
-        wine
         yt-dlp
         zellij
-      ];
+       ];
     shell = pkgs.fish;
   };
 

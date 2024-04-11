@@ -4,6 +4,12 @@
 
   imports = [
     ./gnome.nix
+    ./python.nix
+    ./rust.nix
+    ./ctf.nix
+    ./gaming.nix
+    ./notetaking.nix
+    ./benchmarking.nix
     ./aws.nix
     ./git.nix
     ./shell.nix
