@@ -130,7 +130,7 @@
   users.users.h = {
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
-    extraGroups = [ "networkmanager" "wheel" "uinput" ];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
         broot
         fd
@@ -162,7 +162,6 @@
         pkg-config
         qemu
         qrencode
-        realesrgan-ncnn-vulkan
         signal-desktop
         tor-browser-bundle-bin
         ungoogled-chromium
