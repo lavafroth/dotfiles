@@ -1,5 +1,7 @@
-{ config,pkgs, ...}: {home.packages = with pkgs; [
-	glow
-  marksman
-	rnote
-];}
+{ config, pkgs, ... }: {
+  home.packages = with pkgs; [
+    glow
+    marksman
+    rnote
+  ];
+}

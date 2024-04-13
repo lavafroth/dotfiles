@@ -21,7 +21,7 @@
       PHOTOPRISM_ADMIN_USER = "user";
     };
   };
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.timeout = 1;

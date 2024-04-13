@@ -104,14 +104,15 @@
       xkb.layout = "us";
       xkb.variant = "";
 
-      displayManager = {
-        gdm.enable = true;
-        autoLogin.enable = true;
-        autoLogin.user = "h";
-      };
+      displayManager.gdm.enable = true;
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
       videoDrivers = [ "nvidia" ];
+    };
+
+    displayManager.autoLogin = {
+      enable = true;
+      user = "h";
     };
   };
 
@@ -132,43 +133,43 @@
     description = "Himadri Bhattacharjee";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-        broot
-        fd
-        ffmpeg-full
-        file
-        fractal
-        gh
-        gimp
-        gnome.gnome-boxes
-        gnome-secrets
-        go
-        gopls
-        i2p
-        jellyfin-media-player
-        jq
-        just
-        kdenlive
-        krita
-        lazygit
-        libreoffice-fresh
-        librewolf
-        libvirt
-        mariadb
-        mpv
-        nil
-        nitch
-        ollama
-        openvpn
-        pkg-config
-        qemu
-        qrencode
-        signal-desktop
-        tor-browser-bundle-bin
-        ungoogled-chromium
-        unrar
-        yt-dlp
-        zellij
-       ];
+      broot
+      fd
+      ffmpeg-full
+      file
+      fractal
+      gh
+      gimp
+      gnome.gnome-boxes
+      gnome-secrets
+      go
+      gopls
+      i2p
+      jellyfin-media-player
+      jq
+      just
+      kdenlive
+      krita
+      lazygit
+      libreoffice-fresh
+      librewolf
+      libvirt
+      mariadb
+      mpv
+      nil
+      nitch
+      ollama
+      openvpn
+      pkg-config
+      qemu
+      qrencode
+      signal-desktop
+      tor-browser-bundle-bin
+      ungoogled-chromium
+      unrar
+      yt-dlp
+      zellij
+    ];
     shell = pkgs.fish;
   };
 
