@@ -111,10 +111,10 @@
       enable = true;
       user = "h";
     };
+    displayManager.sddm = { enable = true; wayland.enable = true; };
 
     # Enable the Plasma.
     desktopManager.plasma6.enable = true;
-    displayManager.sddm.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
