@@ -3,7 +3,8 @@
 {
 
   imports = [
-    ./gnome.nix
+    # ./gnome.nix
+    ./kde.nix
     ./python.nix
     ./rust.nix
     ./ctf.nix

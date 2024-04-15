@@ -97,14 +97,11 @@
       # Enable the X11 windowing system.
       enable = true;
 
-      # Enable the GNOME Desktop Environment.
-      desktopManager.gnome.enable = true;
 
       # Configure keymap in X11
       xkb.layout = "us";
       xkb.variant = "";
 
-      displayManager.gdm.enable = true;
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
       videoDrivers = [ "nvidia" ];
@@ -114,6 +111,10 @@
       enable = true;
       user = "h";
     };
+    displayManager.sddm = { enable = true; wayland.enable = true; };
+
+    # Enable the Plasma.
+    desktopManager.plasma6.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
