@@ -179,17 +179,13 @@
 
   system.autoUpgrade.enable = false;
 
-  # Replace sudo with doas
+  # Replace sudo with sudo-rs
   security = {
     rtkit.enable = true;
     sudo.enable = false;
-    doas = {
+    sudo-rs = {
       enable = true;
-      extraRules = [{
-        groups = [ "wheel" ];
-        persist = false;
-        keepEnv = true;
-      }];
+      execWheelOnly = true;
     };
   };
 
@@ -241,7 +237,6 @@
     wifite2
     wl-clipboard
     # cosmic-workspaces-epoch
-    (writeScriptBin "sudo" ''exec doas "$@"'')
   ];
 
   # Make sure opengl is enabled
