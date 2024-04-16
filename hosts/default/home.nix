@@ -3,16 +3,17 @@
 {
 
   imports = [
-    # ./gnome.nix
-    ./kde.nix
-    ./python.nix
-    ./rust.nix
+    ./aws.nix
+    ./benchmarking.nix
     ./ctf.nix
     ./gaming.nix
-    ./notetaking.nix
-    ./benchmarking.nix
-    ./aws.nix
     ./git.nix
+    # ./gnome.nix
+    ./helix.nix
+    ./kde.nix
+    ./notetaking.nix
+    ./python.nix
+    ./rust.nix
     ./shell.nix
   ];
 
@@ -52,20 +53,6 @@
   };
 
   programs = {
-
-    helix = {
-      enable = true;
-      settings = {
-        theme = "adwaita-dark";
-        editor.cursor-shape.insert = "bar";
-        editor.line-number = "relative";
-        editor.idle-timeout = 0;
-        keys.normal."X" = [ "extend_line_up" "extend_to_line_bounds" ];
-        keys.select."X" = [ "extend_line_up" "extend_to_line_bounds" ];
-        keys.normal."C-g" = [ ":new" ":insert-output ${pkgs.lazygit}/bin/lazygit" ":buffer-close!" ":redraw" ];
-      };
-    };
-
     direnv = {
       enable = true;
       nix-direnv.enable = true;
