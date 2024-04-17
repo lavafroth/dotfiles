@@ -153,7 +153,6 @@
       krita
       lazygit
       libreoffice-fresh
-      librewolf
       libvirt
       mariadb
       mpv
@@ -236,6 +235,7 @@
     wget
     wifite2
     wl-clipboard
+    kdePackages.sddm-kcm
     # cosmic-workspaces-epoch
   ];
 

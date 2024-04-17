@@ -11,6 +11,7 @@
     # ./gnome.nix
     ./helix.nix
     ./kde.nix
+    ./librewolf.nix
     ./notetaking.nix
     ./python.nix
     ./rust.nix
