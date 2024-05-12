@@ -165,6 +165,7 @@
       qrencode
       signal-desktop
       tor-browser-bundle-bin
+      tenacity
       ungoogled-chromium
       unrar
       yt-dlp
@@ -224,6 +225,7 @@
     helix
     iw
     macchanger
+    nh
     ntfs3g
     openssl
     p7zip
