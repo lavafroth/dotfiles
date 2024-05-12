@@ -15,9 +15,14 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, sops-nix, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, sops-nix, nix-on-droid, ... }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     nixosConfigurations = {
       cafe-nosecureboot = nixpkgs.lib.nixosSystem {
@@ -47,5 +52,10 @@
         ];
       };
     };
+    
+    nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+      modules = [ ./hosts/aqua/nix-on-droid.nix ];
+    };
+    
   };
 }

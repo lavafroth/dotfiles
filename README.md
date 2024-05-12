@@ -9,8 +9,7 @@ and clone this repository.
 
 ```sh
 git clone https://github.com/lavafroth/dotfiles
-cd dotfiles
-sudo nixos-rebuild switch --flake .#cafe-nosecureboot
+sudo nixos-rebuild switch --flake dotfiles#cafe-nosecureboot
 ```
 
 #### Secureboot
@@ -23,7 +22,7 @@ clear the manufacturer keys and enroll yours as described [here](https://github.
 Once the keys are enrolled, run the following to rebuild the system from now on
 
 ```sh
-sudo nixos-rebuild switch --flake .
+sudo nixos-rebuild switch --flake dotfiles
 ```
 
 #### Sponsorblock for mpv
@@ -31,8 +30,8 @@ sudo nixos-rebuild switch --flake .
 Optionally, if you want to block sponsors in mpv, run
 
 ```sh
-pushd sources/mpv-sponsorblock
-mkdir sources/mpv/scripts
+pushd dotfiles/hosts/default/sources/mpv-sponsorblock
+mkdir dotfiles/hosts/default/sources/mpv/scripts
 nix build
 cp result/lib/libmpv_sponsorblock.so ../mpv/scripts/sponsorblock.so
 popd
@@ -47,8 +46,18 @@ Clone this repo, enter the directory and run a rebuild for the host `rahu`.
 
 ```sh
 git clone https://github.com/lavafroth/dotfiles
-cd dotfiles
-sudo nixos-rebuild switch --flake .#rahu
+sudo nixos-rebuild switch --flake dotfiles#rahu
+```
+
+### Android (Nix-on-droid)
+
+I use Nix-on-droid to have Termux with a declarative config. Install
+[Nix-on-droid from F-Droid](https://f-droid.org/en/packages/com.termux.nix/) and
+enable flakes when prompted. Clone this repo and rebuild the environment.
+
+```sh
+git clone https://github.com/lavafroth/dotfiles
+nix-on-droid switch --flake dotfiles
 ```
 
 ## Troubleshooting
