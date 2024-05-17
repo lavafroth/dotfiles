@@ -238,7 +238,7 @@
     wifite2
     wl-clipboard
     kdePackages.sddm-kcm
-    # cosmic-workspaces-epoch
+    libnotify
   ];
 
   # Make sure opengl is enabled
