@@ -120,14 +120,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  programs.fish = {
-    enable = true;
-    shellAliases = {
-      ls = "${pkgs.eza}/bin/eza -la --icons=always";
-      cat = "bat -p";
-    };
-  };
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.h = {
     isNormalUser = true;
@@ -172,6 +164,7 @@
     shell = pkgs.fish;
   };
 
+  programs.fish.enable = true;
   # Enable nix-command for search and flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
