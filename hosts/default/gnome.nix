@@ -6,9 +6,11 @@
     user-themes
     caffeine
     paperwm
-  ] ++ [
-    pkgs.blackbox-terminal
-  ];
+  ] ++ (with pkgs; [
+    blackbox-terminal
+    gnome-secrets
+    fractal
+  ]);
 
   # the above two get merged
 

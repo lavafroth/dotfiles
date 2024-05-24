@@ -138,11 +138,9 @@
       fd
       ffmpeg-full
       file
-      fractal
       gh
       gimp
       gnome.gnome-boxes
-      gnome-secrets
       go
       gopls
       i2p
