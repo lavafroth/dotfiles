@@ -3,6 +3,10 @@
 {
   programs.fish = {
     enable = true;
+    shellAliases = {
+      ls = "${pkgs.eza}/bin/eza -la --icons=always";
+      cat = "${pkgs.bat}/bin/bat -p";
+    };
     functions = {
       fish_prompt = {
         body = ''
