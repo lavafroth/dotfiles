@@ -124,7 +124,7 @@
   users.users.h = {
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
       broot
       fd
@@ -143,21 +143,21 @@
       krita
       lazygit
       libreoffice-fresh
-      libvirt
-      mariadb
       mpv
       nil
       nitch
       ollama
+      ouch
       openvpn
       pkg-config
-      qemu
       qrencode
       signal-desktop
       tor-browser-bundle-bin
       tenacity
       ungoogled-chromium
       unrar
+      virt-manager
+      yazi
       yt-dlp
       zellij
     ];
@@ -165,6 +165,23 @@
   };
 
   programs.fish.enable = true;
+
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      package = pkgs.qemu_kvm;
+      runAsRoot = true;
+      swtpm.enable = true;
+      ovmf = {
+        enable = true;
+        packages = [(pkgs.OVMF.override {
+          secureBoot = true;
+          tpmSupport = true;
+        }).fd];
+      };
+    };
+  };
+
   # Enable nix-command for search and flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -219,12 +236,10 @@
     nh
     ntfs3g
     openssl
-    p7zip
     pciutils
     picocom
     ripgrep
     sbctl
-    tealdeer
     wget
     wifite2
     wl-clipboard
