@@ -30,6 +30,7 @@
       GOPATH = "${config.home.homeDirectory}/Public/go";
       GOBIN = "${config.home.sessionVariables.GOPATH}/bin";
       CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
+      FLAKE = "${config.home.homeDirectory}/Public/dotfiles";
     };
 
     sessionPath = [ config.home.sessionVariables.GOBIN "${config.home.homeDirectory}/.cargo/bin" ];
