@@ -111,6 +111,8 @@
       enable = true;
       user = "h";
     };
+    # desktopManager.cosmic.enable = true;
+    # displayManager.cosmic-greeter.enable = true;
     displayManager.sddm = { enable = true; wayland.enable = true; };
 
     # Enable the Plasma.
