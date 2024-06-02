@@ -132,7 +132,6 @@
       fd
       ffmpeg-full
       file
-      gh
       gimp
       gnome.gnome-boxes
       go
@@ -144,7 +143,6 @@
       kdenlive
       krita
       blender
-      lazygit
       libreoffice-fresh
       mpv
       nil
