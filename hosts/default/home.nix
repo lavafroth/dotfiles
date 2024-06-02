@@ -12,7 +12,7 @@
     # ./gnome.nix
     ./helix.nix
     ./kde.nix
-    ./librewolf.nix
+    ./browsers.nix
     ./notetaking.nix
     ./python.nix
     ./rust.nix
