@@ -151,7 +151,6 @@
       signal-desktop
       tor-browser-bundle-bin
       tenacity
-      ungoogled-chromium
       virt-manager
       yazi
       yt-dlp
