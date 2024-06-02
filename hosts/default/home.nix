@@ -8,6 +8,7 @@
     ./ctf.nix
     ./gaming.nix
     ./git.nix
+    ./graphics.nix
     # ./gnome.nix
     ./helix.nix
     ./kde.nix

@@ -132,7 +132,6 @@
       fd
       ffmpeg-full
       file
-      gimp
       gnome.gnome-boxes
       go
       gopls
@@ -141,8 +140,6 @@
       jq
       just
       kdenlive
-      krita
-      blender
       libreoffice-fresh
       mpv
       nil
