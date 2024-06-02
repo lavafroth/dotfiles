@@ -17,4 +17,9 @@ let githubHelper = "${pkgs.gh}/bin/gh auth git-credential"; in
     signing.key = "${config.home.homeDirectory}/.ssh/id_ed25519";
 
   };
+
+  home.packages = with pkgs; [
+    gh
+    lazygit
+  ];
 }
