@@ -150,13 +150,11 @@
       ollama
       ouch
       openvpn
-      pkg-config
       qrencode
       signal-desktop
       tor-browser-bundle-bin
       tenacity
       ungoogled-chromium
-      unrar
       virt-manager
       yazi
       yt-dlp
