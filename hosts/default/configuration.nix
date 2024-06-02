@@ -143,6 +143,7 @@
       just
       kdenlive
       krita
+      blender
       lazygit
       libreoffice-fresh
       mpv
