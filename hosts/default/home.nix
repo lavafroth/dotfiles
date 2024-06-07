@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
 
@@ -17,6 +17,7 @@
     ./python.nix
     ./rust.nix
     ./shell.nix
+    ./hud.nix
   ];
 
   home = {
