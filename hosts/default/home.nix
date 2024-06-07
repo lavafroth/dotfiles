@@ -1,7 +1,6 @@
-{ inputs, config, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
-
   imports = [
     ./aws.nix
     ./benchmarking.nix
