@@ -121,13 +121,12 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.h = {
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
+      ags
       broot
       fd
       ffmpeg-full
@@ -279,6 +278,9 @@
 
     # Modesetting is needed for most wayland compositors
     modesetting.enable = true;
+
+    # I use proprietary CUDA garbage with direnv on a
+    # per-directory basis. So should you.
     open = true;
 
     # Disable the nvidia settings menu
