@@ -76,8 +76,16 @@ nix-channel --update
 
 Further reading: [NixOS discourse](https://discourse.nixos.org/t/command-not-found-unable-to-open-database/3807).
 
-### Nvidia CUDA shell does not identify the correct GPU
+### Known Nvidia issues
 
-It turns out the `nvidia_uvm` kernel module is not loaded by default. Solved by adding the module to `boot.kernelModules`.
+#### Nvidia CUDA shell does not identify the correct GPU
+
+The `nvidia_uvm` kernel module is not loaded by default. Solved by adding it to `boot.kernelModules`.
 
 Further reading: [Nixpkgs issues](https://github.com/NixOS/nixpkgs/issues/272413)
+
+#### Running blender with CUDA
+
+```
+nix run --impure github:guibou/nixGL -- nix run blender-bin
+```
