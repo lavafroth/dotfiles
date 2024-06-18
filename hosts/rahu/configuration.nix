@@ -110,14 +110,20 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs;
       let
-        transmission-compose = (pkgs.callPackage
-          (fetchFromGitHub {
-            owner = "lavafroth";
-            repo = "transmission-compose";
-            rev = "983355f668a0b230af17ff4dba4311f4b58c21d6";
-            sha256 = "sha256-mJcFA5Q+6ZuFgKSG78aCpoHtMRBqid03Qr7guGw7ui8=";
-          })
-          { });
+        transmission-compose = (stdenv.mkDerivation {
+        name = "transmission-compose";
+        src = fetchurl {
+          url = "https://github.com/lavafroth/transmission-compose/releases/download/1.1.1/transmission-compose_1.1.1_x86_64-unknown-linux-musl.tar.zst";
+          sha256 = "319531358cccc35bc3aa8a61d7d691e7e3fd22ac8e1a08b66ef3399a9d84ed67";
+        };
+        phases = ["installPhase" "patchPhase"];
+        buildInputs = [ zstd ];
+        installPhase = ''
+          mkdir -p $out/bin
+          tar --extract --directory $out/bin --file $src transmission-compose
+          chmod +x $out/bin/transmission-compose
+        '';
+      });
       in
       [ transmission-compose ];
 
