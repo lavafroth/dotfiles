@@ -11,6 +11,7 @@
 
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
   sops.secrets.photoprism_password = { };
+  sops.secrets.wireless_ap = { };
 
   services.photoprism = {
     enable = true;
