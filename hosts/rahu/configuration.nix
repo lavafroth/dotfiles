@@ -47,6 +47,18 @@
     };
   };
 
+  systemd.services.create_ap = {
+    enable = true;
+    wantedBy = [ "multi-user.target" ];
+    description = "Create AP Service";
+    after = [ "network.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.linux-wifi-hotspot}/bin/create_ap --config /run/secrets/wireless_ap";
+      KillSignal = "SIGINT";
+      Restart = "on-failure";
+    };
+  };
+
   console = {
     earlySetup = true;
     font = "${pkgs.terminus_font}/share/consolefonts/ter-132n.psf.gz";
