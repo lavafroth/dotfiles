@@ -31,6 +31,7 @@
     networkmanager.dns = "none";
   };
 
+  services.fwupd.enable = true;
   services.dnscrypt-proxy2 = {
     enable = true;
     settings = {
