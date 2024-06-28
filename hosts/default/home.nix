@@ -16,7 +16,7 @@
     ./python.nix
     ./rust.nix
     ./shell.nix
-    ./hud.nix
+    # ./hud.nix
   ];
 
   home = {
