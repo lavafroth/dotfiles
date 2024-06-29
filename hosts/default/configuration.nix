@@ -240,6 +240,14 @@
     wl-clipboard
     kdePackages.sddm-kcm
     libnotify
+    (pkgs.runCommand "gpu-screen-recorder-gtk" {
+      nativeBuildInputs = [ pkgs.makeWrapper ];
+    } ''
+      mkdir -p $out/bin
+      makeWrapper ${pkgs.gpu-screen-recorder-gtk}/bin/gpu-screen-recorder-gtk $out/bin/gpu-screen-recorder-gtk \
+        --prefix LD_LIBRARY_PATH : ${pkgs.libglvnd}/lib \
+        --prefix LD_LIBRARY_PATH : ${config.boot.kernelPackages.nvidia_x11}/lib
+    '')
   ];
 
   # Make sure opengl is enabled
