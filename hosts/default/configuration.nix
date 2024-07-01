@@ -83,7 +83,6 @@
   hardware.pulseaudio.enable = false;
   hardware.uinput.enable = true;
   services = {
-    flatpak.enable = true;
     # Enable CUPS to print documents.
     printing.enable = true;
     # Enable sound with pipewire.
