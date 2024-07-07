@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   systemd.user.services.ags-hud = {
     Unit = {
       Description = "ags cyberpunk hud for my cosmic epoch setup";

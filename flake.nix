@@ -60,10 +60,10 @@
         ];
       };
     };
-    
+
     nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
       modules = [ ./hosts/aqua/nix-on-droid.nix ];
     };
-    
+
   };
 }
