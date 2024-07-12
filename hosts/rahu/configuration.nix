@@ -138,7 +138,7 @@
           '';
         });
       in
-      [ transmission-compose ];
+      [ transmission-compose ripgrep jq nh ];
 
     shell = pkgs.fish;
   };
