@@ -6,6 +6,7 @@
     shellAliases = {
       ls = "${pkgs.eza}/bin/eza -la --icons=always";
       cat = "${pkgs.bat}/bin/bat -p";
+      nuke = "set here $PWD; cd ..; rm $here -rf";
     };
     functions = {
       fish_prompt = {
