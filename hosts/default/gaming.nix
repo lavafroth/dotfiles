@@ -3,5 +3,6 @@
     lutris
     wine
     dxvk
+    bottles
   ];
 }
