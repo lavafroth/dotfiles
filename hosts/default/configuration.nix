@@ -79,7 +79,6 @@
   };
 
   xdg.portal.enable = true;
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   hardware.uinput.enable = true;
   services = {
