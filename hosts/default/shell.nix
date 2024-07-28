@@ -6,8 +6,11 @@
     shellAliases = {
       ls = "${pkgs.eza}/bin/eza -la --icons=always";
       cat = "${pkgs.bat}/bin/bat -p";
-      nuke = "set here $PWD; cd ..; rm $here -rf";
+      nuke = "set here $PWD; prevd; rm $here -rf";
     };
+    interactiveShellInit = ''
+      bind \cx cd_zoxide_abbreviation
+    '';
     functions = {
       fish_prompt = {
         body = ''
@@ -38,6 +41,10 @@
         '';
       };
       fish_greeting.body = "";
+      cd_zoxide_abbreviation.body = ''
+         __zoxide_zi
+         commandline -f repaint
+      '';
     };
   };
 }
