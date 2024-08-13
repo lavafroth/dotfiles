@@ -8,6 +8,7 @@
     paperwm
   ] ++ (with pkgs; [
     blackbox-terminal
+    adw-gtk3
     gnome-secrets
     fractal
   ]);
