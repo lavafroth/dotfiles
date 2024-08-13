@@ -3,5 +3,6 @@
     keepassxc
     kdePackages.kde-gtk-config
     kdePackages.kclock
+    kde-rounded-corners
   ];
 }
