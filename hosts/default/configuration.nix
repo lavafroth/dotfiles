@@ -231,7 +231,6 @@
     picocom
     ripgrep
     sbctl
-    wget
     wifite2
     wl-clipboard
     kdePackages.sddm-kcm
