@@ -7,6 +7,7 @@
       ls = "${pkgs.eza}/bin/eza -la --icons=always";
       cat = "${pkgs.bat}/bin/bat -p";
       nuke = "set here $PWD; prevd; rm $here -rf";
+      wget = "${pkgs.curl}/bin/curl -LOC -";
     };
     interactiveShellInit = ''
       bind \cx cd_zoxide_abbreviation
