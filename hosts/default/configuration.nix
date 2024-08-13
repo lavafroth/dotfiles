@@ -209,16 +209,12 @@
   ];
 
   environment.variables = {
-    # Set the path for pkg-config to the openssl library
-    # so that we may compile projects that link to openssl.
-    # For example, a Rust project depending upon the openssl-sys crate.
+    # Set the path for pkg-config. Mostly for CFFI projects.
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     EDITOR = "${pkgs.helix}/bin/hx";
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-
+  # `nix search package` to search for a package
   environment.systemPackages = with pkgs; [
     adw-gtk3
     aircrack-ng
