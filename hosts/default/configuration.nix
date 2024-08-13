@@ -143,7 +143,6 @@
       mpv
       nil
       nitch
-      ollama
       ouch
       openvpn
       qrencode
