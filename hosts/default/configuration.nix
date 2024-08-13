@@ -216,7 +216,6 @@
 
   # `nix search package` to search for a package
   environment.systemPackages = with pkgs; [
-    adw-gtk3
     aircrack-ng
     bat
     git
