@@ -41,7 +41,7 @@
   xdg.desktopEntries.ocr = {
     name = "Screen Grab OCR";
     exec = "${pkgs.writeScript "ocr" ''
-      ${pkgs.gnome.gnome-screenshot}/bin/gnome-screenshot --area --file /tmp/ocr-tmp.png
+      ${pkgs.gnome-screenshot}/bin/gnome-screenshot --area --file /tmp/ocr-tmp.png
       ${pkgs.tesseract}/bin/tesseract /tmp/ocr-tmp.png - | ${pkgs.wl-clipboard}/bin/wl-copy
       rm /tmp/ocr-tmp.png
     ''}";
