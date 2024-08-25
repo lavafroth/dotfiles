@@ -182,6 +182,11 @@
 
   system.autoUpgrade.enable = false;
 
+  system.switch = {
+    enable = false;
+    enableNg = true;
+  };
+
   # Replace sudo with sudo-rs
   security = {
     rtkit.enable = true;
