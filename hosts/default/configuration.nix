@@ -17,6 +17,7 @@
     extraModprobeConfig = ''
       options v4l2loopback exclusive_caps=1 card_label="Virtual Webcam"
     '';
+    initrd.systemd.enable = true;
   };
 
   home-manager.useGlobalPkgs = true;
