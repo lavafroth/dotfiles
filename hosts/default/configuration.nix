@@ -153,7 +153,6 @@
       virt-manager
       yazi
       yt-dlp
-      zellij
     ];
     shell = pkgs.fish;
   };
