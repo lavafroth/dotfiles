@@ -9,9 +9,6 @@
       nuke = "set here $PWD; prevd; rm $here -rf";
       wget = "${pkgs.curl}/bin/curl -LOC -";
     };
-    interactiveShellInit = ''
-      bind \cx cd_zoxide_abbreviation
-    '';
     functions = {
       fish_prompt = {
         body = ''
@@ -42,10 +39,6 @@
         '';
       };
       fish_greeting.body = "";
-      cd_zoxide_abbreviation.body = ''
-         __zoxide_zi
-         commandline -f repaint
-      '';
     };
   };
 }
