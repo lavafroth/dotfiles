@@ -29,11 +29,17 @@
     };
 
     sessionVariables = {
-      GOPATH = "${config.xdg.userDirs.publicShare}/go";
-      GOBIN = "${config.home.sessionVariables.GOPATH}/bin";
       CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
       FLAKE = "${config.xdg.userDirs.publicShare}/dotfiles";
-    };
+      GDBHISTFILE = "${config.xdg.dataHome}/gdb/history";
+
+      GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+
+      GOPATH = "${config.xdg.userDirs.publicShare}/go";
+      GOBIN = "${config.home.sessionVariables.GOPATH}/bin";
+
+      _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.xdg.configHome}/java";
+      };
 
     sessionPath = [ config.home.sessionVariables.GOBIN "${config.home.homeDirectory}/.cargo/bin" ];
     stateVersion = "24.05";
