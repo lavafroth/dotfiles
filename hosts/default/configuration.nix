@@ -132,7 +132,7 @@
       fd
       ffmpeg-full
       file
-      gnome.gnome-boxes
+      gnome-boxes
       go
       gopls
       i2p
