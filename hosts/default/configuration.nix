@@ -130,7 +130,6 @@
       ags
       broot
       fd
-      ffmpeg-full
       file
       gnome-boxes
       go
@@ -139,7 +138,6 @@
       jellyfin-media-player
       jq
       just
-      kdenlive
       libreoffice-fresh
       mpv
       nil
@@ -149,7 +147,6 @@
       qrencode
       signal-desktop
       tor-browser-bundle-bin
-      tenacity
       virt-manager
       yazi
       yt-dlp
