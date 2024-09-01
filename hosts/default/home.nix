@@ -16,6 +16,7 @@
     ./python.nix
     ./rust.nix
     ./shell.nix
+    ./video-editing.nix
     ./zellij.nix
     # ./hud.nix
   ];
