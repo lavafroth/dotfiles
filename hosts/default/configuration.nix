@@ -127,9 +127,6 @@
     description = "Himadri Bhattacharjee";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
-      broot
-      fd
-      file
       gnome-boxes
       go
       gopls

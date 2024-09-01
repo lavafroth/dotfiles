@@ -41,5 +41,11 @@
       fish_greeting.body = "";
     };
   };
+
+  home.packages = with pkgs; [
+    broot
+    file
+    fd
+  ];
 }
 
