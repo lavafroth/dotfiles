@@ -128,8 +128,6 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
       gnome-boxes
-      go
-      gopls
       i2p
       jellyfin-media-player
       jq
