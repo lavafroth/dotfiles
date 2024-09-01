@@ -127,7 +127,6 @@
     description = "Himadri Bhattacharjee";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
-      ags
       broot
       fd
       file
