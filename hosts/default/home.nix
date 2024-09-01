@@ -17,6 +17,7 @@
     ./rust.nix
     ./shell.nix
     ./video-editing.nix
+    ./golang.nix
     ./zellij.nix
     # ./hud.nix
   ];
