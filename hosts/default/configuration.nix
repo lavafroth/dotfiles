@@ -127,6 +127,7 @@
     description = "Himadri Bhattacharjee";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
+      ttyper
       gnome-boxes
       i2p
       jellyfin-media-player
