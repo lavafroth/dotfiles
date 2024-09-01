@@ -134,7 +134,6 @@
       just
       libreoffice-fresh
       mpv
-      nil
       nitch
       ouch
       openvpn
