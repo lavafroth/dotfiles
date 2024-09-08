@@ -8,6 +8,7 @@
       cat = "${pkgs.bat}/bin/bat -p";
       nuke = "set here $PWD; prevd; rm $here -rf";
       wget = "${pkgs.curl}/bin/curl -LOC -";
+      lg = "${pkgs.lazygit}/bin/lazygit";
     };
     functions = {
       fish_prompt = {
