@@ -44,9 +44,24 @@
   };
 
   home.packages = with pkgs; [
+    # fs tools
     broot
     file
     fd
+    yazi
+    ouch
+
+    # generate qr codes
+    qrencode
+
+    # json manipulation
+    jq
+
+    # build tools
+    just
+
+    # form over function (pretty tools)
+    nitch
   ];
 }
 

@@ -131,18 +131,12 @@
       gnome-boxes
       i2p
       jellyfin-media-player
-      jq
-      just
       libreoffice-fresh
       mpv
-      nitch
-      ouch
       openvpn
-      qrencode
       signal-desktop
       tor-browser-bundle-bin
       virt-manager
-      yazi
       yt-dlp
     ];
     shell = pkgs.fish;
