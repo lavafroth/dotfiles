@@ -4,23 +4,23 @@
   imports = [
     ./aws.nix
     ./benchmarking.nix
-    ./ctf.nix
-    ./gaming.nix
-    ./git.nix
-    ./graphics.nix
-    # ./gnome.nix
-    ./helix.nix
-    ./kde.nix
     ./browsers.nix
+    ./ctf.nix
+    # ./gaming.nix
+    ./git.nix
+    # ./gnome.nix
+    ./golang.nix
+    ./graphics.nix
+    ./helix.nix
+    # ./hud.nix
+    ./kde.nix
+    ./nixlang.nix
     ./notetaking.nix
     ./python.nix
     ./rust.nix
     ./shell.nix
     ./video-editing.nix
-    ./golang.nix
-    ./nixlang.nix
     ./zellij.nix
-    # ./hud.nix
   ];
 
   home = {
