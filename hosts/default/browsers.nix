@@ -7,8 +7,8 @@
     };
   };
 
-  # For stuff that I have to log into
   home.packages = with pkgs; [
     ungoogled-chromium
+    tor-browser-bundle-bin
   ];
 }

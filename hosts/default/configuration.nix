@@ -135,7 +135,6 @@
       mpv
       openvpn
       signal-desktop
-      tor-browser-bundle-bin
       virt-manager
       yt-dlp
     ];
