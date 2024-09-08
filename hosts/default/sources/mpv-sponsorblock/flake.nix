@@ -12,9 +12,12 @@
   outputs = { self, flake-utils, naersk, mpv-sponsorblock, nixpkgs }:
     flake-utils.lib.eachDefaultSystem (system:
       let
-        naersk' = (import nixpkgs) {
-          inherit system;
-        }.callPackage naersk { };
+        naersk' =
+          (import nixpkgs) {
+            inherit system;
+          }.callPackage
+            naersk
+            { };
 
       in
       {
