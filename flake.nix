@@ -35,6 +35,7 @@
         modules = [
           ./hosts/default/configuration.nix
           ./cachix/nixos-cosmic.nix
+          ./cachix/cuda-maintainers.nix
           home-manager.nixosModules.home-manager
         ];
       };
@@ -45,6 +46,7 @@
           ./hosts/default/configuration.nix
           ./hosts/default/secureboot.nix
           ./cachix/nixos-cosmic.nix
+          ./cachix/cuda-maintainers.nix
           home-manager.nixosModules.home-manager
           nixos-cosmic.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
