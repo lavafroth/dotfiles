@@ -34,7 +34,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/default/configuration.nix
-          ./nixos-cosmic.nix
+          ./cachix/nixos-cosmic.nix
           home-manager.nixosModules.home-manager
         ];
       };
@@ -44,7 +44,7 @@
         modules = [
           ./hosts/default/configuration.nix
           ./hosts/default/secureboot.nix
-          ./nixos-cosmic.nix
+          ./cachix/nixos-cosmic.nix
           home-manager.nixosModules.home-manager
           nixos-cosmic.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
