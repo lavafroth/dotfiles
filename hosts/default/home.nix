@@ -6,7 +6,7 @@
     ./benchmarking.nix
     ./browsers.nix
     ./ctf.nix
-    # ./gaming.nix
+    ./gaming.nix
     ./git.nix
     # ./gnome.nix
     ./golang.nix
@@ -33,6 +33,7 @@
 
     packages = with pkgs; [
       newsflash
+      cachix
     ];
 
     sessionVariables = {
