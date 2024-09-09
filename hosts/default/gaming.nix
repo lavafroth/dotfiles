@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   home.packages = with pkgs; [
-    wine
     dxvk
-    bottles
+    wine64
+    lutris
   ];
 }
