@@ -1,8 +1,9 @@
 { pkgs, ... }: {
+  home.file.".config/helix/themes/hel.toml".source = ./sources/helix/hel.toml;
   programs.helix = {
     enable = true;
     settings = {
-      theme = "base16_terminal";
+      theme = "hel";
       editor.cursor-shape.insert = "bar";
       editor.line-number = "relative";
       editor.idle-timeout = 0;
