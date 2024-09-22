@@ -70,12 +70,11 @@
   services.samba = {
     enable = true;
     openFirewall = true;
-    securityType = "user";
-    extraConfig = ''
-      security = user
-      guest account = nobody
-      map to guest = bad user
-    '';
+    settings.global = {
+      security = "user";
+      "guest account" = "nobody";
+      "map to guest" = "bad user";
+    };
     shares = {
       media = {
         path = "/media";
