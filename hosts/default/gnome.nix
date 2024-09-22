@@ -99,7 +99,6 @@
       name = "Alt Browsers";
       apps = [
         "torbrowser.desktop"
-        "chromium-browser.desktop"
       ];
     };
 
