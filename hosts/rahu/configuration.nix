@@ -36,6 +36,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services.transmission = {
+    package = pkgs.transmission_4;
     enable = true;
     openRPCPort = true;
     settings = {
