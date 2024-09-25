@@ -205,6 +205,7 @@
 
   # `nix search package` to search for a package
   environment.systemPackages = with pkgs; [
+    comma
     aircrack-ng
     bat
     git
