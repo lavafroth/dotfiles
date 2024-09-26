@@ -3,7 +3,6 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "hel";
       editor.cursor-shape.insert = "bar";
       editor.line-number = "relative";
       editor.idle-timeout = 0;
