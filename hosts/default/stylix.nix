@@ -4,6 +4,7 @@
   stylix.enable = true;
   stylix.image = ./sources/stylix_image.png;
   stylix.polarity = "dark";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
   stylix.fonts = {
     serif = {

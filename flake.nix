@@ -21,8 +21,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
-        url = "github:danth/stylix";
-        inputs.nixpkgs.follows= "nixpkgs";
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid/release-23.11";
