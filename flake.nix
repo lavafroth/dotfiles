@@ -24,13 +24,17 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, sops-nix, nix-on-droid, nixos-cosmic, stylix, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, sops-nix, nix-on-droid, nix-index-database, nixos-cosmic, stylix, ... }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     nixosConfigurations = {
       cafe-nosecureboot = nixpkgs.lib.nixosSystem {
@@ -41,6 +45,8 @@
           ./cachix/cuda-maintainers.nix
           home-manager.nixosModules.home-manager
           stylix.nixosModules.stylix
+          nix-index-database.nixosModules.nix-index
+          { programs.nix-index-database.comma.enable = true; }
         ];
       };
 
@@ -55,6 +61,8 @@
           home-manager.nixosModules.home-manager
           lanzaboote.nixosModules.lanzaboote
           stylix.nixosModules.stylix
+          nix-index-database.nixosModules.nix-index
+          { programs.nix-index-database.comma.enable = true; }
         ];
       };
 
