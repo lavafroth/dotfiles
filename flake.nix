@@ -20,14 +20,17 @@
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-on-droid = {
       url = "github:nix-community/nix-on-droid/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, sops-nix, nix-on-droid, nixos-cosmic, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, lanzaboote, sops-nix, nix-on-droid, nixos-cosmic, stylix, ... }: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     nixosConfigurations = {
       cafe-nosecureboot = nixpkgs.lib.nixosSystem {
@@ -37,6 +40,7 @@
           ./cachix/nixos-cosmic.nix
           ./cachix/cuda-maintainers.nix
           home-manager.nixosModules.home-manager
+          stylix.nixosModules.stylix
         ];
       };
 
@@ -47,9 +51,10 @@
           ./hosts/default/secureboot.nix
           ./cachix/nixos-cosmic.nix
           ./cachix/cuda-maintainers.nix
+          ./hosts/default/stylix.nix
           home-manager.nixosModules.home-manager
-          nixos-cosmic.nixosModules.default
           lanzaboote.nixosModules.lanzaboote
+          stylix.nixosModules.stylix
         ];
       };
 
