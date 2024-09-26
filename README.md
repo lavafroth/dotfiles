@@ -65,9 +65,7 @@ nix-on-droid switch --flake dotfiles
 ### command-not-found unable to connect to database
 
 The `programs.sqlite` is only generated for the `nixos-` prefixed channels.
-The Nix flake in this repo uses the unstable channel. Thus, you must add them.
-
-Run the following as root:
+Ensure you use the unstable channel using these commands as root:
 
 ```sh
 nix-channel --add https://nixos.org/channels/nixos-unstable nixos
@@ -76,15 +74,7 @@ nix-channel --update
 
 Further reading: [NixOS discourse](https://discourse.nixos.org/t/command-not-found-unable-to-open-database/3807).
 
-### Known Nvidia issues
-
-#### Nvidia CUDA shell does not identify the correct GPU
-
-The `nvidia_uvm` kernel module is not loaded by default. Solved by adding it to `boot.kernelModules`.
-
-Further reading: [Nixpkgs issues](https://github.com/NixOS/nixpkgs/issues/272413)
-
-#### Running blender with CUDA
+### Running blender with CUDA
 
 ```
 nix run --impure github:guibou/nixGL -- nix run blender-bin
