@@ -160,7 +160,9 @@
         ];
       };
     };
+
   };
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # Enable nix-command for search and flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
