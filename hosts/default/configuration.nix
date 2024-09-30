@@ -13,6 +13,7 @@
       efi.canTouchEfiVariables = true;
     };
     kernelModules = [ "v4l2loopback" "nvidia_uvm" ];
+    blacklistedKernelModules = [ "rtw88_8822ce" ];
     extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
     extraModprobeConfig = ''
       options v4l2loopback exclusive_caps=1 card_label="Virtual Webcam"
