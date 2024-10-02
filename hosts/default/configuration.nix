@@ -104,12 +104,9 @@
       ttyper
       gnome-boxes
       i2p
-      jellyfin-media-player
       libreoffice-fresh
-      mpv
       openvpn
       signal-desktop
-      yt-dlp
     ];
     shell = pkgs.fish;
   };
