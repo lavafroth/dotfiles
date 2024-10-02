@@ -7,10 +7,12 @@
       ./disable-broken-wifi-card.nix
     ];
 
-  # Bootloader.
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        editor = false;
+      };
       efi.canTouchEfiVariables = true;
     };
     kernelModules = [ "v4l2loopback" "nvidia_uvm" ];
