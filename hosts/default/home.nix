@@ -21,6 +21,7 @@
     ./shell.nix
     ./video-editing.nix
     ./zellij.nix
+    ./media-playback.nix
   ];
 
   home = {
