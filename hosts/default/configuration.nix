@@ -109,7 +109,6 @@
       mpv
       openvpn
       signal-desktop
-      virt-manager
       yt-dlp
     ];
     shell = pkgs.fish;
