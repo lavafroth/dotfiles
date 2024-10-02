@@ -48,14 +48,6 @@
     stateVersion = "24.05";
   };
 
-  xdg.desktopEntries.andcam = {
-    name = "Android Virtual Camera";
-    exec = "${pkgs.writeScript "andcam" ''
-      ${pkgs.android-tools}/bin/adb start-server
-      ${pkgs.scrcpy}/bin/scrcpy --video-source=camera --no-audio --camera-facing=back --v4l2-sink=/dev/video0 -m1024
-    ''}";
-  };
-
   programs = {
     direnv = {
       enable = true;

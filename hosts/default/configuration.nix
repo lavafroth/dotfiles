@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./disable-broken-wifi-card.nix
       ./filesystem-hardening.nix
+      ./phone-as-webcam.nix
     ];
 
   boot = {
@@ -16,11 +17,6 @@
       };
       efi.canTouchEfiVariables = true;
     };
-    kernelModules = [ "v4l2loopback" "nvidia_uvm" ];
-    extraModulePackages = [ pkgs.linuxPackages.v4l2loopback ];
-    extraModprobeConfig = ''
-      options v4l2loopback exclusive_caps=1 card_label="Virtual Webcam"
-    '';
     initrd.systemd.enable = true;
   };
 
