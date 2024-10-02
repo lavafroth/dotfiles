@@ -7,6 +7,7 @@
       ./disable-broken-wifi-card.nix
       ./filesystem-hardening.nix
       ./phone-as-webcam.nix
+      ./nvidia.nix
     ];
 
   boot = {
@@ -105,7 +106,6 @@
 
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
-      videoDrivers = [ "nvidia" ];
     };
 
     displayManager.autoLogin = {
@@ -225,26 +225,10 @@
     wl-clipboard
     kdePackages.sddm-kcm
     libnotify
-    (pkgs.runCommand "gpu-screen-recorder-gtk"
-      {
-        nativeBuildInputs = [ pkgs.makeWrapper ];
-      } ''
-      mkdir -p $out/bin
-      makeWrapper ${pkgs.gpu-screen-recorder-gtk}/bin/gpu-screen-recorder-gtk $out/bin/gpu-screen-recorder-gtk \
-        --prefix LD_LIBRARY_PATH : ${pkgs.libglvnd}/lib \
-        --prefix LD_LIBRARY_PATH : ${config.boot.kernelPackages.nvidia_x11}/lib
-    '')
   ];
 
   # Make sure opengl is enabled
   hardware.graphics.enable = true;
-
-  # NVIDIA drivers are unfree.
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (pkgs.lib.getName pkg) [
-      "nvidia-x11"
-    ];
-
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -252,20 +236,6 @@
     noto-fonts-emoji
     terminus-nerdfont
   ];
-
-  hardware.nvidia = {
-
-    # Modesetting is needed for most wayland compositors
-    modesetting.enable = true;
-
-    # I use proprietary CUDA garbage with direnv on a
-    # per-directory basis. So should you.
-    open = true;
-
-    # Disable the nvidia settings menu
-    nvidiaSettings = false;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
 
   # Enable waydroid to run android applications in a sandbox
   # virtualisation = {
