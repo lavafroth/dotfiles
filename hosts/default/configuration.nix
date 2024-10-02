@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./disable-broken-wifi-card.nix
+      ./filesystem-hardening.nix
     ];
 
   boot = {
