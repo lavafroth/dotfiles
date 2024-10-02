@@ -24,7 +24,7 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.users.h = import ./home.nix;
+  home-manager.users.h = import ./home;
 
   # Enable networking
   networking = {
