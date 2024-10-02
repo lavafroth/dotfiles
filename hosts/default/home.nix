@@ -33,6 +33,9 @@
     };
 
     sessionVariables = {
+      # these mfs pollute my home directory
+      # some unfixable offenders include .jupyter, .mozilla, .librewolf
+      # .pki (chromium) and .ghidra
       CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
       FLAKE = "${config.xdg.userDirs.publicShare}/dotfiles";
       GDBHISTFILE = "${config.xdg.dataHome}/gdb/history";
