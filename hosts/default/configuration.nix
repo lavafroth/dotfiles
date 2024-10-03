@@ -9,6 +9,7 @@
       ./phone-as-webcam.nix
       ./nvidia.nix
       ./secure-dns.nix
+      ./virtualization.nix
     ];
 
   boot = {
@@ -102,7 +103,6 @@
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
     packages = with pkgs; [
       ttyper
-      gnome-boxes
       i2p
       libreoffice-fresh
       openvpn
@@ -112,26 +112,6 @@
   };
 
   programs.fish.enable = true;
-
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [
-          (pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd
-        ];
-      };
-    };
-
-  };
-  virtualisation.spiceUSBRedirection.enable = true;
 
   # Enable nix-command for search and flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -175,7 +155,6 @@
     EDITOR = "${pkgs.helix}/bin/hx";
   };
 
-  # `nix search package` to search for a package
   environment.systemPackages = with pkgs; [
     aircrack-ng
     bat
@@ -212,8 +191,6 @@
   #   waydroid.enable = true;
   #   lxd.enable = true;
   # };
-  virtualisation.podman.enable = true;
-
   networking.firewall.enable = true;
   system.stateVersion = "24.05";
 }
