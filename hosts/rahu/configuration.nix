@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, sops, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   imports =
@@ -104,7 +104,6 @@
     options = "--delete-older-than 14d";
   };
 
-  # system.autoUpgrade.enable = true;
   system.autoUpgrade = {
     enable = true;
     flake = inputs.self.outPath;
@@ -160,7 +159,7 @@
       enable = true;
       user = "user";
       dataDir = "/home/user/"; # Default folder for new synced folders
-      configDir = "/home/user/.config/syncthing"; # Folder for Syncthing's settings and ke
+      configDir = "/home/user/.config/syncthing"; # Folder for Syncthing's settings and keys
       guiAddress = "0.0.0.0:8384";
     };
     jellyfin = {
