@@ -1,27 +1,29 @@
-{pkgs, ... }:{
-virtualisation = {  libvirtd = {
-    enable = true;
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      swtpm.enable = true;
-      ovmf = {
-        enable = true;
-        packages = [
-          (pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd
-        ];
+{ pkgs, ... }:
+{
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        swtpm.enable = true;
+        ovmf = {
+          enable = true;
+          packages = [
+            (pkgs.OVMF.override {
+              secureBoot = true;
+              tpmSupport = true;
+            }).fd
+          ];
+        };
       };
+
     };
-
+    spiceUSBRedirection.enable = true;
   };
-  spiceUSBRedirection.enable = true;
-};
-environment.systemPackages = [
-  pkgs.gnome-boxes
-];
+  environment.systemPackages = [
+    pkgs.gnome-boxes
+  ];
 
-virtualisation.podman.enable = true;
+  virtualisation.podman.enable = true;
 }
