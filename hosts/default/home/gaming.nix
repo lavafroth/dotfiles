@@ -1,7 +1,9 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   home.packages = with pkgs; [
     dxvk
     wine64
     lutris
+    steam-run
   ];
 }
