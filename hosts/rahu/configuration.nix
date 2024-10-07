@@ -1,10 +1,13 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
@@ -75,7 +78,10 @@
     "d /media/seed 1777 transmission transmission"
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -97,25 +103,39 @@
   users.users.user = {
     isNormalUser = true;
     description = "user";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs;
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages =
+      with pkgs;
       let
-        transmission-compose = (stdenv.mkDerivation {
-          name = "transmission-compose";
-          src = fetchurl {
-            url = "https://github.com/lavafroth/transmission-compose/releases/download/1.1.1/transmission-compose_1.1.1_x86_64-unknown-linux-musl.tar.zst";
-            sha256 = "319531358cccc35bc3aa8a61d7d691e7e3fd22ac8e1a08b66ef3399a9d84ed67";
-          };
-          phases = [ "installPhase" "patchPhase" ];
-          buildInputs = [ zstd ];
-          installPhase = ''
-            mkdir -p $out/bin
-            tar --extract --directory $out/bin --file $src transmission-compose
-            chmod +x $out/bin/transmission-compose
-          '';
-        });
+        transmission-compose = (
+          stdenv.mkDerivation {
+            name = "transmission-compose";
+            src = fetchurl {
+              url = "https://github.com/lavafroth/transmission-compose/releases/download/1.1.1/transmission-compose_1.1.1_x86_64-unknown-linux-musl.tar.zst";
+              sha256 = "319531358cccc35bc3aa8a61d7d691e7e3fd22ac8e1a08b66ef3399a9d84ed67";
+            };
+            phases = [
+              "installPhase"
+              "patchPhase"
+            ];
+            buildInputs = [ zstd ];
+            installPhase = ''
+              mkdir -p $out/bin
+              tar --extract --directory $out/bin --file $src transmission-compose
+              chmod +x $out/bin/transmission-compose
+            '';
+          }
+        );
       in
-      [ transmission-compose ripgrep jq nh ];
+      [
+        transmission-compose
+        ripgrep
+        jq
+        nh
+      ];
 
     shell = pkgs.fish;
   };
@@ -145,7 +165,14 @@
       openFirewall = true;
     };
   };
-  networking.firewall.allowedTCPPorts = [ 8384 22000 2342 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
+  networking.firewall.allowedTCPPorts = [
+    8384
+    22000
+    2342
+  ];
+  networking.firewall.allowedUDPPorts = [
+    22000
+    21027
+  ];
   system.stateVersion = "23.11";
 }
