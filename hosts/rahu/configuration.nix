@@ -68,28 +68,6 @@
     keyMap = "us";
   };
 
-  services.samba = {
-    enable = true;
-    openFirewall = true;
-    settings.global = {
-      security = "user";
-      "guest account" = "nobody";
-      "map to guest" = "bad user";
-    };
-    shares = {
-      media = {
-        path = "/media";
-        "valid users" = "user";
-        browseable = "yes";
-        "read only" = "no";
-        "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "writable" = "true";
-      };
-    };
-  };
-
   programs.fish.enable = true;
 
   systemd.tmpfiles.rules = [
