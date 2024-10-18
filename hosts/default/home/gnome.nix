@@ -1,21 +1,22 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
 
-  home.packages = with pkgs.gnomeExtensions; [
-    blur-my-shell
-    quick-settings-tweaker
-    user-themes
-    caffeine
-    paperwm
-  ] ++ (with pkgs; [
-    blackbox-terminal
-    adw-gtk3
-    gnome-secrets
-    fractal
-  ]);
-
+  home.packages =
+    with pkgs.gnomeExtensions;
+    [
+      blur-my-shell
+      quick-settings-tweaker
+      user-themes
+      caffeine
+      paperwm
+    ]
+    ++ (with pkgs; [
+      blackbox-terminal
+      adw-gtk3
+      gnome-secrets
+      fractal
+    ]);
   # the above two get merged
-
-  home.file.".config/paperwm/user.css".source = ./sources/paperwm/user.css;
 
   # Refer to https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/
   dconf.settings = {
