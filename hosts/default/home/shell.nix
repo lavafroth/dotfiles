@@ -43,12 +43,13 @@
     };
   };
 
+  home.file.".config/kitty/kitty.conf".source = ./sources/kitty.conf;
+
   home.packages = with pkgs; [
     # fs tools
     broot
     file
     fd
-    yazi
     ouch
 
     # generate qr codes
@@ -62,6 +63,7 @@
 
     # form over function (pretty tools)
     nitch
+
+    kitty
   ];
 }
-
