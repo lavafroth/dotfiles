@@ -1,16 +1,20 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./disable-broken-wifi-card.nix
-      ./filesystem-hardening.nix
-      ./phone-as-webcam.nix
-      ./nvidia.nix
-      ./secure-dns.nix
-      ./virtualization.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ./disable-broken-wifi-card.nix
+    ./filesystem-hardening.nix
+    ./phone-as-webcam.nix
+    ./nvidia.nix
+    ./secure-dns.nix
+    ./virtualization.nix
+  ];
 
   boot = {
     loader = {
@@ -31,7 +35,10 @@
   networking = {
     hostName = "cafe";
     networkmanager.enable = true;
-    nameservers = [ "127.0.0.1" "::1" ];
+    nameservers = [
+      "127.0.0.1"
+      "::1"
+    ];
     networkmanager.dns = "none";
   };
 
@@ -78,7 +85,6 @@
       # Enable the X11 windowing system.
       enable = true;
 
-
       # Configure keymap in X11
       xkb.layout = "us";
       xkb.variant = "";
@@ -93,7 +99,10 @@
     };
     # desktopManager.cosmic.enable = true;
     # displayManager.cosmic-greeter.enable = true;
-    displayManager.sddm = { enable = true; wayland.enable = true; };
+    displayManager.sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
 
     # Enable the Plasma.
     desktopManager.plasma6.enable = true;
@@ -104,7 +113,11 @@
   users.users.h = {
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
     packages = with pkgs; [
       ttyper
       i2p
@@ -118,7 +131,10 @@
   programs.fish.enable = true;
 
   # Enable nix-command for search and flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   system.autoUpgrade.enable = false;
 
