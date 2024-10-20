@@ -185,12 +185,6 @@
     noto-fonts-emoji
     terminus-nerdfont
   ];
-
-  # Enable waydroid to run android applications in a sandbox
-  # virtualisation = {
-  #   waydroid.enable = true;
-  #   lxd.enable = true;
-  # };
   networking.firewall.enable = true;
   system.stateVersion = "24.05";
 }
