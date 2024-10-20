@@ -35,7 +35,7 @@
           if test -n "$VIRTUAL_ENV"
               printf "(%s) " (set_color blue)(basename $VIRTUAL_ENV)(set_color normal)
           end
-          printf '\uf313  \u0000'
+          printf '\uf313 \u00a0'
           set_color normal
         '';
       };
@@ -48,7 +48,6 @@
     broot
     file
     fd
-    yazi
     ouch
 
     # generate qr codes
@@ -62,6 +61,7 @@
 
     # form over function (pretty tools)
     nitch
+
+    wezterm
   ];
 }
-
