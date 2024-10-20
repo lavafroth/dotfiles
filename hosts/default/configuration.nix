@@ -144,6 +144,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  environment.plasma6.excludePackages = with pkgs; [
+    konsole
+  ];
   environment.gnome.excludePackages = with pkgs; [
     epiphany
     gnome.geary
