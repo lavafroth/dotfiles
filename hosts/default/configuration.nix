@@ -165,11 +165,11 @@
   ];
   environment.gnome.excludePackages = with pkgs; [
     epiphany
-    gnome.geary
+    geary
     gnome-text-editor
     gnome-tour
-    gnome.yelp
-    gnome.totem
+    yelp
+    totem
   ];
 
   environment.variables = {
