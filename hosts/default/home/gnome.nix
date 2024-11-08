@@ -1,5 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
+  # remove this after https://github.com/NixOS/nixpkgs/issues/353990 is fixed
+  home.sessionVariables = {
+    GSK_RENDERER = "gl";
+  };
 
   home.packages =
     with pkgs.gnomeExtensions;
