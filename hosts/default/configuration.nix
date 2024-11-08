@@ -14,6 +14,7 @@
     ./nvidia.nix
     ./secure-dns.nix
     ./virtualization.nix
+    # ./desktops/gnome.nix
   ];
 
   boot = {
@@ -153,25 +154,12 @@
     };
   };
 
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.plasma6.excludePackages = with pkgs; [
     konsole
   ];
-  environment.gnome.excludePackages = with pkgs; [
-    epiphany
-    geary
-    gnome-text-editor
-    gnome-tour
-    yelp
-    totem
-  ];
-
   environment.variables = {
     # Set the path for pkg-config. Mostly for CFFI projects.
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
