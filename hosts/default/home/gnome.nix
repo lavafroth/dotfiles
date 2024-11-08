@@ -116,6 +116,12 @@
       "SoundAndVideo"
     ];
 
+    "/org/gnome/desktop/input-sources/xkb-options" = [
+      "terminate:ctrl_alt_bksp"
+      "lv3:ralt_switch"
+      "caps:swapescape"
+    ];
+
     # notebooks with touchpads
     "org/gnome/desktop/peripherals/touchpad".tap-to-click = true;
 
