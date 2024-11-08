@@ -13,7 +13,6 @@
     ./graphics.nix
     ./helix.nix
     # ./hud.nix
-    ./kde.nix
     ./nixlang.nix
     ./notetaking.nix
     ./python.nix

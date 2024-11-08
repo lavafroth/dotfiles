@@ -15,6 +15,7 @@
     ./secure-dns.nix
     ./virtualization.nix
     # ./desktops/gnome.nix
+    ./desktops/kde.nix
   ];
 
   boot = {
@@ -100,13 +101,6 @@
     };
     # desktopManager.cosmic.enable = true;
     # displayManager.cosmic-greeter.enable = true;
-    displayManager.sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-
-    # Enable the Plasma.
-    desktopManager.plasma6.enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -183,7 +177,6 @@
     sbctl
     wifite2
     wl-clipboard
-    kdePackages.sddm-kcm
     libnotify
   ];
 
