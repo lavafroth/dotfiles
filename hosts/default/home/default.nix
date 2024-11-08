@@ -49,11 +49,14 @@
 
       _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${config.xdg.configHome}/java";
 
-      JULIAUP_DEPOT_PATH="${config.xdg.dataHome}/julia";
-      CARGO_HOME="${config.xdg.dataHome}/cargo";
+      JULIAUP_DEPOT_PATH = "${config.xdg.dataHome}/julia";
+      CARGO_HOME = "${config.xdg.dataHome}/cargo";
     };
 
-    sessionPath = [ config.home.sessionVariables.GOBIN "${config.home.homeDirectory}/.cargo/bin" ];
+    sessionPath = [
+      config.home.sessionVariables.GOBIN
+      "${config.home.homeDirectory}/.cargo/bin"
+    ];
     stateVersion = "24.05";
   };
 
