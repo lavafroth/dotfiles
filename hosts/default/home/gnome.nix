@@ -111,7 +111,7 @@
       "SoundAndVideo"
     ];
 
-    "/org/gnome/desktop/input-sources/xkb-options" = [
+    "org/gnome/desktop/input-sources".xkb-options = [
       "terminate:ctrl_alt_bksp"
       "lv3:ralt_switch"
       "caps:swapescape"
