@@ -11,5 +11,6 @@
   };
   environment.systemPackages = with pkgs; [
     kdePackages.sddm-kcm
+    plasma-panel-colorizer
   ];
 }
