@@ -14,8 +14,8 @@
     ./nvidia.nix
     ./secure-dns.nix
     ./virtualization.nix
-    # ./desktops/gnome.nix
-    ./desktops/kde.nix
+    ./desktops/gnome.nix
+    # ./desktops/kde.nix
   ];
 
   boot = {
