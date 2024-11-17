@@ -12,6 +12,7 @@
   systemd.services."autovt@tty1".enable = false;
 
   environment.gnome.excludePackages = with pkgs; [
+    evince
     epiphany
     geary
     gnome-text-editor

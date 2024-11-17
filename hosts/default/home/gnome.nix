@@ -12,6 +12,7 @@
     ++ (with pkgs; [
       adw-gtk3
       gnome-secrets
+      papers
       fractal
     ]);
   # the above two get merged
