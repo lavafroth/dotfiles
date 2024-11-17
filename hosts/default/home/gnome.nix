@@ -10,7 +10,6 @@
       paperwm
     ]
     ++ (with pkgs; [
-      blackbox-terminal
       adw-gtk3
       gnome-secrets
       fractal
@@ -45,7 +44,7 @@
     "org/gnome/mutter".dynamic-workspaces = true;
 
     "org/gnome/shell".favorite-apps = [
-      "com.raggesilver.BlackBox.desktop"
+      "org.gnome.Console.desktop"
       "librewolf.desktop"
       "org.gnome.Nautilus.desktop"
       "org.gnome.World.Secrets.desktop"
@@ -72,6 +71,7 @@
         "com.github.iwalton3.jellyfin-media-player.desktop"
         "io.github.celluloid_player.Celluloid.desktop"
         "org.kde.kdenlive.desktop"
+        "org.gnome.Music.desktop"
       ];
     };
 
@@ -92,6 +92,27 @@
         "gimp.desktop"
         "com.github.flxzt.rnote.desktop"
         "io.gitlab.theevilskeleton.Upscaler.desktop"
+        "org.inkscape.Inkscape.desktop"
+      ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/System" = {
+      name = "System";
+      apps = [
+        "org.gnome.Settings.desktop"
+        "org.gnome.SystemMonitor.desktop"
+        "org.gnome.DiskUtility.desktop"
+        "org.gnome.baobab.desktop"
+        "org.gnome.seahorse.Application.desktop"
+        "org.gnome.Logs.desktop"
+      ];
+    };
+
+    "org/gnome/desktop/app-folders/folders/BrowserProfiles" = {
+      name = "Browser Profiles";
+      apps = [
+        "google-profile.desktop"
+        "github-profile.desktop"
       ];
     };
 
@@ -108,6 +129,7 @@
       "Programming"
       "Graphics"
       "AltBrowsers"
+      "System"
       "SoundAndVideo"
     ];
 
