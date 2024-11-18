@@ -4,7 +4,6 @@
     with pkgs.gnomeExtensions;
     [
       blur-my-shell
-      quick-settings-tweaker
       user-themes
       caffeine
       paperwm
@@ -13,6 +12,7 @@
       adw-gtk3
       gnome-secrets
       papers
+      celluloid
       fractal
     ]);
   # the above two get merged
