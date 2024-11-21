@@ -145,5 +145,6 @@
 
     # disable hot corners
     "org/gnome/desktop/interface".enable-hot-corners = false;
+    "org/gnome/desktop/peripherals/touchpad".click-method = "areas";
   };
 }
