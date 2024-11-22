@@ -146,5 +146,6 @@
     # disable hot corners
     "org/gnome/desktop/interface".enable-hot-corners = false;
     "org/gnome/desktop/peripherals/touchpad".click-method = "areas";
+    "org/gnome/Console".custom-font = "Monaspace Krypton Var 11";
   };
 }
