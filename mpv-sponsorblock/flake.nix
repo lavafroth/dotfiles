@@ -9,15 +9,22 @@
     };
   };
 
-  outputs = { self, flake-utils, naersk, mpv-sponsorblock, nixpkgs }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      flake-utils,
+      naersk,
+      nixpkgs,
+      mpv-sponsorblock,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
-        naersk' =
-          (import nixpkgs) {
-            inherit system;
-          }.callPackage
-            naersk
-            { };
+        pkgs = (import nixpkgs) {
+          inherit system;
+        };
+
+        naersk' = pkgs.callPackage naersk { };
 
       in
       {
@@ -27,6 +34,7 @@
           copyLibs = true;
           copyBins = false;
           release = true;
+
         };
       }
     );

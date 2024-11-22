@@ -32,6 +32,11 @@
       url = "github:nix-community/nix-on-droid/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mpv-sponsorblock = {
+      url = "./mpv-sponsorblock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -44,6 +49,7 @@
       nix-index-database,
       nixos-cosmic,
       stylix,
+      mpv-sponsorblock,
       ...
     }:
     {
@@ -56,6 +62,14 @@
             ./cachix/nixos-cosmic.nix
             ./cachix/cuda-maintainers.nix
             home-manager.nixosModules.home-manager
+            (
+              { pkgs, ... }:
+              {
+                nixpkgs.overlays = [
+                  (_: _: { sponsorblock-lib = inputs.mpv-sponsorblock.defaultPackage.x86_64-linux; })
+                ];
+              }
+            )
             # stylix.nixosModules.stylix
             nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
@@ -74,6 +88,14 @@
             lanzaboote.nixosModules.lanzaboote
             # stylix.nixosModules.stylix
             nix-index-database.nixosModules.nix-index
+            (
+              { pkgs, ... }:
+              {
+                nixpkgs.overlays = [
+                  (_: _: { sponsorblock-lib = inputs.mpv-sponsorblock.defaultPackage.x86_64-linux; })
+                ];
+              }
+            )
             { programs.nix-index-database.comma.enable = true; }
           ];
         };

@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -28,6 +32,9 @@
       ".config/mpv" = {
         source = ./sources/mpv;
         recursive = true;
+      };
+      ".config/mpv/scripts/sponsorblock.so" = {
+        source = "${pkgs.sponsorblock-lib.out}/sponsorblock.so";
       };
     };
 

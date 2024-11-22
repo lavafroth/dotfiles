@@ -25,20 +25,6 @@ Once the keys are enrolled, run the following to rebuild the system from now on
 sudo nixos-rebuild switch --flake dotfiles
 ```
 
-#### Sponsorblock for mpv
-
-Optionally, if you want to block sponsors in mpv, run
-
-```sh
-pushd dotfiles/hosts/default/sources/mpv-sponsorblock
-mkdir dotfiles/hosts/default/sources/mpv/scripts
-nix build
-cp result/lib/libmpv_sponsorblock.so ../mpv/scripts/sponsorblock.so
-popd
-```
-
-followed by another rebuild.
-
 ### Home Server
 
 Install NixOS with the headless (no GUI) settings. Enable flakes.
