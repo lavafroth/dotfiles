@@ -379,14 +379,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-eGqABWCtUXzYwinnnFgNnId80PPF9WDQJmtF80eEXmc=",
-        "path": "/nix/store/8dk9pzqiwj7imkbyfgqrainrxs1kjwav-source/mpv-sponsorblock",
-        "type": "path"
+        "lastModified": 1732275371,
+        "narHash": "sha256-F5o6G8gc5+bUDk9Z7gbXJPw/4eASxhpuD9Ix/Bw934k=",
+        "owner": "lavafroth",
+        "repo": "mpv-sponsorblock-flake",
+        "rev": "c098b3d17850bd631667a51e2f99a767feb5821d",
+        "type": "github"
       },
       "original": {
-        "path": "/nix/store/8dk9pzqiwj7imkbyfgqrainrxs1kjwav-source/mpv-sponsorblock",
-        "type": "path"
+        "owner": "lavafroth",
+        "repo": "mpv-sponsorblock-flake",
+        "type": "github"
       }
     },
     "mpv-sponsorblock_2": {

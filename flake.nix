@@ -34,7 +34,7 @@
     };
 
     mpv-sponsorblock = {
-      url = "./mpv-sponsorblock";
+      url = "github:lavafroth/mpv-sponsorblock-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -57,19 +57,16 @@
       nixosConfigurations = {
         cafe-nosecureboot = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
             ./hosts/default/configuration.nix
             ./cachix/nixos-cosmic.nix
             ./cachix/cuda-maintainers.nix
             home-manager.nixosModules.home-manager
-            (
-              { pkgs, ... }:
-              {
-                nixpkgs.overlays = [
-                  (_: _: { sponsorblock-lib = inputs.mpv-sponsorblock.defaultPackage.x86_64-linux; })
-                ];
-              }
-            )
+            ./mpv-sponsorblock/overlay.nix
+            # ./hosts/default/stylix.nix
             # stylix.nixosModules.stylix
             nix-index-database.nixosModules.nix-index
             { programs.nix-index-database.comma.enable = true; }
@@ -78,24 +75,20 @@
 
         cafe = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+          };
           modules = [
             ./hosts/default/configuration.nix
             ./hosts/default/secureboot.nix
             ./cachix/nixos-cosmic.nix
             ./cachix/cuda-maintainers.nix
-            # ./hosts/default/stylix.nix
             home-manager.nixosModules.home-manager
             lanzaboote.nixosModules.lanzaboote
+            # ./hosts/default/stylix.nix
             # stylix.nixosModules.stylix
             nix-index-database.nixosModules.nix-index
-            (
-              { pkgs, ... }:
-              {
-                nixpkgs.overlays = [
-                  (_: _: { sponsorblock-lib = inputs.mpv-sponsorblock.defaultPackage.x86_64-linux; })
-                ];
-              }
-            )
+            ./mpv-sponsorblock/overlay.nix
             { programs.nix-index-database.comma.enable = true; }
           ];
         };

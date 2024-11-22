@@ -34,7 +34,7 @@
         recursive = true;
       };
       ".config/mpv/scripts/sponsorblock.so" = {
-        source = "${pkgs.sponsorblock-lib.out}/sponsorblock.so";
+        source = "${pkgs.sponsorblock-lib.out}/lib/libmpv_sponsorblock.so";
       };
     };
 
