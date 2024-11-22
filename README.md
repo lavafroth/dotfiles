@@ -14,12 +14,12 @@ sudo nixos-rebuild switch --flake dotfiles#cafe-nosecureboot
 
 #### Secureboot
 
-To enable secureboot, use the preinstalled `sbctl` command to generate your keys,
-clear the manufacturer keys and enroll yours as described [here](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md).
+- Use the preinstalled `sbctl` command to generate your keys
+- Clear the manufacturer keys and enroll yours as described [here](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md).
 
-> Note: My system did not require enrolling Microsoft keys alongside my own. However, your setup might break if you do not include the Microsoft keys. Classic case of Microsoft being a jerk.
+> Note: My system did not require enrolling Microsoft keys alongside mine. However, your setup might break if you don't. Research about your device carefully before enrolling keys.
 
-Once the keys are enrolled, run the following to rebuild the system from now on
+- Run the following to rebuild the system from now on
 
 ```sh
 sudo nixos-rebuild switch --flake dotfiles
