@@ -6,7 +6,7 @@
     shellAliases = {
       ls = "${pkgs.eza}/bin/eza -la --icons=always";
       cat = "${pkgs.bat}/bin/bat -p";
-      nuke = "set here $PWD; prevd; rm $here -rf";
+      nuke = ''set here "$PWD"; prevd; rm "$here" -rf; set -u here'';
       wget = "${pkgs.curl}/bin/curl -LOC -";
       lg = "${pkgs.lazygit}/bin/lazygit";
     };
