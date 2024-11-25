@@ -69,6 +69,7 @@
     "org/gnome/desktop/app-folders/folders/SoundAndVideo" = {
       name = "Sound & Video";
       apps = [
+        "tenacity.desktop"
         "com.github.iwalton3.jellyfin-media-player.desktop"
         "io.github.celluloid_player.Celluloid.desktop"
         "org.kde.kdenlive.desktop"
@@ -109,18 +110,12 @@
       ];
     };
 
-    "org/gnome/desktop/app-folders/folders/BrowserProfiles" = {
-      name = "Browser Profiles";
-      apps = [
-        "google-profile.desktop"
-        "github-profile.desktop"
-      ];
-    };
-
-    "org/gnome/desktop/app-folders/folders/AltBrowsers" = {
-      name = "Alt Browsers";
+    "org/gnome/desktop/app-folders/folders/AltProfiles" = {
+      name = "Alt Profiles";
       apps = [
         "torbrowser.desktop"
+        "google-profile.desktop"
+        "github-profile.desktop"
       ];
     };
 
@@ -129,7 +124,7 @@
       "Office"
       "Programming"
       "Graphics"
-      "AltBrowsers"
+      "AltProfiles"
       "System"
       "SoundAndVideo"
     ];
