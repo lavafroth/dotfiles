@@ -114,7 +114,6 @@
       "libvirtd"
     ];
     packages = with pkgs; [
-      ttyper
       i2p
       libreoffice-fresh
       signal-desktop
