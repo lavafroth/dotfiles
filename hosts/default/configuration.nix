@@ -164,7 +164,6 @@
     aircrack-ng
     bat
     git
-    gnupg
     helix
     iw
     macchanger
