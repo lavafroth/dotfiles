@@ -7,6 +7,7 @@
       user-themes
       caffeine
       paperwm
+      pano
     ]
     ++ (with pkgs; [
       adw-gtk3
