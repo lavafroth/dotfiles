@@ -103,8 +103,6 @@
     # displayManager.cosmic-greeter.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
   users.users.h = {
     isNormalUser = true;
     description = "Himadri Bhattacharjee";
