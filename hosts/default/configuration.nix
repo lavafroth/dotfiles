@@ -117,7 +117,6 @@
       ttyper
       i2p
       libreoffice-fresh
-      openvpn
       signal-desktop
     ];
     shell = pkgs.fish;
@@ -169,6 +168,7 @@
     macchanger
     nh
     ntfs3g
+    openvpn
     openssl
     pciutils
     picocom
