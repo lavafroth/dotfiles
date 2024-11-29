@@ -147,9 +147,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.plasma6.excludePackages = with pkgs; [
-    konsole
-  ];
   environment.variables = {
     # Set the path for pkg-config. Mostly for CFFI projects.
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";

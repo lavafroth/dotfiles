@@ -13,4 +13,11 @@
     kdePackages.sddm-kcm
     plasma-panel-colorizer
   ];
+
+  environment.plasma6.excludePackages = with pkgs; [
+    konsole
+    kdePackages.oxygen-icons
+    kdePackages.kate
+    kdePackages.plasma-workspace-wallpapers
+  ];
 }
