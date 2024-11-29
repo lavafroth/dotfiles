@@ -18,6 +18,8 @@
     ]);
   # the above two get merged
 
+  home.programs.helix.settings.theme = "adwaita-dark";
+
   # Refer to https://hoverbear.org/blog/declarative-gnome-configuration-in-nixos/
   dconf.settings = {
     "org/gnome/calculator" = {
