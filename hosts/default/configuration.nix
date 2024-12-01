@@ -113,7 +113,7 @@
     ];
     packages = with pkgs; [
       i2p
-      libreoffice-fresh
+      # libreoffice-fresh
       signal-desktop
     ];
     shell = pkgs.fish;
