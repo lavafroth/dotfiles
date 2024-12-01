@@ -85,8 +85,8 @@
             ./cachix/cuda-maintainers.nix
             home-manager.nixosModules.home-manager
             lanzaboote.nixosModules.lanzaboote
-            # ./hosts/default/stylix.nix
-            # stylix.nixosModules.stylix
+            ./hosts/default/stylix.nix
+            stylix.nixosModules.stylix
             nix-index-database.nixosModules.nix-index
             ./mpv-sponsorblock/overlay.nix
             { programs.nix-index-database.comma.enable = true; }

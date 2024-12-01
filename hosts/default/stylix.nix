@@ -4,30 +4,24 @@
   stylix.enable = true;
   stylix.image = ./home/sources/stylix_image.png;
   stylix.polarity = "dark";
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
 
-  stylix.fonts = {
-    serif = {
-      package = pkgs.barlow;
-      name = "Barlow Light";
-    };
-
-    sansSerif = {
-      package = pkgs.barlow;
-      name = "Barlow Light";
-    };
-
+  stylix.fonts = rec {
     monospace = {
       package = pkgs.terminus-nerdfont;
       name = "Terminess NerdFont";
     };
 
+    serif = monospace;
+    sansSerif = monospace;
+
     emoji = {
       package = pkgs.noto-fonts-emoji;
       name = "Noto Color Emoji";
     };
+    sizes = {
+      desktop = 10;
+      terminal = 10;
+    };
   };
-
-  stylix.cursor.package = pkgs.bibata-cursors;
-  stylix.cursor.name = "Bibata-Modern-Ice";
 }
