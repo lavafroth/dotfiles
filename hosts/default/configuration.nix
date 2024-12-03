@@ -176,6 +176,13 @@
   # Make sure opengl is enabled
   hardware.graphics.enable = true;
 
+  console = {
+    earlySetup = true;
+    font = "${pkgs.terminus_font}/share/consolefonts/ter-116n.psf.gz";
+    packages = with pkgs; [ terminus_font ];
+    keyMap = "us";
+  };
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-sans
