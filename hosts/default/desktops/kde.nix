@@ -11,7 +11,6 @@
   };
   environment.systemPackages = with pkgs; [
     kdePackages.sddm-kcm
-    plasma-panel-colorizer
   ];
 
   environment.plasma6.excludePackages = with pkgs; [
