@@ -10,8 +10,12 @@
     };
   };
   environment.systemPackages = with pkgs; [
+    touchegg
     kdePackages.sddm-kcm
   ];
+
+  # touchegg for touchpad scrolling in karousel
+  services.touchegg.enable = true;
 
   environment.plasma6.excludePackages = with pkgs; [
     konsole
