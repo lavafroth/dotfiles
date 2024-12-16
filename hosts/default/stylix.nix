@@ -8,7 +8,7 @@
 
   stylix.fonts = rec {
     monospace = {
-      package = pkgs.terminus-nerdfont;
+      package = pkgs.nerd-fonts.terminess-ttf;
       name = "Terminess NerdFont";
     };
 

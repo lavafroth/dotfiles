@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   # Simply install just the packages
@@ -16,7 +21,7 @@
     man
     git
     rage
-    terminus-nerdfont
+    nerd-fonts.terminess-ttf
     ripgrep
     #gnugrep
     #gnupg
@@ -42,7 +47,7 @@
 
   user.shell = "${pkgs.fish}/bin/fish";
 
-  terminal.font = "${pkgs.terminus-nerdfont}/share/fonts/truetype/NerdFonts/TerminessNerdFont-Regular.ttf";
+  terminal.font = "${pkgs.nerd-fonts.terminess-ttf}/share/fonts/truetype/NerdFonts/TerminessNerdFont-Regular.ttf";
   # Set your time zone
   # time.timeZone = "Europe/Berlin";
   home-manager.config = ./home.nix;

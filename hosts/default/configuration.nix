@@ -187,7 +187,7 @@
     noto-fonts
     noto-fonts-cjk-sans
     noto-fonts-emoji
-    terminus-nerdfont
+    nerd-fonts.terminess-ttf
     monaspace
   ];
   networking.firewall.enable = true;
