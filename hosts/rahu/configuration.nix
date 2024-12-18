@@ -152,27 +152,10 @@
   ];
 
   services.openssh.enable = true;
-  services = {
-    syncthing = {
-      enable = true;
-      user = "user";
-      dataDir = "/home/user/"; # Default folder for new synced folders
-      configDir = "/home/user/.config/syncthing"; # Folder for Syncthing's settings and keys
-      guiAddress = "0.0.0.0:8384";
-    };
-    jellyfin = {
-      enable = true;
-      openFirewall = true;
-    };
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
   };
-  networking.firewall.allowedTCPPorts = [
-    8384
-    22000
-    2342
-  ];
-  networking.firewall.allowedUDPPorts = [
-    22000
-    21027
-  ];
+  networking.firewall.allowedTCPPorts = [ 2342 ];
   system.stateVersion = "23.11";
 }
