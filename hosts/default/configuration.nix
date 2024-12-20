@@ -19,6 +19,10 @@
   ];
 
   boot = {
+    kernelParams = [
+      "quiet"
+      "splash"
+    ];
     loader = {
       systemd-boot = {
         enable = true;
