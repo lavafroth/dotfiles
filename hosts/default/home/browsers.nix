@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.librewolf = {
     enable = true;
     settings = {
@@ -9,5 +10,6 @@
 
   home.packages = with pkgs; [
     tor-browser-bundle-bin
+    ungoogled-chromium
   ];
 }
