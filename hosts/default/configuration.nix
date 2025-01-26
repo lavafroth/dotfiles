@@ -103,8 +103,6 @@
       enable = true;
       user = "h";
     };
-    # desktopManager.cosmic.enable = true;
-    # displayManager.cosmic-greeter.enable = true;
   };
 
   users.users.h = {

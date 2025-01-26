@@ -16,10 +16,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,7 +43,6 @@
       sops-nix,
       nix-on-droid,
       nix-index-database,
-      nixos-cosmic,
       stylix,
       mpv-sponsorblock,
       ...
@@ -62,7 +57,6 @@
           };
           modules = [
             ./hosts/default/configuration.nix
-            ./cachix/nixos-cosmic.nix
             ./cachix/cuda-maintainers.nix
             home-manager.nixosModules.home-manager
             ./mpv-sponsorblock/overlay.nix
@@ -81,7 +75,6 @@
           modules = [
             ./hosts/default/configuration.nix
             ./hosts/default/secureboot.nix
-            ./cachix/nixos-cosmic.nix
             ./cachix/cuda-maintainers.nix
             home-manager.nixosModules.home-manager
             lanzaboote.nixosModules.lanzaboote
