@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  lib,
   ...
 }:
 
@@ -129,8 +127,6 @@
     "flakes"
   ];
 
-  system.autoUpgrade.enable = false;
-
   system.switch = {
     enable = false;
     enableNg = true;
@@ -156,7 +152,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    aircrack-ng
     bat
     git
     helix
@@ -170,7 +165,6 @@
     picocom
     ripgrep
     sbctl
-    wifite2
     wl-clipboard
     libnotify
   ];
