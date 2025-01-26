@@ -68,16 +68,16 @@
   };
 
   xdg.portal.enable = true;
-  hardware.pulseaudio.enable = false;
   hardware.uinput.enable = true;
   services = {
-
     # dbus broker is faster
     dbus.implementation = "broker";
 
     # Enable CUPS to print documents.
     printing.enable = true;
+
     # Enable sound with pipewire.
+    pulseaudio.enable = false;
     pipewire = {
       enable = true;
       alsa.enable = true;
