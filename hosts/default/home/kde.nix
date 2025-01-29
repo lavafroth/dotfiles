@@ -8,5 +8,6 @@
     # kdePackages.karousel
     kde-rounded-corners
     wezterm
+    plasma-panel-colorizer
   ];
 }
