@@ -149,6 +149,7 @@
     # Set the path for pkg-config. Mostly for CFFI projects.
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     EDITOR = "${pkgs.helix}/bin/hx";
+    QT_LOGGING_RULES = "kwin_*.debug=true";
   };
 
   environment.systemPackages = with pkgs; [
