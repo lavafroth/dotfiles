@@ -6,7 +6,8 @@
       theme = pkgs.lib.mkForce "solarized_dark";
       editor.cursor-shape = {
         insert = "bar";
-        normal = "bar";
+        normal = "underline";
+        select = "underline";
       };
       editor.line-number = "relative";
       editor.idle-timeout = 0;
