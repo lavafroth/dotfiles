@@ -61,7 +61,5 @@
 
     # form over function (pretty tools)
     nitch
-
-    # wezterm
   ];
 }

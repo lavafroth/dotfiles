@@ -33,6 +33,10 @@
         source = ./sources/mpv;
         recursive = true;
       };
+      ".config/kitty" = {
+        source = ./sources/kitty;
+        recursive = true;
+      };
       ".config/mpv/scripts/sponsorblock.so" = {
         source = "${pkgs.sponsorblock-lib.out}/lib/libmpv_sponsorblock.so";
       };

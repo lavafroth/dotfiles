@@ -7,7 +7,7 @@
     kdePackages.alligator
     # kdePackages.karousel
     kde-rounded-corners
-    wezterm
+    kitty
     plasma-panel-colorizer
   ];
 }
