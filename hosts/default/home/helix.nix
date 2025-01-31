@@ -1,12 +1,13 @@
 { pkgs, ... }:
 {
-  home.file.".config/helix/themes/hel.toml".source = ./sources/helix/hel.toml;
   programs.helix = {
     enable = true;
     settings = {
       theme = pkgs.lib.mkForce "solarized_dark";
-      editor.cursor-shape.insert = "bar";
-      editor.cursor-shape.normal = "bar";
+      editor.cursor-shape = {
+        insert = "bar";
+        normal = "bar";
+      };
       editor.line-number = "relative";
       editor.idle-timeout = 0;
       keys.normal."X" = [
