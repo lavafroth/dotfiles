@@ -115,6 +115,7 @@
       i2p
       # libreoffice-fresh
       signal-desktop
+      tesseract
     ];
     shell = pkgs.fish;
   };
