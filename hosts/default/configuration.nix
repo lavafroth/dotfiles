@@ -10,7 +10,6 @@
     ./filesystem-hardening.nix
     ./phone-as-webcam.nix
     ./nvidia.nix
-    ./secure-dns.nix
     ./virtualization.nix
     # ./desktops/gnome.nix
     ./desktops/kde.nix
@@ -39,11 +38,6 @@
   networking = {
     hostName = "cafe";
     networkmanager.enable = true;
-    nameservers = [
-      "127.0.0.1"
-      "::1"
-    ];
-    networkmanager.dns = "none";
   };
 
   services.fwupd.enable = true;
