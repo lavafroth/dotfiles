@@ -47,50 +47,45 @@
       mpv-sponsorblock,
       ...
     }:
+
+    let
+      cafeModules = [
+        ./hosts/default/configuration.nix
+        ./cachix/cuda-maintainers.nix
+        home-manager.nixosModules.home-manager
+        ./mpv-sponsorblock/overlay.nix
+        # ./hosts/default/stylix.nix
+        # stylix.nixosModules.stylix
+        nix-index-database.nixosModules.nix-index
+        { programs.nix-index-database.comma.enable = true; }
+      ];
+
+      secureBootModules = [
+        lanzaboote.nixosModules.lanzaboote
+        ./hosts/default/secureboot.nix
+      ];
+      system = "x86_64-linux";
+      specialArgs = {
+        inherit inputs;
+      };
+
+    in
+
     {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
       nixosConfigurations = {
         cafe-nosecureboot = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/default/configuration.nix
-            ./cachix/cuda-maintainers.nix
-            home-manager.nixosModules.home-manager
-            ./mpv-sponsorblock/overlay.nix
-            ./hosts/default/stylix.nix
-            stylix.nixosModules.stylix
-            nix-index-database.nixosModules.nix-index
-            { programs.nix-index-database.comma.enable = true; }
-          ];
+          inherit system specialArgs;
+          modules = cafeModules;
         };
 
         cafe = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/default/configuration.nix
-            ./hosts/default/secureboot.nix
-            ./cachix/cuda-maintainers.nix
-            home-manager.nixosModules.home-manager
-            lanzaboote.nixosModules.lanzaboote
-            ./hosts/default/stylix.nix
-            stylix.nixosModules.stylix
-            nix-index-database.nixosModules.nix-index
-            ./mpv-sponsorblock/overlay.nix
-            { programs.nix-index-database.comma.enable = true; }
-          ];
+          inherit system specialArgs;
+          modules = cafeModules ++ secureBootModules;
         };
 
         rahu = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = {
-            inherit inputs;
-          };
+          inherit system specialArgs;
           modules = [
             ./hosts/rahu/configuration.nix
             sops-nix.nixosModules.sops
