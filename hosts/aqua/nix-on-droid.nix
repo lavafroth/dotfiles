@@ -1,37 +1,27 @@
 {
-  config,
-  lib,
   pkgs,
   ...
 }:
 
 {
-  # Simply install just the packages
   environment.packages = with pkgs; [
-    helix # or some other editor, e.g. nano or neovim
     ouch
     fd
     diffutils
-    nh
     binutils
     coreutils
-    gawk
     #tzdata
     hostname
     man
-    git
+    gitMinimal
     rage
     nerd-fonts.terminess-ttf
     ripgrep
-    #gnugrep
-    #gnupg
     gnused
     gnutar
-    #bzip2
-    #gzip
-    #xz
-    #zip
-    #unzip
+    mdcat
+    openssh
+    yt-dlp
   ];
 
   # Backup etc files instead of failing to activate generation if a file already exists in /etc

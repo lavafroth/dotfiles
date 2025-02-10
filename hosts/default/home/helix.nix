@@ -19,12 +19,6 @@
         "extend_line_up"
         "extend_to_line_bounds"
       ];
-      keys.normal."C-g" = [
-        ":new"
-        ":insert-output ${pkgs.lazygit}/bin/lazygit"
-        ":buffer-close!"
-        ":redraw"
-      ];
     };
   };
 }

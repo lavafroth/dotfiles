@@ -1,7 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
-    ../default/helix.nix
-    ../default/shell.nix
+    ../default/home/helix.nix
+    ../default/home/shell.nix
   ];
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.11";
 }
