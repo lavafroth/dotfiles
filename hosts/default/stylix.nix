@@ -5,6 +5,7 @@
   stylix.image = ./home/sources/stylix_image.png;
   stylix.polarity = "dark";
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
+  stylix.targets.qt.platform = "kde";
 
   # stylix.fonts = rec {
   #   monospace = {
