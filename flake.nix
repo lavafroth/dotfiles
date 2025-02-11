@@ -51,7 +51,7 @@
     let
       cafeModules = [
         ./hosts/default/configuration.nix
-        ./cachix/cuda-maintainers.nix
+        ./cachix/nix-community.nix
         home-manager.nixosModules.home-manager
         ./mpv-sponsorblock/overlay.nix
         ./hosts/default/stylix.nix
