@@ -44,6 +44,8 @@
     openRPCPort = true;
     settings = {
       rpc-bind-address = "0.0.0.0";
+      # Allow connections from localhost and LAN
+      rpc-whitelist = "127.0.0.1,192.168.12.*";
       download-dir = "/media/seed";
       encryption = 2;
       peer-limit = 2000;
