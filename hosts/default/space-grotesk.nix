@@ -1,28 +1,27 @@
 {
   lib,
-  stdenv,
-  fetchFromGitHub,
+  stdenvNoCC,
+  fetchzip,
 }:
 
-stdenv.mkDerivation {
+stdenvNoCC.mkDerivation rec {
   pname = "space-grotesk";
-  version = "2.0";
+  version = "2.0.0";
 
-  src = fetchFromGitHub {
-    owner = "floriankarsten";
-    repo = "space-grotesk";
-    rev = "03507d024a01282884232081fc6011c09ff4e849";
-    hash = "sha256-NvDJeIJYGn3sNGGuOLYz9jQf/NKvt8jsZdhwsliHzzM=";
+  src = fetchzip {
+    url = "https://github.com/floriankarsten/space-grotesk/releases/download/${version}/SpaceGrotesk-${version}.zip";
+    stripRoot = false;
+    hash = "sha256-niwd5E3rJdGmoyIFdNcK5M9A9P2rCbpsyZCl7CDv7I8=";
   };
 
   installPhase = ''
-    mkdir -p $out/share/fonts/truetype
-    cp -a fonts/ttf/static/*.ttf $out/share/fonts/truetype/
-  '';
+    runHook preInstall
 
-  outputHashAlgo = "sha256";
-  outputHashMode = "recursive";
-  outputHash = "J5c2KyhNnnqtjKAbUTsLVEUgsVkGXfzWD+0h0tIMdsk=";
+    mkdir -p $out/share/fonts/truetype
+    install -Dm644 SpaceGrotesk-${version}/ttf/static/*.ttf $out/share/fonts/truetype/
+
+    runHook postInstall
+  '';
 
   meta = with lib; {
     homepage = "https://floriankarsten.github.io/space-grotesk";
