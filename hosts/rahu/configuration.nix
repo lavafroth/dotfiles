@@ -109,6 +109,10 @@
       "networkmanager"
       "wheel"
     ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA/wbGoIUsbBHFbnXj2g+23C8sUgYkZTq0TrBm0MMWnx"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICy8DNUvVXhXhqNaEHfcUJdSY5ZS1cn9roLHQF/pQUO0"
+    ];
     packages =
       with pkgs;
       let
@@ -158,7 +162,14 @@
     acpi
   ];
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      AllowUsers = [ "user" ];
+      PasswordAuthentication = false;
+      X11Forwarding = false;
+    };
+  };
   services.jellyfin = {
     enable = true;
     openFirewall = true;
