@@ -16,7 +16,6 @@
     ./golang.nix
     ./graphics.nix
     ./helix.nix
-    # ./hud.nix
     ./nixlang.nix
     ./notetaking.nix
     ./python.nix
