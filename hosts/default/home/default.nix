@@ -24,6 +24,7 @@
     ./shell.nix
     ./video-editing.nix
     ./media-playback.nix
+    ./mpv.nix
   ];
 
   home = {
@@ -35,9 +36,6 @@
       ".config/kitty" = {
         source = ./sources/kitty;
         recursive = true;
-      };
-      ".config/mpv/scripts/sponsorblock.so" = {
-        source = "${pkgs.sponsorblock-lib.out}/lib/libmpv_sponsorblock.so";
       };
     };
 

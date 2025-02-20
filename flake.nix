@@ -29,10 +29,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mpv-sponsorblock = {
-      url = "github:lavafroth/mpv-sponsorblock-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -44,7 +40,6 @@
       nix-on-droid,
       nix-index-database,
       stylix,
-      mpv-sponsorblock,
       ...
     }:
 
@@ -53,7 +48,6 @@
         ./hosts/default/configuration.nix
         ./cachix/nix-community.nix
         home-manager.nixosModules.home-manager
-        ./mpv-sponsorblock/overlay.nix
         ./hosts/default/stylix.nix
         stylix.nixosModules.stylix
         nix-index-database.nixosModules.nix-index
