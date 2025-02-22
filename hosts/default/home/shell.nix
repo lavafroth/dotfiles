@@ -40,6 +40,9 @@
         '';
       };
       fish_greeting.body = "";
+      # My documents follow Johnny.Decimal system
+      # see https://johnnydecimal.com
+      h.body = "cd ~/Documents/*/*/$argv*";
     };
   };
 
