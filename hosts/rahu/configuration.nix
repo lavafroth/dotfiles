@@ -15,6 +15,10 @@
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
   sops.secrets.photoprism_password = { };
   sops.secrets.wireless_ap = { };
+  sops.secrets.transmission = {
+    owner = "transmission";
+    restartUnits = [ "transmission.service" ];
+  };
 
   services.photoprism = {
     enable = true;
@@ -46,23 +50,36 @@
       rpc-bind-address = "0.0.0.0";
       # Allow connections from localhost and LAN
       rpc-whitelist = "127.0.0.1,192.168.12.*";
+      rpc-authentication-required = true;
       download-dir = "/media/seed";
       encryption = 2;
       peer-limit = 2000;
       peer-limit-global = 2000;
       peer-limit-per-torrent = 500;
     };
+    credentialsFile = "/run/secrets/transmission";
   };
 
   systemd.services.create_ap = {
     enable = true;
-    wantedBy = [ "multi-user.target" ];
     description = "Create AP Service";
+    wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
     serviceConfig = {
       ExecStart = "${pkgs.linux-wifi-hotspot}/bin/create_ap --config /run/secrets/wireless_ap";
       KillSignal = "SIGINT";
       Restart = "on-failure";
+    };
+  };
+
+  systemd.services.homage = {
+    enable = true;
+    description = "Homeage homepage";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig = {
+      ExecStart = "/home/user/local/homage";
+      User = "user";
     };
   };
 
@@ -151,6 +168,27 @@
     enableNg = true;
   };
 
+  security.sudo = {
+    enable = true;
+    extraRules = [
+      {
+        commands = [
+          {
+            command = "/run/current-system/sw/sbin/poweroff";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/sbin/reboot";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+        groups = [ "wheel" ];
+      }
+    ];
+    # extraConfig = ''
+    #   Defaults:rahu secure_path="${pkgs.lib.makeBinPath [ pkgs.systemd ]}:/run/current-system/sw/bin"
+    # '';
+  };
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     git
@@ -174,6 +212,9 @@
     enable = true;
     openFirewall = true;
   };
-  networking.firewall.allowedTCPPorts = [ 2342 ];
+  networking.firewall.allowedTCPPorts = [
+    2342
+    7047
+  ];
   system.stateVersion = "23.11";
 }
