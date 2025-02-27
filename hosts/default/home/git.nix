@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-let githubHelper = "${pkgs.gh}/bin/gh auth git-credential"; in
+let
+  githubHelper = "${pkgs.gh}/bin/gh auth git-credential";
+in
 {
   programs.git = {
     enable = true;
@@ -21,5 +23,6 @@ let githubHelper = "${pkgs.gh}/bin/gh auth git-credential"; in
   home.packages = with pkgs; [
     gh
     lazygit
+    jujutsu
   ];
 }
