@@ -14,7 +14,7 @@
   ];
 
   environment.plasma6.excludePackages = with pkgs; [
-    konsole
+    kdePackages.konsole
     kdePackages.oxygen-icons
     kdePackages.kate
     kdePackages.plasma-workspace-wallpapers
