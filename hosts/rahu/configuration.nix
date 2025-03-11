@@ -79,7 +79,6 @@
     after = [ "network.target" ];
     serviceConfig = {
       ExecStart = "/home/user/local/homage";
-      User = "user";
     };
   };
 
@@ -168,27 +167,6 @@
     enableNg = true;
   };
 
-  security.sudo = {
-    enable = true;
-    extraRules = [
-      {
-        commands = [
-          {
-            command = "/run/current-system/sw/sbin/poweroff";
-            options = [ "NOPASSWD" ];
-          }
-          {
-            command = "/run/current-system/sw/sbin/reboot";
-            options = [ "NOPASSWD" ];
-          }
-        ];
-        groups = [ "wheel" ];
-      }
-    ];
-    # extraConfig = ''
-    #   Defaults:rahu secure_path="${pkgs.lib.makeBinPath [ pkgs.systemd ]}:/run/current-system/sw/bin"
-    # '';
-  };
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     git
