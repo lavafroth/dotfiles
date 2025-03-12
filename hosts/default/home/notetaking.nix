@@ -4,5 +4,6 @@
     mdcat
     marksman
     rnote
+    apostrophe
   ];
 }
