@@ -28,10 +28,6 @@
 
   home = {
     file = {
-      ".config/mpv" = {
-        source = ./sources/mpv;
-        recursive = true;
-      };
       ".config/kitty" = {
         source = ./sources/kitty;
         recursive = true;
