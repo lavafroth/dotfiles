@@ -40,15 +40,12 @@
         '';
       };
       fish_greeting.body = "";
-      # My documents follow Johnny.Decimal system
-      # see https://johnnydecimal.com
-      h.body = "cd ~/Documents/*/*/$argv*";
     };
   };
 
   home.packages = with pkgs; [
     # fs tools
-    broot
+    yazi
     file
     fd
     ouch
