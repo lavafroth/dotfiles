@@ -182,7 +182,6 @@
     noto-fonts-cjk-sans
     noto-fonts-emoji
     nerd-fonts.terminess-ttf
-    monaspace
   ];
   networking.firewall.enable = true;
   system.stateVersion = "24.05";
