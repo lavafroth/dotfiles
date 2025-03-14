@@ -41,6 +41,8 @@
   };
 
   services.fwupd.enable = true;
+  services.ollama.enable = true;
+  services.ollama.acceleration = "cuda";
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
