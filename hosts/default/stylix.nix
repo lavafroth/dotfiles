@@ -8,7 +8,7 @@
   stylix.targets.qt.platform = "kde6";
   # extracted by running
   # `plasma-apply-cursortheme --list-themes`
-  stylix.cursor.name = "Breeze_Light";
+  # stylix.cursor.name = "Breeze_Light";
 
   stylix.fonts = rec {
     monospace = {
