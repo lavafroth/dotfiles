@@ -9,7 +9,6 @@
     ./aws.nix
     ./benchmarking.nix
     ./browsers.nix
-    ./ctf.nix
     ./gaming.nix
     ./git.nix
     # ./gnome.nix
