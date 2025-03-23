@@ -5,7 +5,7 @@
     kdePackages.kde-gtk-config
     kdePackages.kclock
     kdePackages.alligator
-    # kdePackages.karousel
+    kdePackages.karousel
     kde-rounded-corners
     kitty
     plasma-panel-colorizer
