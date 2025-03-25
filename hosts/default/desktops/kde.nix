@@ -18,5 +18,6 @@
     kdePackages.oxygen-icons
     kdePackages.kate
     kdePackages.plasma-workspace-wallpapers
+    kdePackages.elisa
   ];
 }
