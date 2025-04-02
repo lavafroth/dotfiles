@@ -10,7 +10,7 @@
     ./filesystem-hardening.nix
     ./phone-as-webcam.nix
     ./nvidia.nix
-    ./virtualization.nix
+    # ./virtualization.nix
     # ./desktops/gnome.nix
     ./desktops/kde.nix
   ];
@@ -41,8 +41,6 @@
   };
 
   services.fwupd.enable = true;
-  services.ollama.enable = true;
-  services.ollama.acceleration = "cuda";
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
