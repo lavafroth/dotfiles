@@ -8,6 +8,6 @@
     kdePackages.karousel
     kde-rounded-corners
     kitty
-    plasma-panel-colorizer
+    notify-desktop
   ];
 }

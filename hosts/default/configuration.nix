@@ -162,7 +162,6 @@
     ripgrep
     sbctl
     wl-clipboard
-    libnotify
   ];
 
   # Make sure opengl is enabled
