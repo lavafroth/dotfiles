@@ -4,6 +4,5 @@
     dxvk
     wine64
     lutris
-    steam-run
   ];
 }
