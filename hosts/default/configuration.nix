@@ -108,7 +108,7 @@
     packages = with pkgs; [
       i2p
       # libreoffice-fresh
-      signal-desktop
+      signal-desktop-bin
       tesseract
     ];
     shell = pkgs.fish;
