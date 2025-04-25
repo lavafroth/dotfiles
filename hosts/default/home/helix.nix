@@ -3,7 +3,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = pkgs.lib.mkForce "solarized_dark";
+      # theme = pkgs.lib.mkForce "solarized_dark";
       editor.cursor-shape = {
         insert = "bar";
         normal = "underline";

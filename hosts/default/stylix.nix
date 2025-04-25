@@ -4,7 +4,7 @@
   stylix.enable = true;
   stylix.image = ./home/sources/stylix_image.png;
   stylix.polarity = "dark";
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
+  # stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/solarized-dark.yaml";
   stylix.targets.qt.platform = "kde6";
   # extracted by running
   # `plasma-apply-cursortheme --list-themes`
