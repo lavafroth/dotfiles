@@ -41,6 +41,7 @@
   };
 
   services.fwupd.enable = true;
+  security.pam.services.systemd-run0 = { };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
@@ -131,10 +132,10 @@
   security = {
     rtkit.enable = true;
     sudo.enable = false;
-    sudo-rs = {
-      enable = true;
-      execWheelOnly = true;
-    };
+    # sudo-rs = {
+    #   enable = true;
+    #   execWheelOnly = true;
+    # };
   };
 
   # Allow unfree packages
@@ -162,6 +163,7 @@
     ripgrep
     sbctl
     wl-clipboard
+    (writeShellScriptBin "sudo" "run0 $@")
   ];
 
   # Make sure opengl is enabled
