@@ -76,6 +76,11 @@
     credentialsFile = "/run/secrets/transmission";
   };
 
+  systemd.services.transmission.serviceConfig.BindPaths = [
+    "/mnt/ssd0/Stasis/Games"
+    "/mnt/ssd0/Stasis/Books"
+  ];
+
   systemd.services.create_ap = {
     enable = true;
     description = "Create AP Service";
