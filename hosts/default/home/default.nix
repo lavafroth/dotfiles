@@ -38,7 +38,7 @@
       # some unfixable offenders include .mozilla, .librewolf
       # .adb and .ghidra
       CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
-      FLAKE = "${config.xdg.userDirs.publicShare}/dotfiles";
+      NH_FLAKE = "${config.xdg.userDirs.publicShare}/dotfiles";
       GDBHISTFILE = "${config.xdg.dataHome}/gdb/history";
 
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
