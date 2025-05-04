@@ -112,7 +112,7 @@
       signal-desktop-bin
       tesseract
     ];
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
   };
 
   programs.fish.enable = true;
