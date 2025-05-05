@@ -77,8 +77,8 @@
   };
 
   systemd.services.transmission.serviceConfig.BindPaths = [
-    "/mnt/ssd0/Stasis/Games"
-    "/mnt/ssd0/Stasis/Books"
+    "/media/ssd0/Stasis/Games"
+    "/media/ssd0/Stasis/Books"
   ];
 
   systemd.services.create_ap = {
