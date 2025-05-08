@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   home-manager.users.h = import ../home/kde.nix;
   services = {
@@ -11,6 +11,7 @@
   };
   environment.systemPackages = with pkgs; [
     kdePackages.sddm-kcm
+    inputs.kwin-effects-forceblur.packages.${pkgs.system}.default
   ];
 
   environment.plasma6.excludePackages = with pkgs; [
