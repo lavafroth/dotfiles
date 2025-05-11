@@ -56,8 +56,6 @@
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.prowlarr.enable = true;
-  services.prowlarr.openFirewall = true;
   services.transmission = {
     package = pkgs.transmission_4;
     enable = true;
