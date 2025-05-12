@@ -1,6 +1,7 @@
 {
   description = "NixOS configuration";
 
+  inputs.determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
@@ -40,6 +41,7 @@
       nix-on-droid,
       nix-index-database,
       stylix,
+      determinate,
       ...
     }:
 
@@ -52,6 +54,7 @@
         stylix.nixosModules.stylix
         nix-index-database.nixosModules.nix-index
         { programs.nix-index-database.comma.enable = true; }
+        determinate.nixosModules.default
       ];
 
       secureBootModules = [
