@@ -115,18 +115,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 14d";
-  };
-
-  system.autoUpgrade = {
-    enable = true;
-    flake = inputs.self.outPath;
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "--no-write-lock-file"
-      "-L"
-    ];
+    options = "--delete-older-than 112d";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
