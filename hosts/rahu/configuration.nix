@@ -141,35 +141,11 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA/wbGoIUsbBHFbnXj2g+23C8sUgYkZTq0TrBm0MMWnx"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICy8DNUvVXhXhqNaEHfcUJdSY5ZS1cn9roLHQF/pQUO0"
     ];
-    packages =
-      with pkgs;
-      let
-        transmission-compose = (
-          stdenv.mkDerivation {
-            name = "transmission-compose";
-            src = fetchurl {
-              url = "https://github.com/lavafroth/transmission-compose/releases/download/1.1.1/transmission-compose_1.1.1_x86_64-unknown-linux-musl.tar.zst";
-              sha256 = "319531358cccc35bc3aa8a61d7d691e7e3fd22ac8e1a08b66ef3399a9d84ed67";
-            };
-            phases = [
-              "installPhase"
-              "patchPhase"
-            ];
-            buildInputs = [ zstd ];
-            installPhase = ''
-              mkdir -p $out/bin
-              tar --extract --directory $out/bin --file $src transmission-compose
-              chmod +x $out/bin/transmission-compose
-            '';
-          }
-        );
-      in
-      [
-        transmission-compose
-        ripgrep
-        jq
-        nh
-      ];
+    packages = with pkgs; [
+      ripgrep
+      jq
+      nh
+    ];
 
     shell = pkgs.fish;
   };
