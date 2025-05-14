@@ -83,6 +83,7 @@
     after = [ "network.target" ];
     serviceConfig = {
       ExecStart = "/home/user/local/homage";
+      Environment = "PATH=/run/current-system/sw/bin/";
     };
   };
 
@@ -153,7 +154,7 @@
   };
   networking.firewall.allowedTCPPorts = [
     2342
-    7047
+    80
   ];
   system.stateVersion = "23.11";
 }
