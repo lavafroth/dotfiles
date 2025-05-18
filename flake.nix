@@ -28,7 +28,8 @@
       url = "github:nix-community/nix-on-droid/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    nix-ld.url = "github:Mic92/nix-ld";
+    nix-ld.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -40,6 +41,7 @@
       nix-on-droid,
       nix-index-database,
       stylix,
+      nix-ld,
       ...
     }:
 
@@ -52,6 +54,10 @@
         stylix.nixosModules.stylix
         nix-index-database.nixosModules.nix-index
         { programs.nix-index-database.comma.enable = true; }
+
+        # uni requires us to use uv for python
+        # RIP binary isolation lol
+        nix-ld.nixosModules.nix-ld
       ];
 
       secureBootModules = [

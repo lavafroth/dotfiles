@@ -116,6 +116,10 @@
   };
 
   programs.fish.enable = true;
+  programs.nix-ld.dev.enable = true;
+  programs.nix-ld.libraries = [
+    pkgs.stdenv.cc.cc.lib
+  ];
 
   # Enable nix-command for search and flakes
   nix.settings.experimental-features = [
