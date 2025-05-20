@@ -10,7 +10,7 @@
     ./filesystem-hardening.nix
     ./phone-as-webcam.nix
     ./nvidia.nix
-    # ./virtualization.nix
+    ./virtualization.nix
     # ./desktops/gnome.nix
     ./desktops/kde.nix
   ];
@@ -126,6 +126,9 @@
     "nix-command"
     "flakes"
   ];
+
+  services.ollama.enable = true;
+  services.ollama.acceleration = "cuda";
 
   system.switch = {
     enable = false;
