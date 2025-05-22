@@ -138,6 +138,8 @@
   security = {
     rtkit.enable = true;
     sudo.enable = false;
+    sudo-rs.enable = true;
+    sudo-rs.execWheelOnly = true;
   };
 
   # Allow unfree packages
@@ -165,7 +167,6 @@
     ripgrep
     sbctl
     wl-clipboard
-    (writeShellScriptBin "sudo" "run0 $@")
   ];
 
   # Make sure opengl is enabled
