@@ -167,6 +167,7 @@
     ripgrep
     sbctl
     wl-clipboard
+    # android-studio
   ];
 
   # Make sure opengl is enabled
