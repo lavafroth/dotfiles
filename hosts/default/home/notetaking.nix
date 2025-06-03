@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     mdcat
-    marksman
+    iwe
     rnote
     apostrophe
   ];
