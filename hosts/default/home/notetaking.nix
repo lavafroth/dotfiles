@@ -4,6 +4,5 @@
     mdcat
     iwe
     rnote
-    apostrophe
   ];
 }
