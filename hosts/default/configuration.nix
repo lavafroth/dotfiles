@@ -41,7 +41,10 @@
   };
 
   services.fwupd.enable = true;
-  security.pam.services.systemd-run0 = { };
+
+  # fuck this shit chock full of memory leaks
+  services.nscd.enableNsncd = false;
+  services.nscd.enable = false;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
