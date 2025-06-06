@@ -156,6 +156,8 @@
     QT_LOGGING_RULES = "kwin_*.debug=true";
   };
 
+  documentation.man.generateCaches = false;
+
   environment.systemPackages = with pkgs; [
     bat
     git
