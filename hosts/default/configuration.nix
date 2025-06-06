@@ -40,8 +40,6 @@
     networkmanager.enable = true;
   };
 
-  services.fwupd.enable = true;
-
   # fuck this shit chock full of memory leaks
   system.nssModules = pkgs.lib.mkForce [ ];
   # services.nscd.enableNsncd = false;
@@ -51,6 +49,7 @@
   time.timeZone = "Asia/Kolkata";
 
   powerManagement.powertop.enable = true;
+  services.upower.enable = pkgs.lib.mkForce false;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -150,7 +149,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.variables = {
-    # Set the path for pkg-config. Mostly for CFFI projects.
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     EDITOR = "${pkgs.helix}/bin/hx";
     QT_LOGGING_RULES = "kwin_*.debug=true";
