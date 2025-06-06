@@ -27,8 +27,8 @@
 
   home = {
     file = {
-      ".config/kitty" = {
-        source = ./sources/kitty;
+      ".config/alacritty" = {
+        source = ./sources/alacritty;
         recursive = true;
       };
     };

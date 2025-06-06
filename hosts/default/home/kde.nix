@@ -7,7 +7,7 @@
     kdePackages.alligator
     kdePackages.karousel
     kde-rounded-corners
-    kitty
+    alacritty
     notify-desktop
   ];
 }

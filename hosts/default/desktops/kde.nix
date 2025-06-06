@@ -19,6 +19,7 @@
     kdePackages.plasma-workspace-wallpapers
     kdePackages.elisa
     kdePackages.kwallet
+    kdePackages.konsole
     kdePackages.kwallet-pam
   ];
 }
