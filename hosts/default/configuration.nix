@@ -43,8 +43,9 @@
   services.fwupd.enable = true;
 
   # fuck this shit chock full of memory leaks
-  services.nscd.enableNsncd = false;
-  services.nscd.enable = false;
+  system.nssModules = pkgs.lib.mkForce [ ];
+  # services.nscd.enableNsncd = false;
+  # services.nscd.enable = false;
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
