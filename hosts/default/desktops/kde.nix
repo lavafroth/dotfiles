@@ -14,10 +14,11 @@
   ];
 
   environment.plasma6.excludePackages = with pkgs; [
-    kdePackages.konsole
     kdePackages.oxygen-icons
     kdePackages.kate
     kdePackages.plasma-workspace-wallpapers
     kdePackages.elisa
+    kdePackages.kwallet
+    kdePackages.kwallet-pam
   ];
 }
