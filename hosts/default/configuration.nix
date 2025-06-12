@@ -49,7 +49,6 @@
   time.timeZone = "Asia/Kolkata";
 
   powerManagement.powertop.enable = true;
-  services.upower.enable = pkgs.lib.mkForce false;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
