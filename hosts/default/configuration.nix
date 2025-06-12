@@ -132,11 +132,6 @@
   services.ollama.enable = true;
   services.ollama.acceleration = "cuda";
 
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
-
   security = {
     rtkit.enable = true;
     sudo.enable = false;

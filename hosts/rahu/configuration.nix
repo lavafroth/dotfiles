@@ -124,11 +124,6 @@
     shell = pkgs.fish;
   };
 
-  system.switch = {
-    enable = false;
-    enableNg = true;
-  };
-
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     git
