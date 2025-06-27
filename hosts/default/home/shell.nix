@@ -59,7 +59,8 @@
     # build tools
     just
 
-    # form over function (pretty tools)
-    nitch
+    (pkgs.writeScriptBin "lecture" ''
+      ${pkgs.mpv}/bin/mpv --start=00:00:14 --speed=1.25 --script-opts='skipsilence-enabled=yes' "$(${pkgs.wl-clipboard}/bin/wl-paste)"
+    '')
   ];
 }
