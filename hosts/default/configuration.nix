@@ -40,11 +40,6 @@
     networkmanager.enable = true;
   };
 
-  # fuck this shit chock full of memory leaks
-  system.nssModules = pkgs.lib.mkForce [ ];
-  # services.nscd.enableNsncd = false;
-  # services.nscd.enable = false;
-
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
 
@@ -108,12 +103,6 @@
       "wheel"
       "libvirtd"
     ];
-    packages = with pkgs; [
-      i2p
-      # libreoffice-fresh
-      signal-desktop-bin
-      tesseract
-    ];
     shell = pkgs.fish;
   };
 
@@ -150,6 +139,7 @@
 
   documentation.man.generateCaches = false;
 
+  environment.gnome.excludePackages = [ pkgs.gnome-keyring ];
   environment.systemPackages = with pkgs; [
     bat
     git
