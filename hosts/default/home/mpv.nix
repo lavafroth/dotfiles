@@ -10,6 +10,7 @@
         };
 
         scripts = with pkgs.mpvScripts; [
+          mpris
           sponsorblock
           skipsilence
         ];
