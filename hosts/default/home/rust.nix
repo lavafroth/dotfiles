@@ -1,7 +1,8 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   home.packages = with pkgs; [
     cargo
-    cargo-deny
+    cargo-machete
     clippy
     evcxr
     rust-analyzer
