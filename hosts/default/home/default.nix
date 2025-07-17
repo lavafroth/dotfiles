@@ -23,6 +23,7 @@
     ./video-editing.nix
     ./media-playback.nix
     ./mpv.nix
+    ./konsole-stylix.nix
   ];
 
   home = {
