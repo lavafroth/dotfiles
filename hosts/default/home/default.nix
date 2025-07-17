@@ -27,13 +27,6 @@
   ];
 
   home = {
-    file = {
-      ".config/alacritty" = {
-        source = ./sources/alacritty;
-        recursive = true;
-      };
-    };
-
     sessionVariables = {
       # these mfs pollute my home directory
       # some unfixable offenders include .mozilla, .librewolf
@@ -60,6 +53,11 @@
       "${config.home.homeDirectory}/.cargo/bin"
     ];
     stateVersion = "24.05";
+
+    packages = with pkgs; [
+      tesseract
+      signal-desktop-bin
+    ];
   };
 
   programs = {
