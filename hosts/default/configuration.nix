@@ -102,6 +102,7 @@
       "networkmanager"
       "wheel"
       "libvirtd"
+      "dialout" # for accessing arduinos and other serial devices
     ];
     shell = pkgs.fish;
   };
