@@ -57,6 +57,7 @@
     packages = with pkgs; [
       tesseract
       signal-desktop-bin
+      rusty-man
     ];
   };
 
