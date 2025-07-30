@@ -82,7 +82,7 @@
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
     serviceConfig = {
-      ExecStart = "/home/user/local/homage";
+      ExecStart = "/home/user/local/homage /home/user/local/config.txt";
       Environment = "PATH=/run/current-system/sw/bin/";
     };
   };
