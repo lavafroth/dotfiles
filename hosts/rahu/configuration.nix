@@ -13,12 +13,6 @@
 
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
   sops.secrets.wireless_ap = { };
-  sops.secrets.copyparty_himadri = {
-    owner = "copyparty";
-  };
-  sops.secrets.copyparty_sampurna = {
-    owner = "copyparty";
-  };
   sops.secrets.transmission = {
     owner = "transmission";
     restartUnits = [ "transmission.service" ];
@@ -34,54 +28,6 @@
     "video"
     "render"
   ];
-
-  services.copyparty = {
-    enable = true;
-    # directly maps to values in the [global] section of the copyparty config.
-    # see `copyparty --help` for available options
-    settings = {
-      i = "0.0.0.0";
-      p = 3210;
-      # using 'false' will do nothing and omit the value when generating a config
-      ignored-flag = false;
-    };
-
-    # create users
-    accounts = {
-      himadri.passwordFile = "/run/secrets/copyparty_himadri";
-      sampurna.passwordFile = "/run/secrets/copyparty_sampurna";
-    };
-
-    # create a volume
-    volumes = {
-      # create a volume at "/" (the webroot), which will
-      "/" = {
-        path = "/media/ssd0";
-        access = {
-          rwmda = "himadri";
-        };
-        flags = {
-          fk = 4;
-          scan = 60;
-          e2d = true;
-        };
-      };
-
-      "/Music" = {
-        path = "/media/ssd0/Stasis/Music";
-        access.r = "*";
-        flags.e2d = true;
-      };
-
-      "/Movies" = {
-        path = "/media/ssd0/Stasis/Movies";
-        access.r = "*";
-        flags.e2d = true;
-      };
-    };
-    # you may increase the open file limit for the process
-    openFilesLimit = 8192;
-  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -133,12 +79,22 @@
 
   systemd.services.homage = {
     enable = true;
-    description = "Homeage homepage";
+    description = "Homage homepage";
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
     serviceConfig = {
       ExecStart = "/home/user/local/homage /home/user/local/config.txt";
       Environment = "PATH=/run/current-system/sw/bin/";
+    };
+  };
+
+  systemd.services.dufs = {
+    enable = true;
+    description = "Homeage homepage";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "network.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.dufs}/bin/dufs -c /home/user/local/dufs-config.yaml";
     };
   };
 
@@ -204,7 +160,7 @@
   };
   networking.firewall.allowedTCPPorts = [
     2342
-    3210
+    5000
     80
   ];
   system.stateVersion = "23.11";
