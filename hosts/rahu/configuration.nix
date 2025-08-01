@@ -12,21 +12,75 @@
   sops.defaultSopsFormat = "yaml";
 
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
-  sops.secrets.photoprism_password = { };
   sops.secrets.wireless_ap = { };
+  sops.secrets.copyparty_himadri = {
+    owner = "copyparty";
+  };
+  sops.secrets.copyparty_sampurna = {
+    owner = "copyparty";
+  };
   sops.secrets.transmission = {
     owner = "transmission";
     restartUnits = [ "transmission.service" ];
   };
 
-  services.photoprism = {
+  services.immich.enable = true;
+  services.immich.port = 2283;
+  services.immich.openFirewall = true;
+  services.immich.host = "0.0.0.0";
+  services.immich.accelerationDevices = null;
+
+  users.users.immich.extraGroups = [
+    "video"
+    "render"
+  ];
+
+  services.copyparty = {
     enable = true;
-    originalsPath = "/media/Himadri/Stasis/Camera";
-    address = "0.0.0.0";
-    passwordFile = "/run/secrets/photoprism_password";
+    # directly maps to values in the [global] section of the copyparty config.
+    # see `copyparty --help` for available options
     settings = {
-      PHOTOPRISM_ADMIN_USER = "user";
+      i = "0.0.0.0";
+      p = 3210;
+      # using 'false' will do nothing and omit the value when generating a config
+      ignored-flag = false;
     };
+
+    # create users
+    accounts = {
+      himadri.passwordFile = "/run/secrets/copyparty_himadri";
+      sampurna.passwordFile = "/run/secrets/copyparty_sampurna";
+    };
+
+    # create a volume
+    volumes = {
+      # create a volume at "/" (the webroot), which will
+      "/" = {
+        path = "/media/ssd0";
+        access = {
+          rwmda = "himadri";
+        };
+        flags = {
+          fk = 4;
+          scan = 60;
+          e2d = true;
+        };
+      };
+
+      "/Music" = {
+        path = "/media/ssd0/Stasis/Music";
+        access.r = "*";
+        flags.e2d = true;
+      };
+
+      "/Movies" = {
+        path = "/media/ssd0/Stasis/Movies";
+        access.r = "*";
+        flags.e2d = true;
+      };
+    };
+    # you may increase the open file limit for the process
+    openFilesLimit = 8192;
   };
 
   # Bootloader.
@@ -61,6 +115,7 @@
 
   systemd.services.transmission.serviceConfig.BindPaths = [
     "/media/ssd0/Stasis/Games"
+    "/media/ssd0/Stasis/Movies"
     "/media/ssd0/Stasis/Books"
   ];
 
@@ -149,6 +204,7 @@
   };
   networking.firewall.allowedTCPPorts = [
     2342
+    3210
     80
   ];
   system.stateVersion = "23.11";

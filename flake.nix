@@ -32,6 +32,9 @@
       url = "github:lavafroth/mustache2konsole";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    copyparty.url = "github:9001/copyparty";
+
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -47,6 +50,7 @@
       stylix,
       nix-ld,
       mustache2konsole,
+      copyparty,
       ...
     }:
 
@@ -93,6 +97,18 @@
         rahu = nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
           modules = [
+            copyparty.nixosModules.default
+            (
+              { pkgs, ... }:
+              {
+                # add the copyparty overlay to expose the package to the module
+                nixpkgs.overlays = [ copyparty.overlays.default ];
+                # (optional) install the package globally
+                environment.systemPackages = [ pkgs.copyparty ];
+                # configure the copyparty module
+                services.copyparty.enable = true;
+              }
+            )
             ./hosts/rahu/configuration.nix
             sops-nix.nixosModules.sops
           ];
