@@ -63,6 +63,8 @@
     "/media/ssd0/Stasis/Games"
     "/media/ssd0/Stasis/Movies"
     "/media/ssd0/Stasis/Books"
+    "/media/ssd0/Stasis/Music"
+    "/media/ssd0/Stasis/Shows"
   ];
 
   systemd.services.create_ap = {
