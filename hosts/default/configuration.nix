@@ -12,7 +12,7 @@
     ./nvidia.nix
     ./virtualization.nix
     # ./desktops/gnome.nix
-    ./desktops/kde.nix
+    # ./desktops/kde.nix
   ];
 
   boot = {
@@ -88,6 +88,9 @@
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
     };
+
+    displayManager.cosmic-greeter.enable = true;
+    desktopManager.cosmic.enable = true;
 
     displayManager.autoLogin = {
       enable = true;
