@@ -138,7 +138,6 @@
   environment.variables = {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
     EDITOR = "${pkgs.helix}/bin/hx";
-    QT_LOGGING_RULES = "kwin_*.debug=true";
   };
 
   documentation.man.generateCaches = false;

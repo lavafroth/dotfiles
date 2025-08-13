@@ -22,4 +22,6 @@
     kdePackages.kwallet-pam
     kdePackages.kaccounts-integration
   ];
+
+  environment.variables.QT_LOGGING_RULES = "kwin_*.debug=true";
 }
