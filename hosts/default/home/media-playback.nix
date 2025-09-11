@@ -2,6 +2,5 @@
 {
   home.packages = with pkgs; [
     yt-dlp
-    jellyfin-media-player
   ];
 }
