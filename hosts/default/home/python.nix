@@ -2,13 +2,13 @@
 {
   home.packages = [
     pkgs.uv
-    (pkgs.python312.withPackages (
+    (pkgs.python313.withPackages (
       ps: with ps; [
-        jupyter
+        marimo
         python-lsp-server
         python-lsp-ruff
         pandas
-        requests
+        httpx
         xlrd
         xlwt
         sympy
