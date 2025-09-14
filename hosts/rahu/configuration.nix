@@ -13,21 +13,11 @@
 
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
   sops.secrets.wireless_ap = { };
+  sops.secrets.photoprism = { };
   sops.secrets.transmission = {
     owner = "transmission";
     restartUnits = [ "transmission.service" ];
   };
-
-  services.immich.enable = true;
-  services.immich.port = 2283;
-  services.immich.openFirewall = true;
-  services.immich.host = "0.0.0.0";
-  services.immich.accelerationDevices = null;
-
-  users.users.immich.extraGroups = [
-    "video"
-    "render"
-  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -67,6 +57,18 @@
     "/media/ssd0/Stasis/Shows"
   ];
 
+  services.photoprism = {
+    enable = true;
+    port = 2342;
+    address = "0.0.0.0";
+    passwordFile = "/run/secrets/photoprism";
+    settings = {
+      PHOTOPRISM_ADMIN_USER = "admin";
+      PHOTOPRISM_DEFAULT_LOCALE = "en";
+      PHOTOPRISM_SITE_TITLE = "rahu";
+    };
+  };
+
   systemd.services.create_ap = {
     enable = true;
     description = "Create AP Service";
@@ -87,16 +89,6 @@
     serviceConfig = {
       ExecStart = "/home/user/local/homage /home/user/local/config.txt";
       Environment = "PATH=/run/current-system/sw/bin/";
-    };
-  };
-
-  systemd.services.dufs = {
-    enable = true;
-    description = "Homeage homepage";
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.dufs}/bin/dufs -c /home/user/local/dufs-config.yaml";
     };
   };
 
@@ -127,7 +119,6 @@
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA/wbGoIUsbBHFbnXj2g+23C8sUgYkZTq0TrBm0MMWnx"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICy8DNUvVXhXhqNaEHfcUJdSY5ZS1cn9roLHQF/pQUO0"
     ];
     packages = with pkgs; [
       ripgrep
@@ -162,7 +153,6 @@
   };
   networking.firewall.allowedTCPPorts = [
     2342
-    5000
     80
   ];
   system.stateVersion = "23.11";
