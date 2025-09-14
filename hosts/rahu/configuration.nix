@@ -60,7 +60,7 @@
   services.photoprism = {
     enable = true;
     port = 2342;
-    originalsPath = "/var/lib/private/photoprism/originals";
+    originalsPath = "/media/Himadri/Stasis/Camera";
     address = "0.0.0.0";
     passwordFile = "/run/secrets/photoprism";
     settings = {
