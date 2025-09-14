@@ -13,7 +13,10 @@
 
   sops.age.keyFile = "/home/user/.config/sops/age/keys.txt";
   sops.secrets.wireless_ap = { };
-  sops.secrets.photoprism = { };
+  sops.secrets.photoprism = {
+    restartUnits = [ "photoprism.service" ];
+  };
+
   sops.secrets.transmission = {
     owner = "transmission";
     restartUnits = [ "transmission.service" ];
