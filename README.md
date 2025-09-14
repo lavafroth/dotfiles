@@ -46,20 +46,6 @@ git clone https://github.com/lavafroth/dotfiles
 nix-on-droid switch --flake dotfiles
 ```
 
-## Troubleshooting
-
-### command-not-found unable to connect to database
-
-The `programs.sqlite` is only generated for the `nixos-` prefixed channels.
-Ensure you use the unstable channel using these commands as root:
-
-```sh
-nix-channel --add https://nixos.org/channels/nixos-unstable nixos
-nix-channel --update
-```
-
-Further reading: [NixOS discourse](https://discourse.nixos.org/t/command-not-found-unable-to-open-database/3807).
-
 ### Running blender with CUDA
 
 ```
