@@ -6,12 +6,9 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./disable-broken-wifi-card.nix
     ./filesystem-hardening.nix
     ./phone-as-webcam.nix
-    ./nvidia.nix
     ./virtualization.nix
-    # ./desktops/gnome.nix
     ./desktops/kde.nix
   ];
 
@@ -119,9 +116,6 @@
     "flakes"
   ];
 
-  services.ollama.enable = true;
-  services.ollama.acceleration = "cuda";
-
   security = {
     rtkit.enable = true;
     sudo.enable = false;
@@ -155,7 +149,6 @@
     ripgrep
     sbctl
     wl-clipboard
-    android-studio
   ];
 
   # Make sure opengl is enabled
