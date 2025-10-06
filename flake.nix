@@ -28,11 +28,6 @@
       url = "github:nix-community/nix-on-droid/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mustache2konsole = {
-      url = "github:lavafroth/mustache2konsole";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-ld.url = "github:Mic92/nix-ld";
     nix-ld.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -47,7 +42,6 @@
       nix-index-database,
       stylix,
       nix-ld,
-      mustache2konsole,
       ...
     }:
 
@@ -60,7 +54,6 @@
         stylix.nixosModules.stylix
         nix-index-database.nixosModules.nix-index
         { programs.nix-index-database.comma.enable = true; }
-        { nixpkgs.overlays = [ mustache2konsole.overlays.default ]; }
 
         # uni requires us to use uv for python
         # RIP binary isolation lol
