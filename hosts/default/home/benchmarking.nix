@@ -1,6 +1,6 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     hyperfine
-    linuxPackages_latest.perf
+    perf
   ];
 }
