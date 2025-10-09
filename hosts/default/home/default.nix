@@ -23,10 +23,13 @@
     ./video-editing.nix
     ./media-playback.nix
     ./mpv.nix
-    # ./konsole-stylix.nix
+    # ./plasma.nix
   ];
 
   home = {
+    file = {
+      ".config/kglobalshortcutsrc".source = ./sources/kglobalshortcutsrc;
+    };
     sessionVariables = {
       # these mfs pollute my home directory
       # some unfixable offenders include .mozilla, .librewolf
