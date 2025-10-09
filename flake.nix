@@ -56,7 +56,7 @@
         { programs.nix-index-database.comma.enable = true; }
 
         # uni requires us to use uv for python
-        # RIP binary isolation lol
+        # TODO: Restore binary isolation
         nix-ld.nixosModules.nix-ld
       ];
 
