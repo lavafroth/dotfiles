@@ -20,6 +20,8 @@
                 ipython
                 matplotlib
                 pandas
+                scikit-learn
+                seaborn
                 # kitkat backend to view plots
                 # directly in the kitty terminal
                 (ps.buildPythonPackage rec {
