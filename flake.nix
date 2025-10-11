@@ -33,31 +33,19 @@
   };
 
   outputs =
-    inputs@{
+    {
       nixpkgs,
-      home-manager,
       lanzaboote,
       sops-nix,
       nix-on-droid,
-      nix-index-database,
-      stylix,
-      nix-ld,
       ...
-    }:
+    }@inputs:
 
     let
       cafeModules = [
         ./hosts/default/configuration.nix
         ./cachix/nix-community.nix
-        home-manager.nixosModules.home-manager
         ./hosts/default/stylix.nix
-        stylix.nixosModules.stylix
-        nix-index-database.nixosModules.nix-index
-        { programs.nix-index-database.comma.enable = true; }
-
-        # uni requires us to use uv for python
-        # TODO: Restore binary isolation
-        nix-ld.nixosModules.nix-ld
       ];
 
       secureBootModules = [
@@ -65,12 +53,8 @@
         ./hosts/default/secureboot.nix
       ];
       system = "x86_64-linux";
-      specialArgs = {
-        inherit inputs;
-      };
-
+      specialArgs = { inherit inputs; };
     in
-
     {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
       nixosConfigurations = {

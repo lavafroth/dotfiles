@@ -278,26 +278,6 @@
         "type": "github"
       }
     },
-    "mustache2konsole": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1752990396,
-        "narHash": "sha256-P8ariIwu7x3Njm6KbTacFsNkxxU5t9B/M2lRGB1I+xo=",
-        "owner": "lavafroth",
-        "repo": "mustache2konsole",
-        "rev": "f63133635d68fde4fd0de3316122be82525718b5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lavafroth",
-        "repo": "mustache2konsole",
-        "type": "github"
-      }
-    },
     "nix-formatter-pack": {
       "inputs": {
         "nixpkgs": [
@@ -561,7 +541,6 @@
       "inputs": {
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
-        "mustache2konsole": "mustache2konsole",
         "nix-index-database": "nix-index-database",
         "nix-ld": "nix-ld",
         "nix-on-droid": "nix-on-droid",

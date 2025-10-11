@@ -1,5 +1,6 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 
@@ -10,6 +11,12 @@
     ./phone-as-webcam.nix
     ./virtualization.nix
     ./desktops/kde.nix
+    inputs.home-manager.nixosModules.home-manager
+    inputs.nix-index-database.nixosModules.nix-index
+    inputs.stylix.nixosModules.stylix
+    # uni requires us to use uv for python
+    # TODO: Restore binary isolation
+    inputs.nix-ld.nixosModules.nix-ld
   ];
 
   boot = {
@@ -115,6 +122,7 @@
     "nix-command"
     "flakes"
   ];
+  programs.nix-index-database.comma.enable = true;
 
   security = {
     rtkit.enable = true;
