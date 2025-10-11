@@ -11,7 +11,6 @@
     ./browsers.nix
     ./gaming.nix
     ./git.nix
-    # ./gnome.nix
     ./golang.nix
     ./graphics.nix
     ./helix.nix
@@ -23,13 +22,9 @@
     ./video-editing.nix
     ./media-playback.nix
     ./mpv.nix
-    # ./plasma.nix
   ];
 
   home = {
-    file = {
-      ".config/kglobalshortcutsrc".source = ./sources/kglobalshortcutsrc;
-    };
     sessionVariables = {
       # these mfs pollute my home directory
       # some unfixable offenders include .mozilla, .librewolf

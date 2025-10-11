@@ -9,4 +9,5 @@
     kde-rounded-corners
     notify-desktop
   ];
+  home.file.".config/kglobalshortcutsrc".source = ./sources/kglobalshortcutsrc;
 }
