@@ -24,6 +24,7 @@
     ./mpv.nix
   ];
 
+  xdg.enable = true;
   home = {
     sessionVariables = {
       # these mfs pollute my home directory
@@ -44,6 +45,9 @@
 
       JULIAUP_DEPOT_PATH = "${config.xdg.dataHome}/julia";
       CARGO_HOME = "${config.xdg.dataHome}/cargo";
+      PSQL_HISTORY = "${config.xdg.stateHome}/psql_history";
+      PYTHON_HISTORY = "${config.xdg.stateHome}/python_history";
+      SQLITE_HISTORY="${config.xdg.stateHome}/sqlite_history";
     };
 
     sessionPath = [

@@ -122,6 +122,7 @@
     "nix-command"
     "flakes"
   ];
+  nix.settings.use-xdg-base-directories = true;
   programs.nix-index-database.comma.enable = true;
 
   security = {
