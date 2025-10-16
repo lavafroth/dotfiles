@@ -44,7 +44,6 @@
     let
       cafeModules = [
         ./hosts/default/configuration.nix
-        ./cachix/nix-community.nix
         ./hosts/default/stylix.nix
       ];
 
