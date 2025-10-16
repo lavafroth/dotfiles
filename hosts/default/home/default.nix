@@ -85,6 +85,10 @@
         cursor_trail_start_threshold = 0;
         shell_integration = "no-cursor";
         font_size = 13.0;
+        tab_bar_margin_height = "8.0 0.0";
+        tab_bar_style = "powerline";
+        tab_powerline_style = "slanted";
+
       };
     };
   };
