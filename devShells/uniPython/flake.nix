@@ -14,10 +14,9 @@
       devShells = forAllSystems (pkgs: {
         default = pkgs.mkShell {
           packages = [
-            (pkgs.python311.withPackages (
+            (pkgs.python313.withPackages (
               ps: with ps; [
                 numpy
-                ipython
                 matplotlib
                 pandas
                 scikit-learn
@@ -36,14 +35,13 @@
                   buildInputs = with ps; [
                     matplotlib
                     setuptools
-                    build
                   ];
                 })
               ]
             ))
           ];
 
-          MPLBACKEND = "module://kitcat";
+          MPLBACKEND = "kitcat";
         };
       });
     };
