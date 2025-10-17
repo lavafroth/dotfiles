@@ -35,17 +35,6 @@ git clone https://github.com/lavafroth/dotfiles
 sudo nixos-rebuild switch --flake dotfiles#rahu
 ```
 
-### Android (Nix-on-droid)
-
-I use Nix-on-droid to have Termux with a declarative config. Install
-[Nix-on-droid from F-Droid](https://f-droid.org/en/packages/com.termux.nix/) and
-enable flakes when prompted. Clone this repo and rebuild the environment.
-
-```sh
-git clone https://github.com/lavafroth/dotfiles
-nix-on-droid switch --flake dotfiles
-```
-
 ### Running blender with CUDA
 
 ```
