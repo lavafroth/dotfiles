@@ -2,17 +2,17 @@
 
 NixOS configuration files personalized for my daily driver and home server.
 
-### Work Computer
+## Work Computer
 
-To get started, install NixOS, [enable flakes](https://nixos.wiki/wiki/Flakes#NixOS)
-and clone this repository.
+- Install NixOS
+- [Enable flakes](https://nixos.wiki/wiki/Flakes#NixOS)
+- Run the following
 
 ```sh
-git clone https://github.com/lavafroth/dotfiles
-sudo nixos-rebuild switch --flake dotfiles#cafe-nosecureboot
+sudo nixos-rebuild switch --flake github:lavafroth/dotfiles#cafe-nosecureboot
 ```
 
-#### Secureboot
+### Secureboot
 
 - Use the preinstalled `sbctl` command to generate your keys
 - Clear the manufacturer keys and enroll yours as described [here](https://github.com/nix-community/lanzaboote/blob/master/docs/QUICK_START.md).
@@ -22,17 +22,7 @@ sudo nixos-rebuild switch --flake dotfiles#cafe-nosecureboot
 - Run the following to rebuild the system from now on
 
 ```sh
-sudo nixos-rebuild switch --flake dotfiles
-```
-
-### Home Server
-
-Install NixOS with the headless (no GUI) settings. Enable flakes.
-Clone this repo, enter the directory and run a rebuild for the host `rahu`.
-
-```sh
-git clone https://github.com/lavafroth/dotfiles
-sudo nixos-rebuild switch --flake dotfiles#rahu
+sudo nixos-rebuild switch --flake github:lavafroth/dotfiles#cafe
 ```
 
 ### Running blender with CUDA
@@ -40,3 +30,14 @@ sudo nixos-rebuild switch --flake dotfiles#rahu
 ```
 nix run --impure github:guibou/nixGL -- nix run blender-bin
 ```
+
+## Home Server
+
+- Install NixOS with the headless (no GUI) settings
+- Enable flakes
+- Rebuild with this flake
+
+```sh
+sudo nixos-rebuild switch --flake github:lavafroth/dotfiles#rahu
+```
+
