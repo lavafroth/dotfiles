@@ -4,6 +4,5 @@
     arti
     librewolf
     ungoogled-chromium
-    brave
   ];
 }
