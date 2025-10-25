@@ -6,18 +6,27 @@
     gh = {
       enable = true;
       extensions = [
-        (
-          pkgs.stdenv.mkDerivation {
-            pname = "gh-star";
-            name = "gh-star";
-            src = ./gh-star;
-            installPhase = ''
-              mkdir -p $out/bin
-              cp $src/gh-star.sh $out/bin/gh-star
-              chmod +x $out/bin/gh-star
-            '';
-          }
-        )
+        (pkgs.stdenv.mkDerivation rec {
+          name = "gh-star";
+          pname = name;
+          src = ./gh-extensions;
+          installPhase = ''
+            mkdir -p $out/bin
+            cp $src/${name}.sh $out/bin/${name}
+            chmod +x $out/bin/${name}
+          '';
+        })
+
+        (pkgs.stdenv.mkDerivation rec {
+          name = "gh-dependabot";
+          pname = name;
+          src = ./gh-extensions;
+          installPhase = ''
+            mkdir -p $out/bin
+            cp $src/${name}.sh $out/bin/${name}
+            chmod +x $out/bin/${name}
+          '';
+        })
       ];
     };
     git = {
