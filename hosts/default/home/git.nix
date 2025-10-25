@@ -1,27 +1,40 @@
 { config, pkgs, ... }:
 
-let
-  githubHelper = "${pkgs.gh}/bin/gh auth git-credential";
-in
 {
-  programs.git = {
-    enable = true;
-    userName = "Himadri Bhattacharjee";
-    userEmail = "107522312+lavafroth@users.noreply.github.com";
-    delta.enable = true;
+  programs = {
 
-    extraConfig = {
-      credential."https://github.com".helper = githubHelper;
-      credential."https://gist.github.com".helper = githubHelper;
-      gpg.format = "ssh";
+    gh = {
+      enable = true;
+      extensions = [
+        (
+          pkgs.stdenv.mkDerivation {
+            pname = "gh-star";
+            name = "gh-star";
+            src = ./gh-star;
+            installPhase = ''
+              mkdir -p $out/bin
+              cp $src/gh-star.sh $out/bin/gh-star
+              chmod +x $out/bin/gh-star
+            '';
+          }
+        )
+      ];
     };
-    signing.signByDefault = true;
-    signing.key = "${config.home.homeDirectory}/.ssh/id_ed25519";
+    git = {
+      enable = true;
+      settings = {
+        user.name = "Himadri Bhattacharjee";
+        user.email = "107522312+lavafroth@users.noreply.github.com";
+        gpg.format = "ssh";
+      };
+
+      signing.signByDefault = true;
+      signing.key = "${config.home.homeDirectory}/.ssh/id_ed25519";
+
+    };
+
+    delta.enable = true;
+    jujutsu.enable = true;
 
   };
-
-  home.packages = with pkgs; [
-    gh
-    jujutsu
-  ];
 }
