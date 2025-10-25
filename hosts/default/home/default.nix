@@ -92,7 +92,10 @@
         tab_bar_margin_height = "8.0 0.0";
         tab_bar_style = "powerline";
         tab_powerline_style = "slanted";
-
+      };
+      keybindings = {
+        "ctrl+t" = "new_tab_with_cwd";
+        "ctrl+shift+t" = "";
       };
     };
   };
