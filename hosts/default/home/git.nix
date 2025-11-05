@@ -28,16 +28,6 @@
           '';
         })
 
-        (pkgs.stdenv.mkDerivation rec {
-          name = "gh-dependabot";
-          pname = name;
-          src = ./gh-extensions;
-          installPhase = ''
-            mkdir -p $out/bin
-            cp $src/${name}.sh $out/bin/${name}
-            chmod +x $out/bin/${name}
-          '';
-        })
       ];
     };
     git = {
