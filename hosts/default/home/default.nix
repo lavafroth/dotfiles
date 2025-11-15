@@ -30,6 +30,8 @@
       # these mfs pollute my home directory
       # some unfixable offenders include .mozilla, .librewolf
       # .adb and .ghidra
+
+      SCIKIT_LEARN_DATA = "${config.xdg.cacheHome}/sklearn-data";
       CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
       NH_FLAKE = "${config.xdg.userDirs.publicShare}/dotfiles";
       GDBHISTFILE = "${config.xdg.dataHome}/gdb/history";
