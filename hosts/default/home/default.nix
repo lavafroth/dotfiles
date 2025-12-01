@@ -36,6 +36,10 @@
       NH_FLAKE = "${config.xdg.userDirs.publicShare}/dotfiles";
       GDBHISTFILE = "${config.xdg.dataHome}/gdb/history";
 
+      # Remove when https://github.com/flxzt/rnote/issues/1543 gets fixed.
+      # causes the drawing tablet input to not get recognized.
+      GDK_BACKEND="x11";
+
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
 
       GOPATH = "${config.xdg.userDirs.publicShare}/go";
