@@ -23,6 +23,7 @@
     kdePackages.kaccounts-integration
     kdePackages.kwrited
     kdePackages.konsole
+    kdePackages.plasma-systemmonitor
   ];
 
   environment.variables.QT_LOGGING_RULES = "kwin_*.debug=true";
