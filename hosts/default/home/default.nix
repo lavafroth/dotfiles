@@ -65,10 +65,8 @@
     packages = with pkgs; [
       tesseract
       signal-desktop-bin
-      rusty-man
       (pkgs.writeShellScriptBin "lecture" ''
-        url="$1" || "$(wl-paste)"
-        mpv --speed=1.5 --start=00:00:14 --cache-pause-wait=14 --script-opts='skipsilence-enabled=yes,skipsilence-threshold_db=-18' --vf=sub,negate "$url"
+        mpv --speed=1.5 --start=00:00:14 --cache-pause-wait=14 --script-opts='skipsilence-enabled=yes,skipsilence-threshold_db=-18' --vf=sub,negate "$1"
       '')
     ];
   };
