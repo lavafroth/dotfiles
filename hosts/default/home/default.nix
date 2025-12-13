@@ -101,6 +101,7 @@
       keybindings = {
         "ctrl+t" = "new_tab_with_cwd";
         "ctrl+shift+t" = "";
+        "ctrl+backspace" = "send_text all \\x17";
       };
     };
   };
