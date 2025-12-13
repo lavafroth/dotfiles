@@ -6,6 +6,9 @@
     ungoogled-chromium
   ];
 
+ 
+  # librewolf styling
+  home.file.".librewolf/default/chrome/userChrome.css".source = ./sources/userChrome.css;
   programs.librewolf = {
     enable = true;
     settings = {
@@ -15,6 +18,11 @@
       "sidebar.revamp" = true;
       "sidebar.verticalTabs" = true;
       "sidebar.revamp.round-content-area" = true;
+      "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      "browser.toolbars.bookmarks.visibility" = "never";
+      "browser.uiCustomization.state" = ''
+      {"placements":{"widget-overflow-fixed-list":[],"unified-extensions-area":["sponsorblocker_ajay_app-browser-action","ublock0_raymondhill_net-browser-action"],"nav-bar":["back-button","forward-button","urlbar-container","vertical-spacer","unified-extensions-button","dearrow_ajay_app-browser-action"],"toolbar-menubar":["menubar-items"],"TabsToolbar":[],"vertical-tabs":["tabbrowser-tabs"],"PersonalToolbar":["personal-bookmarks"]},"seen":["developer-button","screenshot-button","ublock0_raymondhill_net-browser-action","sponsorblocker_ajay_app-browser-action","dearrow_ajay_app-browser-action"],"dirtyAreaCache":["nav-bar","TabsToolbar","vertical-tabs","toolbar-menubar","PersonalToolbar","unified-extensions-area"],"currentVersion":23,"newElementCount":3}
+      '';
     };
 
     profiles.default.search = {
