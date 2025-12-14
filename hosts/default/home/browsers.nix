@@ -6,6 +6,8 @@
     ungoogled-chromium
   ];
 
+  # https://nix-community.github.io/stylix/options/modules/firefox.html
+  stylix.targets.librewolf.profileNames = [ "default" ];
  
   # librewolf styling
   home.file.".librewolf/default/chrome/userChrome.css".source = ./sources/userChrome.css;
@@ -29,6 +31,7 @@
       force = true;
       default = "udm14";
       privateDefault = "ddg";
+
 
       engines = {
         "udm14" = {
