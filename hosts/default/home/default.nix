@@ -63,6 +63,8 @@
     stateVersion = "24.05";
 
     packages = with pkgs; [
+      kiwix
+      kiwix-tools
       tesseract
       signal-desktop-bin
       (pkgs.writeShellScriptBin "lecture" ''
