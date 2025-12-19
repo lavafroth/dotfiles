@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
-  # virtualisation = {
-  #   libvirtd = {
-  #     enable = true;
+  virtualisation = {
+    libvirtd = {
+      enable = true;
   #     qemu = {
   #       package = pkgs.qemu_kvm;
   #       runAsRoot = true;
@@ -18,12 +18,12 @@
   #       };
   #     };
 
-  #   };
-  #   spiceUSBRedirection.enable = true;
-  # };
-  # environment.systemPackages = [
-  #   pkgs.gnome-boxes
-  # ];
+    };
+    spiceUSBRedirection.enable = true;
+  };
+  environment.systemPackages = [
+    pkgs.gnome-boxes
+  ];
 
   virtualisation.podman.enable = true;
   # virtualisation.waydroid.enable = true;
