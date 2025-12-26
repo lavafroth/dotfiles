@@ -107,6 +107,52 @@
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
           definedAliases = [ "@nixwiki" ];
         };
+
+        "sklearn" = {
+          urls = [
+            {
+              template = "https://scikit-learn.org/stable/search.html";
+              params = [
+                {
+                  name = "q";
+                  value = "{searchTerms}";
+                }
+              ];
+            }
+          ];
+          definedAliases = [ "@sklearn" ];
+        };
+
+        "torch" = {
+          urls = [
+            {
+              template = "https://docs.pytorch.org/docs/2.9/search.html";
+              params = [
+                {
+                  name = "q";
+                  value = "{searchTerms}";
+                }
+              ];
+            }
+          ];
+          definedAliases = [ "@torch" ];
+        };
+
+        "docs.rs" = {
+          urls = [
+            {
+              template = "https://docs.rs/releases/search";
+              params = [
+                {
+                  name = "query";
+                  value = "{searchTerms}";
+                }
+              ];
+            }
+          ];
+          definedAliases = [ "@docsrs" ];
+        };
+        
       };
     };
 
