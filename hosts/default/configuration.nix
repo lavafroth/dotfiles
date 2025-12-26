@@ -163,6 +163,35 @@
   # Make sure opengl is enabled
   hardware.graphics.enable = true;
   hardware.bluetooth.enable = true;
+  services.keyd = {
+    enable = true;
+    keyboards.sticky_keys.settings = {
+      main = {
+
+        control = "oneshot(control)";
+        meta = "oneshot(meta)";
+        shift = "oneshot(shift)";
+        leftalt = "oneshot(alt)";
+      };
+
+      control = {
+        control = "toggle(control)";
+      };
+
+      meta = {
+        meta = "toggle(meta)";
+      };
+
+      shift = {
+        shift = "toggle(shift)";
+      };
+
+      alt = {
+        leftalt = "toggle(alt)";
+      };
+
+    };
+  };
 
   console = {
     earlySetup = true;
