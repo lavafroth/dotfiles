@@ -162,6 +162,7 @@
 
   # Make sure opengl is enabled
   hardware.graphics.enable = true;
+  hardware.bluetooth.enable = true;
 
   console = {
     earlySetup = true;
