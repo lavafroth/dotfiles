@@ -36,6 +36,11 @@
       NH_FLAKE = "${config.xdg.userDirs.publicShare}/dotfiles";
       GDBHISTFILE = "${config.xdg.dataHome}/gdb/history";
 
+      HISTFILE="${config.xdg.stateHome}/bash/history";
+      KERAS_HOME="${config.xdg.stateHome}/keras";
+      ANDROID_USER_HOME="${config.xdg.dataHome}/android";
+      W3M_DIR="${config.xdg.dataHome}/w3m";
+
       # Remove when https://github.com/flxzt/rnote/issues/1543 gets fixed.
       # causes the drawing tablet input to not get recognized.
       GDK_BACKEND="x11";
