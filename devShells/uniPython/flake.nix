@@ -42,6 +42,12 @@
           ];
 
           MPLBACKEND = "kitcat";
+          PYTHONSTARTUP = "${pkgs.writeText "pythonstartup.py" ''
+            import numpy as np
+            import pandas as pd
+            import torch
+            from torch import nn
+            ''}";
         };
       });
     };
