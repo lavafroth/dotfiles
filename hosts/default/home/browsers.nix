@@ -29,7 +29,7 @@
 
     profiles.default.search = {
       force = true;
-      default = "udm14";
+      default = "ddg";
       privateDefault = "ddg";
 
 
