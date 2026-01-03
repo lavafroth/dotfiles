@@ -11,6 +11,8 @@
     ./phone-as-webcam.nix
     ./virtualization.nix
     ./desktops/kde.nix
+    ./sticky-keys.nix
+    ./locale.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-index-database.nixosModules.nix-index
     inputs.stylix.nixosModules.stylix
@@ -43,26 +45,9 @@
     hostName = "cafe";
     networkmanager.enable = true;
   };
-
-  # Set your time zone.
-  time.timeZone = "Asia/Kolkata";
+  hardware.bluetooth.enable = true;
 
   powerManagement.powertop.enable = true;
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
   xdg.portal.enable = true;
   hardware.uinput.enable = true;
   services = {
@@ -81,11 +66,9 @@
       pulse.enable = true;
     };
 
+    # X11
     xserver = {
-      # Enable the X11 windowing system.
       enable = true;
-
-      # Configure keymap in X11
       xkb.layout = "us";
       xkb.variant = "";
 
@@ -162,36 +145,6 @@
 
   # Make sure opengl is enabled
   hardware.graphics.enable = true;
-  hardware.bluetooth.enable = true;
-  services.keyd = {
-    enable = true;
-    keyboards.sticky_keys.settings = {
-      main = {
-
-        control = "oneshot(control)";
-        meta = "oneshot(meta)";
-        shift = "oneshot(shift)";
-        leftalt = "oneshot(alt)";
-      };
-
-      control = {
-        control = "toggle(control)";
-      };
-
-      meta = {
-        meta = "toggle(meta)";
-      };
-
-      shift = {
-        shift = "toggle(shift)";
-      };
-
-      alt = {
-        leftalt = "toggle(alt)";
-      };
-
-    };
-  };
 
   console = {
     earlySetup = true;
@@ -205,6 +158,7 @@
     noto-fonts-cjk-sans
     nerd-fonts.terminess-ttf
   ];
+
   networking.firewall.enable = true;
   system.stateVersion = "24.05";
 }
