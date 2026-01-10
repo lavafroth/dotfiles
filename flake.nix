@@ -17,6 +17,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    lollipop.url = "github:lavafroth/lollipop";
+
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,6 +41,7 @@
       lanzaboote,
       sops-nix,
       nix-on-droid,
+      lollipop,
       ...
     }@inputs:
 
@@ -46,6 +49,7 @@
       cafeModules = [
         ./hosts/default/configuration.nix
         ./hosts/default/stylix.nix
+        { nixpkgs.overlays = [lollipop.overlays.default]; }
       ];
 
       secureBootModules = [

@@ -11,7 +11,7 @@
     ./phone-as-webcam.nix
     ./virtualization.nix
     ./desktops/kde.nix
-    ./sticky-keys.nix
+    # ./sticky-keys.nix
     ./locale.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-index-database.nixosModules.nix-index
@@ -141,7 +141,19 @@
     ripgrep
     sbctl
     wl-clipboard
+    transmission_4-qt
+    lollipop
   ];
+
+  systemd.services.lollipop = {
+    enable = true;
+    description = "lollipop";
+    wantedBy = [ "multi-user.target" ];
+    # after = [ "network.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.lollipop}/bin/lollipop";
+    };
+  };
 
   # Make sure opengl is enabled
   hardware.graphics.enable = true;
