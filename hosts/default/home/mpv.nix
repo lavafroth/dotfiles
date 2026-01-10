@@ -4,10 +4,8 @@
     enable = true;
 
     package = (
-      pkgs.mpv-unwrapped.wrapper {
-        mpv = pkgs.mpv-unwrapped.override {
-          waylandSupport = true;
-        };
+      pkgs.mpv.override {
+       # waylandSupport = true;
 
         scripts = with pkgs.mpvScripts; [
           mpris
