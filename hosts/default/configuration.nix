@@ -145,10 +145,12 @@
     sbctl
     wl-clipboard
     transmission_4-qt
+    hashcat
   ];
 
   # Make sure opengl is enabled
   hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs; [ intel-compute-runtime intel-media-driver ocl-icd ];
 
   console = {
     earlySetup = true;
