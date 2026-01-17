@@ -49,7 +49,7 @@
       cafeModules = [
         ./hosts/default/configuration.nix
         ./hosts/default/stylix.nix
-        { nixpkgs.overlays = [lollipop.overlays.default]; }
+        lollipop.nixosModules.default
       ];
 
       secureBootModules = [

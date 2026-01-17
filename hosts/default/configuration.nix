@@ -51,6 +51,9 @@
   xdg.portal.enable = true;
   hardware.uinput.enable = true;
   services = {
+    # sticky keys
+    lollipop.enable = true;
+
     # dbus broker is faster
     dbus.implementation = "broker";
 
@@ -142,18 +145,7 @@
     sbctl
     wl-clipboard
     transmission_4-qt
-    lollipop
   ];
-
-  systemd.services.lollipop = {
-    enable = true;
-    description = "lollipop";
-    wantedBy = [ "multi-user.target" ];
-    # after = [ "network.target" ];
-    serviceConfig = {
-      ExecStart = "${pkgs.lollipop}/bin/lollipop";
-    };
-  };
 
   # Make sure opengl is enabled
   hardware.graphics.enable = true;
