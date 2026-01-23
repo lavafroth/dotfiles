@@ -6,8 +6,9 @@
     kdePackages.kclock
     kdePackages.alligator
     kdePackages.karousel
-    kde-rounded-corners
     notify-desktop
+    klassy
   ];
   home.file.".config/kglobalshortcutsrc".source = ./sources/kglobalshortcutsrc;
+  home.file.".config/kwinrc".source = ./sources/kwinrc;
 }
