@@ -137,7 +137,7 @@ Window One Screen Down=none,,Move Window One Screen Down
 Window One Screen Up=none,,Move Window One Screen Up
 Window One Screen to the Left=none,,Move Window One Screen to the Left
 Window One Screen to the Right=none,,Move Window One Screen to the Right
-Window Operations Menu=Alt+F3,Alt+F3,Window Operations Menu
+Window Operations Menu=Alt+F3,Alt+F3,Window Menu
 Window Pack Down=none,,Move Window Down
 Window Pack Left=none,,Move Window Left
 Window Pack Right=none,,Move Window Right
@@ -152,7 +152,7 @@ Window Quick Tile Top Left=none,,Quick Tile Window to the Top Left
 Window Quick Tile Top Right=none,,Quick Tile Window to the Top Right
 Window Raise=none,,Raise Window
 Window Resize=none,,Resize Window
-Window Shade=none,,Shade Window
+Window Shade=none,none,Shade Window
 Window Shrink Horizontal=none,,Shrink Window Horizontally
 Window Shrink Vertical=none,,Shrink Window Vertically
 Window to Desktop 1=none,,Window to Desktop 1
@@ -176,9 +176,9 @@ Window to Desktop 7=none,,Window to Desktop 7
 Window to Desktop 8=none,,Window to Desktop 8
 Window to Desktop 9=none,,Window to Desktop 9
 Window to Next Desktop=none,,Window to Next Desktop
-Window to Next Screen=none,,Move Window to Next Screen
+Window to Next Screen=none,Meta+Shift+Right,Move Window to Next Screen
 Window to Previous Desktop=none,,Window to Previous Desktop
-Window to Previous Screen=none,,Move Window to Previous Screen
+Window to Previous Screen=none,Meta+Shift+Left,Move Window to Previous Screen
 Window to Screen 0=none,,Move Window to Screen 0
 Window to Screen 1=none,,Move Window to Screen 1
 Window to Screen 2=none,,Move Window to Screen 2
@@ -321,6 +321,7 @@ _k_friendly_name=Power Management
 powerProfile=Battery\tMeta+B,Battery\tMeta+B,Switch Power Profile
 
 [plasmashell]
+Slideshow Wallpaper Next Image=none,,Next Wallpaper Image
 _k_friendly_name=plasmashell
 activate application launcher=Meta\tAlt+F1,Meta\tAlt+F1,Activate Application Launcher
 activate task manager entry 1=none,Meta+1,Activate Task Manager Entry 1
@@ -354,11 +355,11 @@ toggle do not disturb=none,,Toggle do not disturb
 [services][brave-browser.desktop]
 _launch=Meta+6
 
+[services][chromium-browser.desktop]
+_launch=Meta+2
+
 [services][kitty.desktop]
 _launch=Meta+1
-
-[services][librewolf.desktop]
-_launch=Meta+2
 
 [services][net.local.kitty.desktop]
 _launch=Meta+M
@@ -378,6 +379,9 @@ _launch=Alt+Space
 [services][org.kde.spectacle.desktop]
 RecordRegion=none
 _launch=Print
+
+[services][org.keepassxc.KeePassXC.desktop]
+_launch=Meta+4
 
 [services][signal.desktop]
 _launch=Meta+5
