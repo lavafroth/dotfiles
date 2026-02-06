@@ -24,6 +24,7 @@
     kdePackages.kwrited
     kdePackages.konsole
     kdePackages.plasma-systemmonitor
+    kdePackages.discover
   ];
 
   environment.variables.QT_LOGGING_RULES = "kwin_*.debug=true";
