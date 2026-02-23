@@ -70,6 +70,7 @@
     packages = with pkgs; [
       kiwix
       kiwix-tools
+      harper
       tesseract
       signal-desktop-bin
       (pkgs.writeShellScriptBin "lecture" ''
