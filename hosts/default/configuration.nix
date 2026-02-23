@@ -150,6 +150,7 @@
     sbctl
     wl-clipboard
     transmission_4-qt
+    redis
     hashcat
   ];
 
