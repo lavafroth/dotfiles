@@ -355,11 +355,11 @@ toggle do not disturb=none,,Toggle do not disturb
 [services][brave-browser.desktop]
 _launch=Meta+6
 
-[services][chromium-browser.desktop]
-_launch=Meta+2
-
 [services][kitty.desktop]
 _launch=Meta+1
+
+[services][librewolf.desktop]
+_launch=Meta+2
 
 [services][net.local.kitty.desktop]
 _launch=Meta+M
