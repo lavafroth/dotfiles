@@ -72,7 +72,7 @@
       kiwix-tools
       harper
       tesseract
-      signal-desktop-bin
+      signal-desktop
       (pkgs.writeShellScriptBin "lecture" ''
         mpv --speed=1.5 --start=00:00:14 --cache-pause-wait=14 --script-opts='skipsilence-enabled=yes,skipsilence-threshold_db=-18' --vf=sub,negate "$1"
       '')
