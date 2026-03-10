@@ -9,7 +9,7 @@
     ./hardware-configuration.nix
     ./filesystem-hardening.nix
     # ./phone-as-webcam.nix
-    ./virtualization.nix
+    # ./virtualization.nix
     ./desktops/kde.nix
     # ./sticky-keys.nix
     ./locale.nix
