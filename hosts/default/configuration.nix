@@ -6,40 +6,20 @@
 
 {
   imports = [
+    ./bootloader.nix
     ./hardware-configuration.nix
     ./filesystem-hardening.nix
+    ./desktops/kde.nix
+    ./locale.nix
     # ./phone-as-webcam.nix
     # ./virtualization.nix
-    ./desktops/kde.nix
-    # ./sticky-keys.nix
-    ./locale.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-index-database.nixosModules.nix-index
     inputs.stylix.nixosModules.stylix
-    # uni requires us to use uv for python
+    # uni requires uv for python
     # TODO: Restore binary isolation
     inputs.nix-ld.nixosModules.nix-ld
   ];
-
-  boot = {
-    # https://wiki.archlinux.org/title/Kernel_mode_setting#Early_KMS_start
-    # early KMS over HDMI
-    kernelParams = [
-      "quiet"
-      "splash"
-      "video=HDMI-1:1920x1080@60"
-    ];
-    initrd.availableKernelModules = [ "i915" ];
-
-    loader = {
-      systemd-boot = {
-        enable = true;
-        editor = false;
-      };
-      efi.canTouchEfiVariables = true;
-    };
-    initrd.systemd.enable = true;
-  };
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
