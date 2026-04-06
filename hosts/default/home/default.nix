@@ -72,9 +72,29 @@
       kiwix-tools
       harper
       tesseract
+      whisper-cpp
       signal-desktop
+
       (pkgs.writeShellScriptBin "lecture" ''
         mpv --speed=1.5 --start=00:00:14 --cache-pause-wait=14 --script-opts='skipsilence-enabled=yes,skipsilence-threshold_db=-18' --vf=sub,negate "$1"
+      '')
+      (pkgs.writeShellScriptBin "transcribe" ''
+        MODEL=$1
+        WAVFILE="/tmp/whisper.wav"
+
+        if test ! -f "$WAVFILE"; then
+          ${pkgs.notify-desktop}/bin/notify-desktop "Recording audio" "Re-trigger the shortcut to transcribe"
+          nohup pw-record $WAVFILE &
+          disown -a
+          exit
+        fi
+
+        ${pkgs.busybox}/bin/fuser -k -INT "$WAVFILE"
+        ${pkgs.notify-desktop}/bin/notify-desktop "Starting transcription" "using model $MODEL"
+        ${pkgs.whisper-cpp}/bin/whisper-cli -m "$MODEL" -f "$WAVFILE" --output-txt
+        cat /tmp/whisper.wav.txt | wl-copy
+        rm "$WAVFILE"
+        ${pkgs.notify-desktop}/bin/notify-desktop "Transcription finished" "You may paste from the clipboard"
       '')
     ];
   };
