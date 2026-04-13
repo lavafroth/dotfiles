@@ -8,7 +8,8 @@
     kdePackages.karousel
     notify-desktop
     klassy
-    (pkgs.writeShellScriptBin "kde-rotate" ''
+
+    (pkgs.writeShellScriptBin "rotate-screen" ''
       #!/usr/bin/env sh
       case $(${pkgs.kdePackages.libkscreen}/bin/kscreen-doctor --json | ${pkgs.jq}/bin/jq .outputs[0].rotation) in
           1) direction=left ;;
