@@ -25,6 +25,20 @@
   ];
 
   xdg.enable = true;
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = true;
+
+    desktop = "${config.home.homeDirectory}/dex";
+    documents = "${config.home.homeDirectory}/dox";
+    publicShare = "${config.home.homeDirectory}/pub";
+    download = "${config.home.homeDirectory}/dl";
+    music = "${config.home.homeDirectory}/mus";
+    pictures = "${config.home.homeDirectory}/pix";
+    videos = "${config.home.homeDirectory}/vid";
+    templates = "${config.home.homeDirectory}/tpl";
+
+  };
   home = {
     sessionVariables = {
       # these mfs pollute my home directory
