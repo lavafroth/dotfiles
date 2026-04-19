@@ -2,6 +2,7 @@
 {
   home.packages = [
     pkgs.uv
+    pkgs.ty
     (pkgs.python313.withPackages (
       ps: with ps; [
         marimo
