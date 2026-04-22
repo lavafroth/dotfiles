@@ -8,7 +8,6 @@
   imports = [
     ./bootloader.nix
     ./hardware-configuration.nix
-    ./filesystem-hardening.nix
     ./desktops/kde.nix
     ./locale.nix
     # ./phone-as-webcam.nix
