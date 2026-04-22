@@ -83,6 +83,7 @@
 
     packages = with pkgs; [
       kiwix
+      newsboat
       kiwix-tools
       harper
       tesseract
