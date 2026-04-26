@@ -35,10 +35,10 @@
       settings = {
         user.name = "Himadri Bhattacharjee";
         user.email = "107522312+lavafroth@users.noreply.github.com";
-        gpg.format = "ssh";
       };
 
       signing.signByDefault = true;
+      signing.format = "ssh";
       signing.key = "${config.home.homeDirectory}/.ssh/id_ed25519";
 
     };
