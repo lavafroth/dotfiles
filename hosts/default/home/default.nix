@@ -28,6 +28,7 @@
   xdg.userDirs = {
     enable = true;
     createDirectories = true;
+    setSessionVariables = true;
 
     desktop = "${config.home.homeDirectory}/dex";
     documents = "${config.home.homeDirectory}/dox";
