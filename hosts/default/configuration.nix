@@ -100,12 +100,8 @@
   nix.settings.use-xdg-base-directories = true;
   programs.nix-index-database.comma.enable = true;
 
-  security = {
-    rtkit.enable = true;
-    sudo.enable = false;
-    sudo-rs.enable = true;
-    sudo-rs.execWheelOnly = true;
-  };
+  security.rtkit.enable = true;
+  security.sudo.enable = false;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
