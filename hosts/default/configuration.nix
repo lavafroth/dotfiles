@@ -111,7 +111,7 @@
     EDITOR = "${pkgs.helix}/bin/hx";
   };
 
-  documentation.man.generateCaches = false;
+  documentation.man.cache.enable = false;
 
   environment.gnome.excludePackages = [ pkgs.gnome-keyring ];
   environment.systemPackages = with pkgs; [
