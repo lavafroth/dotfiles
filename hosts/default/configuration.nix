@@ -20,6 +20,9 @@
     inputs.nix-ld.nixosModules.nix-ld
   ];
 
+  boot.extraModprobeConfig = ''
+    install algif_aead ${pkgs.busybox}/bin/false
+  '';
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.h = import ./home;
