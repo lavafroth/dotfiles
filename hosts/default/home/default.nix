@@ -85,6 +85,7 @@
     packages = with pkgs; [
       kiwix
       newsboat
+      anki
       kiwix-tools
       harper
       tesseract
