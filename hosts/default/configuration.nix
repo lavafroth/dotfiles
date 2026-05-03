@@ -61,6 +61,7 @@
       enable = true;
       xkb.layout = "us";
       xkb.variant = "";
+      xkb.options = "caps:swapescape";
 
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
