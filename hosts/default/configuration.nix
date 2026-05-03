@@ -150,9 +150,9 @@
 
   console = {
     earlySetup = true;
-    font = "${pkgs.terminus_font}/share/consolefonts/ter-116n.psf.gz";
+    font = "ter-v116n";
     packages = with pkgs; [ terminus_font ];
-    keyMap = "us";
+    useXkbConfig = true;
   };
 
   fonts.packages = with pkgs; [
