@@ -66,6 +66,19 @@
 
       excludePackages = [ pkgs.xterm ];
       desktopManager.xterm.enable = false;
+
+      windowManager.session = [{
+        name="terminal";
+        start = ''
+          ${pkgs.kitty}/bin/kitty \
+          --override remember_window_size=no \
+          --override initial_window_width=1920 \
+          --override allow_remote_control=yes \
+          --override initial_window_height=1080 &
+          waitpid=$!
+          wait $waitpid
+          '';
+      }];
     };
 
     displayManager.autoLogin = {
