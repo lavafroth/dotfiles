@@ -5,7 +5,6 @@
     haruna
     kdePackages.kde-gtk-config
     kdePackages.kclock
-    kdePackages.alligator
     kdePackages.karousel
     notify-desktop
     klassy
