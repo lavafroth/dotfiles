@@ -176,9 +176,9 @@
 
   networking.firewall.enable = true;
 
-  system.nixos-init.enable = true;
-  system.etc.overlay.enable = true; # okay to mount as overlayfs since I don't mess with it
-  services.userborn.enable = true;
+  # system.nixos-init.enable = true;
+  # system.etc.overlay.enable = true; # okay to mount as overlayfs since I don't mess with it
+  # services.userborn.enable = true;
 
   system.stateVersion = "24.05";
 }
