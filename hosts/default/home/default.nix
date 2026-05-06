@@ -38,6 +38,7 @@
     pictures = "${config.home.homeDirectory}/pix";
     videos = "${config.home.homeDirectory}/vid";
     templates = "${config.home.homeDirectory}/tpl";
+    projects = "${config.home.homeDirectory}/prj";
 
   };
   home = {
