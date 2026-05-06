@@ -163,7 +163,7 @@
 
   console = {
     earlySetup = true;
-    font = "ter-v116n";
+    font = "ter-v16n";
     packages = with pkgs; [ terminus_font ];
     useXkbConfig = true;
   };
