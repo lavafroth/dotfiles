@@ -58,29 +58,7 @@
     };
 
     # X11
-    xserver = {
-      enable = true;
-      xkb.layout = "us";
-      xkb.variant = "";
-      xkb.options = "caps:swapescape";
-
-      excludePackages = [ pkgs.xterm ];
-      desktopManager.xterm.enable = false;
-
-      windowManager.session = [{
-        name="terminal";
-        start = ''
-          ${pkgs.kitty}/bin/kitty \
-          --override remember_window_size=no \
-          --override initial_window_width=1920 \
-          --override allow_remote_control=yes \
-          --override initial_window_height=1080 &
-          waitpid=$!
-          wait $waitpid
-          '';
-      }];
-    };
-
+    xserver.enable = false;
     displayManager.autoLogin = {
       enable = true;
       user = "h";
@@ -116,7 +94,6 @@
   security.rtkit.enable = true;
   security.sudo.enable = false;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.variables = {
@@ -165,7 +142,6 @@
     earlySetup = true;
     font = "ter-v16n";
     packages = with pkgs; [ terminus_font ];
-    useXkbConfig = true;
   };
 
   fonts.packages = with pkgs; [
