@@ -81,7 +81,8 @@
       config.home.sessionVariables.GOBIN
       "${config.home.homeDirectory}/.cargo/bin"
     ];
-    stateVersion = "24.05";
+
+    stateVersion = "26.05";
 
     packages = with pkgs; [
       kiwix
