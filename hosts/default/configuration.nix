@@ -22,6 +22,10 @@
 
   boot.extraModprobeConfig = ''
     install algif_aead ${pkgs.busybox}/bin/false
+    install esp4 ${pkgs.busybox}/bin/false
+    install esp6 ${pkgs.busybox}/bin/false
+    install rxrpc ${pkgs.busybox}/bin/false
+
   '';
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
