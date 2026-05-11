@@ -45,6 +45,8 @@
     # sticky keys
     lollipop.enable = true;
     lollipop.timeout = 300;
+    lollipop.touchpad.enable = true;
+    lollipop.touchpad.timeout = 300;
 
     # dbus broker is faster
     dbus.implementation = "broker";
