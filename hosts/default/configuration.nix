@@ -39,8 +39,11 @@
   hardware.bluetooth.enable = true;
 
   powerManagement.powertop.enable = true;
-  xdg.portal.enable = true;
   hardware.uinput.enable = true;
+
+  xdg.portal.extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
+  xdg.portal.enable = true;
+
   services = {
     # sticky keys
     lollipop.enable = true;
