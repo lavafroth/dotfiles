@@ -134,7 +134,7 @@
 
   # Make sure opengl is enabled
   hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit =  true;
+  hardware.graphics.enable32Bit = true;
   hardware.graphics.extraPackages = with pkgs; [
     intel-compute-runtime
     intel-media-driver
