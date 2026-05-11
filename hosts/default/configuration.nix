@@ -102,6 +102,20 @@
 
   security.rtkit.enable = true;
   security.sudo.enable = false;
+  security.wrappers = {
+    umount.setuid = pkgs.lib.mkForce false;
+    su.setuid = pkgs.lib.mkForce false;
+    sg.setuid = pkgs.lib.mkForce false;
+    pkexec.setuid = pkgs.lib.mkForce false;
+    passwd.setuid = pkgs.lib.mkForce false;
+    newuidmap.setuid = pkgs.lib.mkForce false;
+    newgrp.setuid = pkgs.lib.mkForce false;
+    newgidmap.setuid = pkgs.lib.mkForce false;
+    mount.setuid = pkgs.lib.mkForce false;
+    fusermount3.setuid = pkgs.lib.mkForce false;
+    fusermount.setuid = pkgs.lib.mkForce false;
+    chsh.setuid = pkgs.lib.mkForce false;
+  };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -160,10 +174,6 @@
   ];
 
   networking.firewall.enable = true;
-
-  # system.nixos-init.enable = true;
-  # system.etc.overlay.enable = true; # okay to mount as overlayfs since I don't mess with it
-  # services.userborn.enable = true;
 
   system.stateVersion = "24.05";
 }
