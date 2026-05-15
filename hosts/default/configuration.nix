@@ -51,6 +51,7 @@
     lollipop.timeout = 300;
     lollipop.touchpad.enable = true;
     lollipop.touchpad.timeout = 300;
+    lollipop.sharedMemory = true;
 
     # dbus broker is faster
     dbus.implementation = "broker";
