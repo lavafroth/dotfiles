@@ -19,6 +19,11 @@
 
     lollipop.url = "github:lavafroth/lollipop";
 
+    helium = {
+      url = "github:schembriaiden/helium-browser-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,6 +55,12 @@
         ./hosts/default/configuration.nix
         ./hosts/default/stylix.nix
         lollipop.nixosModules.default
+        # https://github.com/NixOS/nixpkgs/pull/498572
+        {
+          environment.systemPackages = [
+            inputs.helium.packages.${system}.default
+          ];
+        }
       ];
 
       secureBootModules = [
