@@ -134,6 +134,7 @@
     git
     helix
     iw
+    wifite2
     macchanger
     nh
     ntfs3g
