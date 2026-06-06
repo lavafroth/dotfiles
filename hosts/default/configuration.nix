@@ -34,8 +34,7 @@
   # Enable networking
   networking = {
     hostName = "cafe";
-    wireless.iwd.enable = true;
-    wireless.iwd.settings.Settings.AddressRandomization = "network";
+    networkmanager.enable = true;
   };
   hardware.bluetooth.enable = true;
 
