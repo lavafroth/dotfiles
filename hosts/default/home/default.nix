@@ -116,7 +116,6 @@
         tr -d '\n' < /tmp/whisper.wav.txt | wl-copy
         rm "$WAVFILE"
         ydotool key 29:1 47:1 47:0 29:0
-        ${pkgs.notify-desktop}/bin/notify-desktop "Transcription finished" "You may paste from the clipboard"
       '')
     ];
   };
