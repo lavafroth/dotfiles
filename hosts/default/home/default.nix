@@ -44,22 +44,21 @@
   home = {
     sessionVariables = {
       # these mfs pollute my home directory
-      # some unfixable offenders include .mozilla, .librewolf
+      # some unfixable offenders include
       # .adb and .ghidra
-
       SCIKIT_LEARN_DATA = "${config.xdg.cacheHome}/sklearn-data";
       CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
       NH_FLAKE = "${config.xdg.userDirs.publicShare}/dotfiles";
       GDBHISTFILE = "${config.xdg.dataHome}/gdb/history";
 
-      HISTFILE="${config.xdg.stateHome}/bash/history";
-      KERAS_HOME="${config.xdg.stateHome}/keras";
-      ANDROID_USER_HOME="${config.xdg.dataHome}/android";
-      W3M_DIR="${config.xdg.dataHome}/w3m";
+      HISTFILE = "${config.xdg.stateHome}/bash/history";
+      KERAS_HOME = "${config.xdg.stateHome}/keras";
+      ANDROID_USER_HOME = "${config.xdg.dataHome}/android";
+      W3M_DIR = "${config.xdg.dataHome}/w3m";
 
       # Remove when https://github.com/flxzt/rnote/issues/1543 gets fixed.
       # causes the drawing tablet input to not get recognized.
-      GDK_BACKEND="x11";
+      GDK_BACKEND = "x11";
 
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
 
@@ -74,7 +73,8 @@
       CARGO_HOME = "${config.xdg.dataHome}/cargo";
       PSQL_HISTORY = "${config.xdg.stateHome}/psql_history";
       PYTHON_HISTORY = "${config.xdg.stateHome}/python_history";
-      SQLITE_HISTORY="${config.xdg.stateHome}/sqlite_history";
+      SQLITE_HISTORY = "${config.xdg.stateHome}/sqlite_history";
+
       YDOTOOL_SOCKET = "$XDG_RUNTIME_DIR/.ydotool_socket";
     };
 
