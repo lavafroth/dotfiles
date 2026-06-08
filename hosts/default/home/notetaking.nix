@@ -4,6 +4,6 @@
     mdcat
     typst
     iwe
-    rnote
+    drawy
   ];
 }
