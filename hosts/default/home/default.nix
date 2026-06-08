@@ -75,6 +75,7 @@
       PSQL_HISTORY = "${config.xdg.stateHome}/psql_history";
       PYTHON_HISTORY = "${config.xdg.stateHome}/python_history";
       SQLITE_HISTORY="${config.xdg.stateHome}/sqlite_history";
+      YDOTOOL_SOCKET = "$XDG_RUNTIME_DIR/.ydotool_socket";
     };
 
     sessionPath = [
@@ -86,6 +87,7 @@
 
     packages = with pkgs; [
       kiwix
+      ydotool
       newsboat
       anki
       kiwix-tools
@@ -111,8 +113,9 @@
         ${pkgs.busybox}/bin/fuser -k -INT "$WAVFILE"
         ${pkgs.notify-desktop}/bin/notify-desktop "Starting transcription" "using model $MODEL"
         ${pkgs.whisper-cpp}/bin/whisper-cli -m "$MODEL" -f "$WAVFILE" --output-txt
-        cat /tmp/whisper.wav.txt | wl-copy
+        tr -d '\n' < /tmp/whisper.wav.txt | wl-copy
         rm "$WAVFILE"
+        ydotool key 29:1 47:1 47:0 29:0
         ${pkgs.notify-desktop}/bin/notify-desktop "Transcription finished" "You may paste from the clipboard"
       '')
     ];

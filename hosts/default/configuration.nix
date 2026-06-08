@@ -12,6 +12,7 @@
     ./locale.nix
     # ./phone-as-webcam.nix
     # ./virtualization.nix
+    ./ydotool.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-index-database.nixosModules.nix-index
     inputs.stylix.nixosModules.stylix
@@ -81,6 +82,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "uinput"
       "libvirtd"
       "dialout" # for accessing arduinos and other serial devices
     ];
