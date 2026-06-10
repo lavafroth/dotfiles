@@ -10,6 +10,8 @@
     ./hardware-configuration.nix
     ./desktops/kde.nix
     ./locale.nix
+    ./disable-setuid.nix
+    ./graphics.nix
     # ./phone-as-webcam.nix
     # ./virtualization.nix
     ./ydotool.nix
@@ -102,22 +104,6 @@
   programs.nix-index-database.comma.enable = true;
 
   security.rtkit.enable = true;
-  security.sudo.enable = false;
-  security.wrappers = {
-    umount.setuid = pkgs.lib.mkForce false;
-    su.setuid = pkgs.lib.mkForce false;
-    sg.setuid = pkgs.lib.mkForce false;
-    pkexec.setuid = pkgs.lib.mkForce false;
-    passwd.setuid = pkgs.lib.mkForce false;
-    newuidmap.setuid = pkgs.lib.mkForce false;
-    newgrp.setuid = pkgs.lib.mkForce false;
-    newgidmap.setuid = pkgs.lib.mkForce false;
-    mount.setuid = pkgs.lib.mkForce false;
-    fusermount3.setuid = pkgs.lib.mkForce false;
-    fusermount.setuid = pkgs.lib.mkForce false;
-    chsh.setuid = pkgs.lib.mkForce false;
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   environment.variables = {
@@ -142,25 +128,9 @@
     pciutils
     picocom
     ripgrep
-    sbctl
     wl-clipboard
     transmission_4-qt
     hashcat
-  ];
-
-  # Make sure opengl is enabled
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
-  hardware.graphics.extraPackages = with pkgs; [
-    intel-compute-runtime
-    intel-media-driver
-    ocl-icd
-    vulkan-headers
-    vulkan-loader
-    vulkan-validation-layers
-    libva-vdpau-driver
-    libvdpau-va-gl
-    mesa
   ];
 
   console = {

@@ -18,4 +18,6 @@
     };
   };
 
+  environment.systemPackages = [ pkgs.sbctl ];
+
 }
