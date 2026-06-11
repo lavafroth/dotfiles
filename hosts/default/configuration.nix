@@ -12,6 +12,7 @@
     ./locale.nix
     ./disable-setuid.nix
     ./graphics.nix
+    ./idevice.nix
     # ./phone-as-webcam.nix
     # ./virtualization.nix
     ./ydotool.nix
