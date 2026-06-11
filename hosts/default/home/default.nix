@@ -21,7 +21,6 @@
     ./shell.nix
     ./video-editing.nix
     ./media-playback.nix
-    ./mpv.nix
   ];
 
   xdg.enable = true;
