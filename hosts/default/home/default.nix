@@ -56,10 +56,6 @@
       ANDROID_USER_HOME = "${config.xdg.dataHome}/android";
       W3M_DIR = "${config.xdg.dataHome}/w3m";
 
-      # Remove when https://github.com/flxzt/rnote/issues/1543 gets fixed.
-      # causes the drawing tablet input to not get recognized.
-      GDK_BACKEND = "x11";
-
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
 
       GOPATH = "${config.xdg.userDirs.publicShare}/go";
