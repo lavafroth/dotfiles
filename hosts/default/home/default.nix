@@ -29,15 +29,15 @@
     createDirectories = true;
     setSessionVariables = true;
 
-    desktop = "${config.home.homeDirectory}/dex";
-    documents = "${config.home.homeDirectory}/dox";
-    publicShare = "${config.home.homeDirectory}/pub";
-    download = "${config.home.homeDirectory}/dl";
-    music = "${config.home.homeDirectory}/mus";
-    pictures = "${config.home.homeDirectory}/pix";
-    videos = "${config.home.homeDirectory}/vid";
-    templates = "${config.home.homeDirectory}/tpl";
-    projects = "${config.home.homeDirectory}/prj";
+    desktop = "${config.home.homeDirectory}/desktop";
+    documents = "${config.home.homeDirectory}/documents";
+    publicShare = "${config.home.homeDirectory}/public";
+    download = "${config.home.homeDirectory}/downloads";
+    music = "${config.home.homeDirectory}/music";
+    pictures = "${config.home.homeDirectory}/pictures";
+    videos = "${config.home.homeDirectory}/videos";
+    templates = "${config.home.homeDirectory}/templates";
+    projects = "${config.home.homeDirectory}/projects";
 
   };
   home = {
