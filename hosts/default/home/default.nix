@@ -12,14 +12,13 @@
     ./gaming.nix
     ./git.nix
     ./golang.nix
-    ./graphics.nix
     ./helix.nix
     ./nixlang.nix
     ./notetaking.nix
     ./python.nix
     ./rust.nix
     ./shell.nix
-    ./video-editing.nix
+    ./creative-suite.nix
     ./media-playback.nix
   ];
 
