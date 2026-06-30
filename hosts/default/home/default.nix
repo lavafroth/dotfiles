@@ -56,7 +56,7 @@
 
       GNUPGHOME = "${config.xdg.dataHome}/gnupg";
 
-      GOPATH = "${config.xdg.userDirs.publicShare}/go";
+      GOPATH = "${config.xdg.userDirs.projects}/go";
       GOBIN = "${config.home.sessionVariables.GOPATH}/bin";
 
       JUPYTER_PLATFORM_DIRS = "1";
