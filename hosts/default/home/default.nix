@@ -46,7 +46,7 @@
       # .adb and .ghidra
       SCIKIT_LEARN_DATA = "${config.xdg.cacheHome}/sklearn-data";
       CUDA_CACHE_PATH = "${config.xdg.cacheHome}/nv";
-      NH_FLAKE = "${config.xdg.userDirs.publicShare}/dotfiles";
+      NH_FLAKE = "${config.xdg.userDirs.projects}/dotfiles";
       GDBHISTFILE = "${config.xdg.dataHome}/gdb/history";
 
       HISTFILE = "${config.xdg.stateHome}/bash/history";
