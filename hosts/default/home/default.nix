@@ -90,6 +90,8 @@
       tesseract
       whisper-cpp
       signal-desktop
+      android-tools
+      dust
 
       (pkgs.writeShellScriptBin "lecture" ''
         mpv --speed=1.5 --start=00:00:14 --cache-pause-wait=14 --script-opts='skipsilence-enabled=yes,skipsilence-threshold_db=-18' --vf=sub,negate "$1"
@@ -111,6 +113,10 @@
         tr -d '\n' < /tmp/whisper.wav.txt | wl-copy
         rm "$WAVFILE"
         ydotool key 29:1 47:1 47:0 29:0
+      '')
+
+      (pkgs.writeShellScriptBin "adb" ''
+        env HOME="${config.xdg.dataHome}/android" ${pkgs.android-tools}/bin/adb "$@"
       '')
     ];
   };
