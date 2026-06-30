@@ -68,6 +68,7 @@
       PSQL_HISTORY = "${config.xdg.stateHome}/psql_history";
       PYTHON_HISTORY = "${config.xdg.stateHome}/python_history";
       SQLITE_HISTORY = "${config.xdg.stateHome}/sqlite_history";
+      XCOMPOSECACHE = "${config.xdg.cacheHome}/X11/xcompose";
 
       YDOTOOL_SOCKET = "$XDG_RUNTIME_DIR/.ydotool_socket";
     };
