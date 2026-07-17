@@ -86,6 +86,7 @@
       "uinput"
       "libvirtd"
       "dialout" # for accessing arduinos and other serial devices
+      "kvm"
     ];
     shell = pkgs.fish;
   };
@@ -131,6 +132,7 @@
     wl-clipboard
     transmission_4-qt
     hashcat
+    qemu
   ];
 
   console = {
