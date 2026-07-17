@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     dxvk
     wine64
+    luanti
     (lutris.override {
       buildFHSEnv = args: pkgs.buildFHSEnv ( args // {
         multiPkgs = envPkgs: let
