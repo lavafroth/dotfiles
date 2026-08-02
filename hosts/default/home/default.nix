@@ -20,6 +20,7 @@
     ./shell.nix
     ./creative-suite.nix
     ./media-playback.nix
+    ./shell-scripts/transcribe.nix
   ];
 
   xdg.enable = true;
@@ -89,6 +90,7 @@
       harper
       tesseract
       whisper-cpp
+      piper-tts
       signal-desktop
       android-tools
       dust
@@ -96,25 +98,11 @@
       (pkgs.writeShellScriptBin "lecture" ''
         mpv --speed=1.5 --start=00:00:14 --cache-pause-wait=14 --script-opts='skipsilence-enabled=yes,skipsilence-threshold_db=-18' --vf=sub,negate "$1"
       '')
-      (pkgs.writeShellScriptBin "transcribe" ''
-        MODEL=$1
-        WAVFILE="/tmp/whisper.wav"
-
-        if test ! -f "$WAVFILE"; then
-          ${pkgs.notify-desktop}/bin/notify-desktop "Recording audio" "Re-trigger the shortcut to transcribe"
-          nohup pw-record $WAVFILE &
-          disown -a
-          exit
-        fi
-
-        ${pkgs.busybox}/bin/fuser -k -INT "$WAVFILE"
-        ${pkgs.notify-desktop}/bin/notify-desktop "Starting transcription" "using model $MODEL"
-        ${pkgs.whisper-cpp}/bin/whisper-cli -m "$MODEL" -f "$WAVFILE" --output-txt
-        tr -d '\n' < /tmp/whisper.wav.txt | wl-copy
-        rm "$WAVFILE"
-        ydotool key 29:1 47:1 47:0 29:0
+      (pkgs.writeShellScriptBin "speak" ''
+        MODEL="$1"
+        wl-paste --primary | piper -m "$MODEL" -f - | mpv -
       '')
-
+    
       (pkgs.writeShellScriptBin "adb" ''
         env HOME="${config.xdg.dataHome}/android" ${pkgs.android-tools}/bin/adb "$@"
       '')
