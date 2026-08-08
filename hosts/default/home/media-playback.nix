@@ -12,6 +12,12 @@
         ];
       }
     );
+
+    config = {
+      keepaspect-window="no";
+      keepaspect="yes";
+      blend-subtitles="video";
+    };
   };
 
   home.packages = with pkgs; [

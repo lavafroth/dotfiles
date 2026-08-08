@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     keepassxc
-    haruna
     kdePackages.kde-gtk-config
     kdePackages.kclock
     kdePackages.karousel
